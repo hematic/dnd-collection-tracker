@@ -53,7 +53,7 @@ jobs:
           mkdir -p "$DND_DATA_DIR" "$DND_PDF_DIR"
           trap 'docker compose logs; docker compose down' EXIT
           docker build --tag "$DND_TRACKER_IMAGE" .
-          docker compose up --wait --wait-timeout 120 --pull never
+          docker compose up -d --pull never
           docker compose exec -T dnd-tracker-ocr tesseract --list-langs | grep -Fx eng
           docker compose exec -T dnd-tracker python - <<'PY'
           import json, time, urllib.request
