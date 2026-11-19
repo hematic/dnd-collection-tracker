@@ -4,9 +4,11 @@
 
 Start with a built-in catalog of **1,048 books and sets across 1,115 releases**, from original D&D through the 2024 rules, plus edition-independent companions. Run it on your own computer or host it for a group. The catalog ships with bibliographic metadata, not PDFs or cover art.
 
-[See it in action](#see-it-in-action) · [Quick start](#quick-start) · [Using your collection](#using-your-collection) · [Self-hosting](#self-host-with-docker) · [Release notes](./CHANGELOG.md)
+[Live demo](https://dndtest.apps.hematic.net/) · [See it in action](#see-it-in-action) · [Quick start](#quick-start) · [Using your collection](#using-your-collection) · [Self-hosting](#self-host-with-docker) · [Release notes](./CHANGELOG.md)
 
 ## See it in action
+
+**[Try the live demo](https://dndtest.apps.hematic.net/)**: a fresh install with the full catalog and an empty collection. It's read-only, so you can browse, search, filter and export, but not edit.
 
 ![Fresh install showing the AD&D 2e shelf, catalog filters, and color-coded placeholder covers](./docs/media/fresh-shelves.png)
 
