@@ -1,14 +1,13 @@
 # D&D Collection Tracker behind Traefik + TinyAuth (route defined in Traefik's file provider).
-# Komodo: point a Stack at this repo and put the variables from .env.example in its Environment.
-# Plain docker: copy .env.example to .env, then: docker compose up -d --build
+# Komodo: put the variables from .env.example in the Stack environment; leave Run Build off.
+# Plain Docker: copy .env.example to .env, then run docker compose up -d.
+x-image: &tracker-image
+  image: ${DND_TRACKER_IMAGE:-hematic/dnd-collection-tracker:latest}
+  user: "${PUID:-1000}:${PGID:-1000}"
+
 services:
   dnd-tracker:
-    image: dnd-collection-tracker:local
-    build:
-      context: .
-      args:
-        PUID: ${PUID:-1000}
-        PGID: ${PGID:-1000}
+    <<: *tracker-image
     container_name: dnd-tracker
     restart: unless-stopped
     environment:
@@ -36,7 +35,7 @@ services:
       retries: 3
 
   dnd-tracker-ocr:
-    image: dnd-collection-tracker:local
+    <<: *tracker-image
     container_name: dnd-tracker-ocr
     restart: unless-stopped
     command: ["python", "-m", "app.pdf_worker"]

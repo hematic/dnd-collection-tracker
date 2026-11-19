@@ -2,6 +2,12 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [0.39.2] - 2026-11-19
+
+### Added
+- Publish versioned Docker Hub images for Linux amd64 and arm64, with matching GitHub releases.
+- Let both Compose services pull the same prebuilt image and set their host UID and GID without rebuilding.
+
 ## [0.39.1] - 2026-11-19
 
 ### Changed

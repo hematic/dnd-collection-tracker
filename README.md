@@ -97,18 +97,28 @@ Everything lives in two places, and neither is in git:
 | Database + covers | `data/tracker.db`, `data/covers/` | `DND_DATA_DIR` on the server (mounted at `/data`) |
 | PDFs | Your local library or network share | `DND_PDF_DIR` on the host (default `/mnt/dnd/Books`), mounted read-only at `/pdfs` |
 
-The supplied [Compose stack](./docker-compose.yml) assumes Traefik and TinyAuth. It starts the web app and a separate OCR worker. Both containers need the same library at `/pdfs`; keep the SQLite database on the host's local disk, not a network share.
+The [Docker Hub image](https://hub.docker.com/r/hematic/dnd-collection-tracker) runs on Linux amd64 and arm64. The [Compose stack](./docker-compose.yml) uses the same image for the web app and OCR worker. It still assumes Traefik and TinyAuth. Both containers need the same library at `/pdfs`; keep the SQLite database on the host's local disk, not a network share.
 
-1. Copy [`.env.example`](./.env.example) to `.env`. Set the host storage paths, editor usernames or emails, and `TRAEFIK_IP`. In Komodo, put those values in the Stack environment and enable **Run Build**.
+1. Download `docker-compose.yml` and `tracker.env.example` from the [GitHub release](https://github.com/hematic/dnd-collection-tracker/releases) you want to install. Rename `tracker.env.example` to `.env` to use that release's pinned image. From a source checkout, use [`.env.example`](./.env.example) instead. Set the host storage paths, editor usernames or emails, and `TRAEFIK_IP`. In Komodo, put those values in the Stack environment and leave **Run Build** off.
 2. Route Traefik to `DND_PORT` (default `8765`). Configure forward-auth to strip incoming identity headers and pass TinyAuth's authenticated headers. For Docker labels, the response-header setting is:
    ```
    traefik.http.middlewares.tinyauth.forwardauth.authResponseHeaders: Remote-User,Remote-Email,Remote-Name,Remote-Groups
    ```
-3. If moving an existing collection, stop the local app and copy its database and covers to `DND_DATA_DIR`. Give `PUID:PGID` write access. If existing links use a Windows or NAS path, set `DND_TRACKER_PDF_MAP` in your `.env` or Komodo environment (for example, `\\nas\Books=/pdfs`). Compose passes it to both services; the database keeps the original paths. New Docker installs can leave the mapping blank and use **Browse PDF library** to pick files from `DND_PDF_DIR`.
-4. Deploy the stack, or run `docker compose up -d --build`.
+3. Create `DND_DATA_DIR` and give `PUID:PGID` write access. If moving an existing collection, stop the old app and copy its database and covers there. If existing links use a Windows or NAS path, set `DND_TRACKER_PDF_MAP` in your `.env` or Komodo environment (for example, `\\nas\Books=/pdfs`). Compose passes it to both services; the database keeps the original paths. New Docker installs can leave the mapping blank and use **Browse PDF library** to pick files from `DND_PDF_DIR`.
+4. Deploy the stack, or run `docker compose pull && docker compose up -d`.
 
 Anyone TinyAuth lets in can browse and open linked PDFs. Only `DND_TRACKER_ADMINS` can edit. Restrict direct access to the published port so clients cannot bypass Traefik.
 
 **Backups:** Use SQLite's `.backup` command (or stop both services before copying the database) and back up the `covers/` folder. Keep the PDF library backed up separately.
 
+**Updating:** Back up first, then change `DND_TRACKER_IMAGE` to the new `X.Y.Z` tag and run `docker compose pull && docker compose up -d`. `latest` follows the newest published stable version; pin a numbered tag to control when you upgrade. If a rollback requires restoring the database, use your pre-upgrade backup.
+
+**Building from source:** Run `docker build -t dnd-collection-tracker:local .`, then `DND_TRACKER_IMAGE=dnd-collection-tracker:local docker compose up -d --pull never`.
+
 **OCR troubleshooting:** If the UI reports **OCR worker offline**, check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. `DND_OCR_CPU_SHARES` adjusts its relative CPU priority, not a hard cap.
+
+### Publishing a release
+
+Configure the GitHub Actions variable `DOCKERHUB_USERNAME` and secret `DOCKERHUB_TOKEN` with write access to the public Docker Hub repository. In Docker Hub, make numbered tags immutable (regex `^[0-9]+\.[0-9]+\.[0-9]+$`), but leave `latest` mutable.
+
+Prepare the version with `python -m app.version patch --note "Describe the change"` (or use `minor` or `major`), review and commit the version and changelog, and push that commit to `main`. Tag the commit `vX.Y.Z` and push the tag. Publish one release at a time; ordinary branch pushes and pull requests run checks without publishing. The workflow tests both architectures, publishes the versioned image, and then creates the GitHub release. If publishing fails after the image is pushed, rerun the workflow rather than replacing the version tag.

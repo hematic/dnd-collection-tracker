@@ -1,0 +1,217 @@
+name: Docker
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ['v*.*.*']
+
+permissions:
+  contents: read
+
+env:
+  IMAGE: docker.io/hematic/dnd-collection-tracker
+
+jobs:
+  test:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
+        with:
+          python-version: '3.13'
+          cache: pip
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '22'
+      - run: |
+          python -m pip install -r requirements.txt
+          python -m app.version --check
+          python -m unittest discover -s tests
+          node --test tests/*.test.cjs
+
+  smoke:
+    strategy:
+      matrix:
+        runner: [ubuntu-24.04, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - name: Run web and OCR worker from the same image
+        shell: bash
+        env:
+          DND_TRACKER_IMAGE: dnd-collection-tracker:smoke
+          DND_TRACKER_ADMINS: smoke
+          TRAEFIK_IP: 192.0.2.10
+        run: |
+          export DND_DATA_DIR="$RUNNER_TEMP/tracker-data" DND_PDF_DIR="$RUNNER_TEMP/tracker-pdfs"
+          export PUID="$(id -u)" PGID="$(id -g)"
+          mkdir -p "$DND_DATA_DIR" "$DND_PDF_DIR"
+          trap 'docker compose logs; docker compose down' EXIT
+          docker build --tag "$DND_TRACKER_IMAGE" .
+          docker compose up --wait --wait-timeout 120 --pull never
+          docker compose exec -T dnd-tracker-ocr tesseract --list-langs | grep -Fx eng
+          docker compose exec -T dnd-tracker python - <<'PY'
+          import json, time, urllib.request
+          from app.version import APP_VERSION
+
+          def get(endpoint):
+              with urllib.request.urlopen(f"http://127.0.0.1:8000/api/{endpoint}", timeout=5) as response:
+                  return json.load(response)
+
+          assert get("meta")["version"] == APP_VERSION
+          for _ in range(30):
+              if get("pdf-index")["worker_online"]:
+                  break
+              time.sleep(1)
+          else:
+              raise SystemExit("OCR worker did not report online")
+          PY
+
+  publish:
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/')
+    needs: [test, smoke]
+    runs-on: ubuntu-24.04
+    permissions:
+      contents: write
+    concurrency:
+      group: docker-release
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Verify release tag and configuration
+        id: release
+        shell: bash
+        env:
+          DOCKERHUB_USERNAME: ${{ vars.DOCKERHUB_USERNAME }}
+          DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
+        run: |
+          python3 -m app.version --check
+          version="$(python3 -m app.version)"
+          if [[ "$GITHUB_REF_NAME" != "v$version" ]]; then
+            echo "::error::Release tag must be v$version"
+            exit 1
+          fi
+          git merge-base --is-ancestor HEAD origin/main
+          if [[ -z "$DOCKERHUB_USERNAME" || -z "$DOCKERHUB_TOKEN" ]]; then
+            echo "::error::Set the DOCKERHUB_USERNAME variable and DOCKERHUB_TOKEN secret"
+            exit 1
+          fi
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+          echo "revision=$(git rev-parse HEAD)" >> "$GITHUB_OUTPUT"
+      - uses: docker/setup-qemu-action@c7c53464625b32c7a7e944ae62b3e17d2b600130 # v3
+        with:
+          platforms: arm64
+      - uses: docker/setup-buildx-action@8d2750c68a42422c14e847fe6c8ac0403b4cbd6f # v3
+      - uses: docker/login-action@c94ce9fb468520275223c153574b00df6fe4bcc9 # v3
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+      - name: Check published tags
+        id: registry
+        shell: bash
+        env:
+          VERSION: ${{ steps.release.outputs.version }}
+        run: |
+          tag_exists() {
+            local status
+            status="$(curl --silent --show-error --retry 3 --max-time 30 --output /dev/null \
+              --write-out '%{http_code}' \
+              "https://hub.docker.com/v2/namespaces/hematic/repositories/dnd-collection-tracker/tags/$1")" || exit 1
+            case "$status" in
+              200) return 0 ;;
+              404) return 1 ;;
+              *) echo "::error::Docker Hub returned HTTP $status for tag $1"; exit 1 ;;
+            esac
+          }
+          if tag_exists "$VERSION"; then
+            docker buildx imagetools inspect --raw "$IMAGE:$VERSION" \
+              | jq -e --arg sha "$(git rev-parse HEAD)" \
+                '.annotations["org.opencontainers.image.revision"] == $sha' >/dev/null \
+              || { echo "::error::Docker Hub tag $VERSION is already in use"; exit 1; }
+            echo "reuse=true" >> "$GITHUB_OUTPUT"
+          fi
+          promote=true
+          if tag_exists latest; then
+            latest="$(docker buildx imagetools inspect --raw "$IMAGE:latest" \
+              | jq -er '.annotations["org.opencontainers.image.version"]')"
+            if [[ ! "$latest" =~ ^(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)\.(0|[1-9][0-9]*)$ ]]; then
+              echo "::error::The current latest image is not labeled with a stable release version"
+              exit 1
+            fi
+            if [[ "$latest" != "$VERSION" && "$(printf '%s\n' "$latest" "$VERSION" | sort -V | tail -1)" == "$latest" ]]; then
+              promote=false
+            fi
+          fi
+          echo "promote=$promote" >> "$GITHUB_OUTPUT"
+      - name: Publish versioned image
+        if: steps.registry.outputs.reuse != 'true'
+        uses: docker/build-push-action@10e90e3645eae34f1e60eeb005ba3a3d33f178e8 # v6
+        with:
+          context: .
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: ${{ env.IMAGE }}:${{ steps.release.outputs.version }}
+          labels: |
+            org.opencontainers.image.source=${{ github.server_url }}/${{ github.repository }}
+            org.opencontainers.image.version=${{ steps.release.outputs.version }}
+            org.opencontainers.image.revision=${{ steps.release.outputs.revision }}
+            org.opencontainers.image.licenses=MIT
+          annotations: |
+            index:org.opencontainers.image.version=${{ steps.release.outputs.version }}
+            index:org.opencontainers.image.revision=${{ steps.release.outputs.revision }}
+      - name: Verify image and update latest
+        id: image
+        shell: bash
+        env:
+          VERSION: ${{ steps.release.outputs.version }}
+          PROMOTE: ${{ steps.registry.outputs.promote }}
+        run: |
+          raw="$(mktemp)"
+          docker buildx imagetools inspect --raw "$IMAGE:$VERSION" > "$raw"
+          jq -e --arg version "$VERSION" --arg revision "$(git rev-parse HEAD)" '
+            .annotations["org.opencontainers.image.version"] == $version and
+            .annotations["org.opencontainers.image.revision"] == $revision and
+            ([.manifests[].platform | select(.os == "linux") | .architecture] | sort)
+              == ["amd64", "arm64"]
+          ' "$raw"
+          digest="sha256:$(sha256sum "$raw" | cut -d' ' -f1)"
+          echo "digest=$digest" >> "$GITHUB_OUTPUT"
+          if [[ "$PROMOTE" == true ]]; then
+            docker buildx imagetools create --prefer-index=false --tag "$IMAGE:latest" "$IMAGE@$digest"
+            docker buildx imagetools inspect --raw "$IMAGE:latest" | cmp "$raw" -
+          fi
+      - name: Publish GitHub release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          VERSION: ${{ steps.release.outputs.version }}
+          DIGEST: ${{ steps.image.outputs.digest }}
+          PROMOTE: ${{ steps.registry.outputs.promote }}
+        run: |
+          if draft="$(gh release view "$GITHUB_REF_NAME" --json isDraft --jq .isDraft)"; then
+            if [[ "$draft" == false ]]; then
+              exit 0
+            fi
+          fi
+          notes="$(mktemp)"
+          awk -v version="$VERSION" '
+            index($0, "## [" version "] - ") == 1 { printing = 1; next }
+            printing && /^## \[/ { exit }
+            printing { print }
+          ' CHANGELOG.md > "$notes"
+          printf '\n**Docker:** `%s:%s` (Linux amd64 and arm64)\n\n**Image digest:** `%s`\n' \
+            "$IMAGE" "$VERSION" "$DIGEST" >> "$notes"
+          if [[ "${draft:-}" != true ]]; then
+            gh release create "$GITHUB_REF_NAME" --verify-tag --draft --title "$GITHUB_REF_NAME" --notes-file "$notes"
+          fi
+          sed "s/:latest$/:$VERSION/" .env.example > tracker.env.example
+          gh release upload "$GITHUB_REF_NAME" --clobber docker-compose.yml tracker.env.example
+          gh release edit "$GITHUB_REF_NAME" --draft=false --latest="$PROMOTE"
