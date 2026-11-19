@@ -90,6 +90,27 @@ Valid editions, types and release kinds are listed in `app/db.py`.
 
 ## Self-host with Docker
 
+The [Docker Hub image](https://hub.docker.com/r/hematic/dnd-collection-tracker) runs on Linux amd64 and arm64. Both setups use the same image for the web app and OCR worker.
+
+### Local quick start
+
+Use Docker Engine 28 or newer (or a current Docker Desktop) and Docker Compose v2. This setup needs no account, proxy, or `.env` file.
+
+```sh
+mkdir -p dnd-tracker/pdfs
+cd dnd-tracker
+curl -fLO https://raw.githubusercontent.com/hematic/dnd-collection-tracker/main/compose.local.yml
+docker compose -f compose.local.yml up -d
+```
+
+Open [http://127.0.0.1:8765](http://127.0.0.1:8765). **Keep this stack local.** It has no login; anyone who can reach it can edit and open linked PDFs. For remote access, use the [authenticated setup](#authenticated-reverse-proxy) instead.
+
+The `dnd-tracker-local_tracker-data` volume holds the database and covers and survives `docker compose -f compose.local.yml down`. Do not add `-v` unless you intend to delete that data. Add PDFs to `./pdfs`, or set `DND_LOCAL_PDF_DIR` to your library path. Set `DND_LOCAL_PORT` if port `8765` is already taken. You can put these optional settings in a `.env` file next to [the local Compose file](./compose.local.yml).
+
+To update, back up your data, then run `docker compose -f compose.local.yml pull` and `docker compose -f compose.local.yml up -d`. Set `DND_TRACKER_IMAGE` to an exact release tag in `.env` if you want to control when you upgrade.
+
+### Authenticated reverse proxy
+
 Everything lives in two places, and neither is in git:
 
 | What | Local (Windows) | Server |
@@ -97,7 +118,7 @@ Everything lives in two places, and neither is in git:
 | Database + covers | `data/tracker.db`, `data/covers/` | `DND_DATA_DIR` on the server (mounted at `/data`) |
 | PDFs | Your local library or network share | `DND_PDF_DIR` on the host (default `/mnt/dnd/Books`), mounted read-only at `/pdfs` |
 
-The [Docker Hub image](https://hub.docker.com/r/hematic/dnd-collection-tracker) runs on Linux amd64 and arm64. The [Compose stack](./docker-compose.yml) uses the same image for the web app and OCR worker. It still assumes Traefik and TinyAuth. Both containers need the same library at `/pdfs`; keep the SQLite database on the host's local disk, not a network share.
+The [authenticated Compose stack](./docker-compose.yml) assumes Traefik and TinyAuth. Both containers need the same library at `/pdfs`; keep the SQLite database on the host's local disk, not a network share.
 
 1. Download `docker-compose.yml` and `tracker.env.example` from the [GitHub release](https://github.com/hematic/dnd-collection-tracker/releases) you want to install. Rename `tracker.env.example` to `.env` to use that release's pinned image. From a source checkout, use [`.env.example`](./.env.example) instead. Set the host storage paths, editor usernames or emails, and `TRAEFIK_IP`. In Komodo, put those values in the Stack environment and leave **Run Build** off.
 2. Route Traefik to `DND_PORT` (default `8765`). Configure forward-auth to strip incoming identity headers and pass TinyAuth's authenticated headers. For Docker labels, the response-header setting is:
