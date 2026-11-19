@@ -1,0 +1,56 @@
+# D&D Collection Tracker behind Traefik + TinyAuth (route defined in Traefik's file provider).
+# Komodo: point a Stack at this repo and put the variables from .env.example in its Environment.
+# Plain docker: copy .env.example to .env, then: docker compose up -d --build
+services:
+  dnd-tracker:
+    image: dnd-collection-tracker:local
+    build:
+      context: .
+      args:
+        PUID: ${PUID:-1000}
+        PGID: ${PGID:-1000}
+    container_name: dnd-tracker
+    restart: unless-stopped
+    environment:
+      DND_TRACKER_DATA: /data
+      DND_TRACKER_PDF_ROOT: /pdfs
+      DND_TRACKER_PDF_MAP: ${DND_TRACKER_PDF_MAP:-}
+      DND_TRACKER_ADMINS: ${DND_TRACKER_ADMINS:?set DND_TRACKER_ADMINS in .env}
+      # Only Traefik may talk to the app: the published port is reachable from the LAN, and
+      # Traefik is what enforces the TinyAuth login and strips forged Remote-* headers.
+      DND_TRACKER_TRUSTED_PROXIES: ${TRAEFIK_IP:?set TRAEFIK_IP to the proxy IP}
+    cpu_shares: ${DND_TRACKER_CPU_SHARES:-1024}
+    volumes:
+      # Database + covers: an absolute folder on the server's local disk, outside the
+      # repo checkout so redeploys/re-clones can never touch it. (SQLite and network shares don't mix.)
+      - ${DND_DATA_DIR:?set DND_DATA_DIR to an absolute path, e.g. /opt/appdata/dnd-tracker}:/data
+      # The PDF library, already mounted on the host, read-only.
+      - ${DND_PDF_DIR:-/mnt/dnd/Books}:/pdfs:ro
+    ports:
+      - "${DND_PORT:-8765}:8000"
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/meta')"]
+      interval: 60s
+      timeout: 5s
+      start_period: 20s
+      retries: 3
+
+  dnd-tracker-ocr:
+    image: dnd-collection-tracker:local
+    container_name: dnd-tracker-ocr
+    restart: unless-stopped
+    command: ["python", "-m", "app.pdf_worker"]
+    environment:
+      DND_TRACKER_DATA: /data
+      DND_TRACKER_PDF_ROOT: /pdfs
+      DND_TRACKER_PDF_MAP: ${DND_TRACKER_PDF_MAP:-}
+    cpu_shares: ${DND_OCR_CPU_SHARES:-1024}
+    volumes:
+      - ${DND_DATA_DIR:?set DND_DATA_DIR to an absolute path, e.g. /opt/appdata/dnd-tracker}:/data
+      - ${DND_PDF_DIR:-/mnt/dnd/Books}:/pdfs:ro
+    depends_on:
+      dnd-tracker:
+        condition: service_healthy
+    stop_grace_period: 2m
+    healthcheck:
+      disable: true

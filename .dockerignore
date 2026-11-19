@@ -1,0 +1,10 @@
+.venv/
+__pycache__/
+**/__pycache__/
+.git/
+backups/
+data/*
+!data/catalog.json
+*.db
+*.bat
+.env

@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D&amp;D Collection Tracker</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <h1>D&amp;D Collection</h1>
+    <button id="open-collection" class="secondary page-tab" type="button" aria-pressed="true">Collection</button>
+    <button id="open-pdf-search" class="secondary page-tab" type="button" aria-pressed="false">PDF Search</button>
+    <span class="topbar-spacer" aria-hidden="true"></span>
+    <span id="whoami" class="whoami"></span>
+    <button id="open-help" class="icon-btn help-trigger" type="button" aria-label="Help and app version" title="Help and app version">?</button>
+    <button id="toggle-theme" class="secondary" type="button" aria-label="Switch to dark theme" title="Switch to dark theme">☾ Dark</button>
+  </header>
+
+  <div class="layout">
+    <aside id="filters" class="filters">
+      <div class="filters-head">
+        <h2>Filters</h2>
+        <button class="icon-btn help-trigger" type="button" data-help-topic="filters" aria-label="Help: filters and sorting" title="Help: filters and sorting">?</button>
+        <button id="reset" class="link">Reset all</button>
+        <button id="close-filters" class="icon-btn" aria-label="Close filters" title="Close filters">×</button>
+      </div>
+      <section>
+        <h2>Sort</h2>
+        <div class="row">
+          <select id="sort">
+            <option value="year">Year</option>
+            <option value="title">Title</option>
+            <option value="edition">Edition</option>
+            <option value="type">Book type</option>
+            <option value="code">Product code</option>
+            <option value="publisher">Publisher</option>
+          </select>
+          <button id="sort-dir" class="icon-btn" title="Toggle direction" aria-label="Toggle sort direction">↑</button>
+        </div>
+        <label class="check"><input type="checkbox" id="group-shelves" checked> Shelf per edition</label>
+      </section>
+
+      <section>
+        <h2>Cover size</h2>
+        <div class="size-row">
+          <span>S</span>
+          <input type="range" id="cover-size" min="110" max="320" step="10" value="180" aria-label="Cover size">
+          <span>L</span>
+        </div>
+      </section>
+
+      <details class="filter-group" data-filter-group="releases">
+        <summary>Releases <span class="filter-count" data-count-for="releases" hidden></span></summary>
+        <label class="check"><input type="checkbox" id="all-releases"> Show every release separately</label>
+        <label class="check"><input type="checkbox" id="show-contents"> Show books inside box sets separately</label>
+        <label class="check"><input type="checkbox" data-hide="Reprint|Premium Reprint"> Hide reprints</label>
+        <label class="check"><input type="checkbox" data-hide="Special Edition|Alternate Cover"> Hide special editions &amp; alt covers</label>
+        <label class="check"><input type="checkbox" data-hide="Revised"> Hide revised printings</label>
+        <label class="check"><input type="checkbox" data-hide="Digital"> Hide digital releases</label>
+        <label class="check"><input type="checkbox" data-hide="Compilation"> Hide compilations</label>
+      </details>
+
+      <details class="filter-group" data-filter-group="collection" open>
+        <summary>My Collection <span class="filter-count" data-count-for="collection" hidden></span></summary>
+        <label class="check"><input type="checkbox" id="owned"> Physically owned only</label>
+        <label class="check"><input type="checkbox" id="not-physically-owned"> Not physically owned</label>
+        <label class="check"><input type="checkbox" id="has-pdf"> Has linked PDF</label>
+        <label class="check" title="Find books without a PDF linked to any release; when showing every release separately, find individual releases without links."><input type="checkbox" id="no-pdf"> Has No Linked PDF</label>
+      </details>
+
+      <details class="filter-group" data-filter-group="year">
+        <summary>Year <span class="filter-count" data-count-for="year" hidden></span></summary>
+        <div class="row years">
+          <input id="year-min" type="number" placeholder="From" min="1970" max="2100">
+          <span>–</span>
+          <input id="year-max" type="number" placeholder="To" min="1970" max="2100">
+        </div>
+      </details>
+
+      <details class="filter-group" data-filter-group="edition">
+        <summary>Edition <span class="filter-count" data-count-for="edition" hidden></span></summary>
+        <button class="link group-clear" data-clear="edition">Clear selection</button>
+        <div id="edition-list" class="checklist"></div>
+      </details>
+
+      <details class="filter-group" data-filter-group="type">
+        <summary>Book Type <span class="filter-count" data-count-for="type" hidden></span></summary>
+        <button class="link group-clear" data-clear="type">Clear selection</button>
+        <div id="type-list" class="checklist"></div>
+      </details>
+
+      <details class="filter-group" data-filter-group="publisher">
+        <summary>Publisher <span class="filter-count" data-count-for="publisher" hidden></span></summary>
+        <button class="link group-clear" data-clear="publisher">Clear selection</button>
+        <div id="publisher-list" class="checklist"></div>
+      </details>
+
+      <details class="filter-group" data-filter-group="export">
+        <summary>Export <span class="filter-count" data-count-for="export" hidden></span></summary>
+        <label class="export-field">Inventory
+          <select id="export-scope">
+            <option value="all">All books</option>
+            <option value="filtered">Current filtered view</option>
+            <option value="missing">Not physically owned</option>
+            <option value="owned">Physically owned</option>
+          </select>
+        </label>
+        <label class="export-field">Edition
+          <select id="export-edition"></select>
+        </label>
+        <p id="export-filtered-hint" class="rmeta" hidden>Uses the collection filters, sort order, and release options above.</p>
+        <a id="export-csv" class="secondary wide export-download" href="/api/export.csv?scope=all" download>Download CSV</a>
+      </details>
+
+    </aside>
+
+    <main id="main">
+      <div id="collection-page">
+      <div class="collection-toolbar">
+        <input id="search" type="search" placeholder="Search title, code, ISBN, setting, publisher…" autocomplete="off">
+        <button id="toggle-filters" class="icon-btn" aria-label="Show filters" aria-expanded="false" aria-controls="filters" title="Filters">☰</button>
+        <div class="collection-toolbar-end">
+          <div class="collection-actions">
+            <button id="select-mode" class="secondary" title="Select several books and change them all at once">Select</button>
+            <button id="add-set" class="secondary" title="Create a box set or collection and put books in it">+ New box set</button>
+            <button id="add-book" class="primary">+ Add book</button>
+          </div>
+          <div class="collection-status-view">
+            <div id="summary" class="summary"></div>
+            <div class="view-switch" role="group" aria-label="View">
+              <button data-view="shelf" class="active" title="Bookshelves">Shelves</button>
+              <button data-view="grid" title="Cover grid">Grid</button>
+              <button data-view="table" title="Table">Table</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="content"></div>
+      </div>
+      <section id="pdf-search-page" class="pdf-search-page" hidden aria-labelledby="pdf-search-title">
+        <div class="helpable-heading">
+          <h2 id="pdf-search-title">Search PDF contents</h2>
+          <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-search" aria-label="Help: PDF search" title="Help: PDF search">?</button>
+        </div>
+        <p class="rmeta">Search text from linked PDFs. Scanned pages are OCRed locally; original files are unchanged.</p>
+        <form id="pdf-search-form" class="pdf-search-form">
+          <input id="pdf-search-query" type="search" placeholder="Search PDF text, e.g. Rakshasa" maxlength="200" required>
+          <label>Match
+            <select id="pdf-search-match">
+              <option value="all">All words</option>
+              <option value="any">Any word</option>
+              <option value="phrase">Exact phrase</option>
+            </select>
+          </label>
+          <label>Edition
+            <select id="pdf-search-edition">
+              <option value="">All editions</option>
+            </select>
+          </label>
+          <button class="primary" type="submit">Search</button>
+        </form>
+        <section class="pdf-index-panel">
+          <div class="helpable-heading">
+            <h3>PDF text index</h3>
+            <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-indexing" aria-label="Help: PDF indexing" title="Help: PDF indexing">?</button>
+          </div>
+          <div id="pdf-index-status" class="rmeta" aria-live="polite">Loading index status…</div>
+          <div id="pdf-index-actions" class="actions" hidden>
+            <button id="index-pdfs" class="secondary" type="button">Start indexing</button>
+            <button id="pause-pdfs" class="secondary" type="button">Pause indexing</button>
+            <button id="reindex-pdfs" class="secondary" type="button">Re-index all</button>
+            <button id="retry-pdfs" class="secondary" type="button">Retry failures</button>
+          </div>
+          <div id="pdf-index-failures" class="pdf-index-failures"></div>
+          <details id="pdf-index-ocr" class="pdf-index-ocr">
+            <summary>Books with OCR</summary>
+            <p id="pdf-index-ocr-empty" class="rmeta">No OCR-processed PDFs recorded yet.</p>
+            <div id="pdf-index-ocr-books" class="pdf-index-ocr-books"></div>
+          </details>
+        </section>
+        <div id="pdf-search-error" class="form-error" hidden></div>
+        <div id="pdf-search-summary" class="rmeta" aria-live="polite"></div>
+        <div id="pdf-search-results" class="pdf-search-results"></div>
+        <button id="pdf-search-more" class="secondary wide" type="button" hidden>Load more results</button>
+      </section>
+    </main>
+  </div>
+
+  <div id="drawer-backdrop" class="backdrop" hidden></div>
+  <aside id="drawer" class="drawer" hidden aria-modal="true" role="dialog"></aside>
+
+  <dialog id="form-dialog"></dialog>
+  <dialog id="pdf-library-dialog" aria-labelledby="pdf-library-title" aria-describedby="pdf-library-description"></dialog>
+  <dialog id="help-dialog" aria-labelledby="help-title">
+    <div class="help-dialog-head">
+      <h2 id="help-title">Help &amp; About</h2>
+      <button class="icon-btn" type="button" data-close-help aria-label="Close help" title="Close help">×</button>
+    </div>
+    <p class="help-intro">Quick guides for browsing and managing your collection. Use the ? buttons beside a section to jump to its help.</p>
+    <details data-help-section="collection">
+      <summary>Browsing the collection</summary>
+      <p>Switch between Shelves, Grid, and Table in the top bar. Select a cover to open its linked PDF, or open the book details when no PDF is linked. Click the title beneath a cover, use Shift-click, or select a table row to open details directly.</p>
+    </details>
+    <details data-help-section="filters">
+      <summary>Filters and sorting</summary>
+      <p>Use the sidebar to sort and filter by release, ownership, year, edition, book type, or publisher. Under Publisher, select one or more names or “No publisher set” to find releases with a blank publisher. Publisher is also available in the Sort menu. “Has No Linked PDF” finds books without a PDF linked to any release; when showing every release separately, it finds individual releases without links. The search field matches titles, product codes, ISBNs, settings, and publishers. Reset all clears the filters. Your current collection view is saved in the URL, so filtered views can be bookmarked.</p>
+    </details>
+    <details data-help-section="ownership">
+      <summary>Ownership and releases</summary>
+      <p>Ownership is tracked per release (printing). Mark physical and PDF ownership separately in a book's details. By default, a book appears once using its shelf-default release; enable “Show every release separately” to see all printings.</p>
+    </details>
+    <details data-help-section="exports">
+      <summary>Exporting your inventory</summary>
+      <p>Open Export in the sidebar and choose “Current filtered view” to download just the matching collection entries, using the active filters, sort order, and release options. With “Show every release separately” enabled, each matching release gets its own CSV row. The separate export Edition control is disabled for this option because the collection's edition filters are used instead. You can also export the full inventory, physically owned books, or books not physically owned, optionally choosing one edition.</p>
+    </details>
+    <details data-help-section="pdf-search">
+      <summary>Searching PDF contents</summary>
+      <p>PDF Search is separate from the collection search. Choose whether all words, any word, or an exact phrase must match. Search terms also match word endings (for example, “troll” matches “trolls”). Results include snippets and page numbers.</p>
+    </details>
+    <details data-help-section="pdf-indexing">
+      <summary>Indexing PDFs</summary>
+      <p>PDF text must be indexed before it can be searched. Editors start indexing from the PDF Search page; it runs in the separate Docker OCR worker and does not start automatically. Pause takes effect after the current page; resume continues queued work. Scanned pages are OCRed locally, and original PDFs are unchanged.</p>
+    </details>
+    <details data-help-section="editing">
+      <summary>Editing and access</summary>
+      <p>Access depends on the deployment configuration. In the Docker deployment, admins can add and update books, releases, covers, and ownership; other users can browse and search. Use the book details drawer to edit a book or one of its releases.</p>
+    </details>
+    <p class="app-version">Version <strong id="app-version">Loading…</strong>
+      <a href="/changelog" target="_blank" rel="noopener">Release notes</a>
+    </p>
+    <div class="form-actions">
+      <button class="primary" type="button" data-close-help>Done</button>
+    </div>
+  </dialog>
+  <div id="toast" class="toast" hidden></div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>

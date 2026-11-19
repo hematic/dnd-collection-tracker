@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+data/tracker.db
+data/tracker.backup-*.db
+data/covers/
+backups/
+.env
