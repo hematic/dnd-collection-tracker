@@ -30,11 +30,19 @@ Start with a built-in catalog of **1,048 books and sets across 1,115 releases**,
 
 Use the **?** buttons in the app for contextual help, version information, and release notes.
 
+![Browse PDF library dialog open on the Official folder, listing Adventures, Campaign Setting, Core Rulebook, Monster Book, Other and Sourcebook](./docs/media/pdf-add.png)
+
+![Edit book form for Arcana Unleashed with edition, type, box set, release kind, publisher, product code, ISBN and ownership fields](./docs/media/edit-book.png)
+
+![Box set dialog for Starter Set: Heroes of the Borderlands with a filterable checklist of books to include](./docs/media/set-management.png)
+
 ## Search inside your PDFs
 
 In the [Docker setup](#docker-hosting), open **PDF Search** and choose **Start indexing** as an editor. The worker indexes embedded text and uses local OCR for scanned pages. Search for all words, any word, or an exact phrase, optionally filter by edition, and open a result at the matching page.
 
 Indexing only starts when requested. Editors can pause, resume, re-index, or retry failures. Readers can use the completed index. Text stays in your database, and the source PDFs are never modified.
+
+![PDF search page with match and edition filters, and index progress showing 599 of 1,122 linked PDFs indexed with OCR used on scanned pages](./docs/media/search-pdf.png)
 
 ## Extending the catalog
 
