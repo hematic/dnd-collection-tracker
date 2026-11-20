@@ -12,8 +12,6 @@ Start with a built-in catalog of **1,048 books and sets across 1,115 releases**,
 
 ![Fresh install showing the AD&D 2e shelf, catalog filters, and color-coded placeholder covers](./docs/media/fresh-shelves.png)
 
-*A fresh install: pick an edition and start browsing, even before you've linked a single PDF.*
-
 ## Using your collection
 
 | What you want to do | Where to start |
@@ -60,18 +58,11 @@ Valid editions, types and release kinds are listed in `app/db.py`.
 
 The catalog is loaded every time the app starts. Re-seeding updates catalog facts but **never** overwrites your PDF links, covers, owned flags or notes. If you edit a catalog book in the app, it becomes yours and the seed leaves it alone from then on. PDF page text and the full-text search index are also stored in `tracker.db`; the database may grow as PDFs are indexed.
 
-The first seed into an empty collection with no work, release, deletion,
-mapping, repair or redirect history creates the complete bundled catalog in
-one transaction. The emptiness check and seed share a write reservation.
-No ownership, file links, mapping approvals or repair audits are invented.
-Existing collections retain their creation gates: previously gated additions
-and new gated releases are not silently added on restart. Previously saved
-catalog-to-local mappings continue to reuse your stable local IDs without
-rewriting mapped bibliography. Catalog entries marked
-`preserve_existing_bibliography` also keep their existing work/release fields
-and shelf defaults.
+On a brand-new install, the app fills your collection with the full catalog the first time it starts. It only adds books and releases. It never marks anything as owned or links any PDFs for you.
 
-Deleting a catalog book or release is permanent in your database: restarting or updating the app does not bring it back. Deleting a box set keeps its contained books as separate entries. Your shelf-default release choice also survives catalog updates without preventing other unedited catalog facts from being refreshed. These preferences are stored in `tracker.db` and included in its backups. Deletions made before this behavior was added cannot be recovered automatically; delete any previously restored entries again.
+On an existing collection, updates are careful not to undo your choices. Books you've edited stay as you left them, and anything you deleted stays deleted.
+
+Deleting a catalog book or release is permanent in your database: restarting or updating the app does not bring it back. Deleting a box set keeps its contained books as separate entries. Your shelf-default release choice also survives catalog updates without preventing other unedited catalog facts from being refreshed. These preferences are stored in `tracker.db` and included in its backups.
 
 ## Docker hosting
 
