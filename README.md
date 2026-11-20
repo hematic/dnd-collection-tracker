@@ -99,7 +99,7 @@ Open [http://127.0.0.1:8765](http://127.0.0.1:8765). **Keep this stack local.** 
 
 The `dnd-tracker-local_tracker-data` volume holds the database and covers and survives `docker compose -f compose.local.yml down`. Do not add `-v` unless you intend to delete that data. Add PDFs to `./pdfs`, or set `DND_LOCAL_PDF_DIR` to your library path. Set `DND_LOCAL_PORT` if port `8765` is already taken. You can put these optional settings in a `.env` file next to [the local Compose file](./compose.local.yml).
 
-To update, back up your data, then run `docker compose -f compose.local.yml pull` and `docker compose -f compose.local.yml up -d`. Set `DND_TRACKER_IMAGE` to an exact release tag in `.env` if you want to control when you upgrade.
+To update, [back up your data](#back-up-and-restore), then run `docker compose -f compose.local.yml pull` and `docker compose -f compose.local.yml up -d`. Set `DND_TRACKER_IMAGE` to an exact release tag in `.env` if you want to control when you upgrade.
 
 ### Authenticated reverse proxy
 
@@ -123,13 +123,68 @@ The database and covers live in `DND_DATA_DIR`, mounted at `/data`. Keep it on t
 3. Create `DND_DATA_DIR` and give `PUID:PGID` write access. If moving an existing collection, stop the old app and copy its database and covers there. If existing links use a Windows or NAS path, set `DND_TRACKER_PDF_MAP` in your `.env` (for example, `\\nas\Books=/pdfs`). Compose passes it to both services; the database keeps the original paths. New Docker installs can leave the mapping blank and use **Browse PDF library** to pick files from `DND_PDF_DIR`.
 4. Deploy the stack with `docker compose pull && docker compose up -d`.
 
-**Backups:** Use SQLite's `.backup` command (or stop both services before copying the database) and back up the `covers/` folder. Keep the PDF library backed up separately.
-
-**Updating:** Back up first, then change `DND_TRACKER_IMAGE` to the new `X.Y.Z` tag and run `docker compose pull && docker compose up -d`. `latest` follows the newest published stable version; pin a numbered tag to control when you upgrade. If a rollback requires restoring the database, use your pre-upgrade backup.
+**Updating:** [Back up first](#back-up-and-restore), then change `DND_TRACKER_IMAGE` to the new `X.Y.Z` tag and run `docker compose pull && docker compose up -d`. `latest` follows the newest published stable version; pin a numbered tag to control when you upgrade. For a rollback, run the old image with the pre-upgrade backup rather than opening an upgraded database with the old image.
 
 **Building from source:** Run `docker build -t dnd-collection-tracker:local .`, then `DND_TRACKER_IMAGE=dnd-collection-tracker:local docker compose up -d --pull never`.
 
 **OCR troubleshooting:** If the UI reports **OCR worker offline**, check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. `DND_OCR_CPU_SHARES` adjusts its relative CPU priority, not a hard cap.
+
+### Back up and restore
+
+A backup of `/data` includes the database, covers, ownership, notes, PDF links, and search index. **CSV export is an inventory, not a backup.** Back up the PDF library and any `.env` file separately. Keep the archives somewhere private and off the tracker host.
+
+Run these commands from the Compose folder in a POSIX shell. Stop both the app and its OCR worker before archiving the data so neither can write to SQLite during the backup.
+
+#### Quick-start Docker volume
+
+```sh
+backup_dir=$(mktemp -d "$HOME/dnd-tracker-backup.XXXXXXXX") &&
+  docker compose -f compose.local.yml stop &&
+  docker compose -f compose.local.yml run --rm --no-deps -T --entrypoint tar dnd-tracker \
+    -C /data -czf - . > "$backup_dir/tracker-data.tar.gz" &&
+  tar -tzf "$backup_dir/tracker-data.tar.gz" &&
+  docker compose -f compose.local.yml up -d &&
+  printf 'Backup saved to %s\n' "$backup_dir"
+```
+
+To restore, replace `backup_file` below with the archive's absolute path. Choose an **unused** Compose project name so its volume is empty. Keep the same PDF mount and, for rollback, pin the same image version that produced the backup before running these commands. The old volume is left untouched.
+
+```sh
+backup_file=/absolute/path/to/tracker-data.tar.gz
+docker compose -f compose.local.yml stop &&
+  docker compose -p dnd-tracker-restored -f compose.local.yml \
+    run --rm --no-deps -T --entrypoint tar dnd-tracker \
+    -C /data -xzf - < "$backup_file" &&
+  docker compose -p dnd-tracker-restored -f compose.local.yml up -d
+```
+
+Verify the restored collection before removing any old data. If you keep the restored instance, include `-p dnd-tracker-restored` in future Compose commands.
+
+#### Hosted setup with a data folder
+
+Replace `data_dir` with the `DND_DATA_DIR` value in your `.env`. Run as a user that can read the entire data directory, including the database.
+
+```sh
+data_dir=/absolute/path/to/tracker-data
+backup_dir=$(mktemp -d "$HOME/dnd-tracker-backup.XXXXXXXX") &&
+  docker compose stop &&
+  tar -C "$data_dir" -czf "$backup_dir/tracker-data.tar.gz" . &&
+  tar -tzf "$backup_dir/tracker-data.tar.gz" &&
+  docker compose up -d &&
+  printf 'Backup saved to %s\n' "$backup_dir"
+```
+
+To restore, stop the stack and extract into a **new, empty** data directory. Leave the old directory untouched until you've verified the restore.
+
+```sh
+backup_file=/absolute/path/to/tracker-data.tar.gz
+restored_dir=/absolute/path/to/new-tracker-data
+docker compose stop &&
+  mkdir "$restored_dir" &&
+  tar -C "$restored_dir" -xzf "$backup_file"
+```
+
+Give the configured `PUID:PGID` ownership of the restored directory and its contents, set `DND_DATA_DIR` in `.env` to that directory, and use the original PDF mount and path mapping. For rollback, pin the image version that produced the backup. Then run `docker compose up -d` and verify the collection. If a backup or restore command fails, resolve the error before using the archive or starting the restored stack.
 
 ## Local hosting
 

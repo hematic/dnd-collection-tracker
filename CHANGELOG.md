@@ -2,6 +2,12 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.0.0] - 2026-11-20
+
+### Changed
+- Filter the collection by one or more book settings, including books without a setting, and preserve the selection in bookmarks and filtered CSV exports.
+- Document how to back up and restore local and hosted Docker collections.
+
 ## [0.39.2] - 2026-11-19
 
 ### Added
