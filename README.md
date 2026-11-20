@@ -14,6 +14,10 @@ Start with a built-in catalog of **1,048 books and sets across 1,115 releases**,
 
 ![Fresh install showing the AD&D 2e shelf, catalog filters, and color-coded placeholder covers](./docs/media/fresh-shelves.png)
 
+![Table view of 5e books sorted by year, with edition, type and release columns and the collection filters](./docs/media/table-view.png)
+
+![Release drawer for Arcana Unleashed showing its original printing and alternate hobby store cover, each with print and PDF ownership checkboxes](./docs/media/book-releases-example.png)
+
 ## Using your collection
 
 | What you want to do | Where to start |
