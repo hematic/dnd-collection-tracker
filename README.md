@@ -2,7 +2,9 @@
 
 **A bookshelf for your Dungeons & Dragons collection.** Browse by edition, track the specific printings you own, and open your own PDFs directly from the shelf.
 
-Start with a built-in catalog of **1,048 books and sets across 1,115 releases**, from original D&D through the 2024 rules, plus edition-independent companions. Run it on your own computer or host it for a group. The catalog ships with bibliographic metadata, not PDFs or cover art.
+Start with a built-in catalog of **1,048 books and sets across 1,115 releases**, from original D&D through the 2024 rules, plus edition-independent companions. Run it on your own computer or host it for a group. The catalog ships with bibliographic metadata, not PDFs or cover art. Bring PDFs you've bought, for example from DMs Guild or DriveThruRPG. The app never downloads or shares them.
+
+*Unofficial fan project, not affiliated with or endorsed by Wizards of the Coast. Dungeons & Dragons and D&D are trademarks of Wizards of the Coast LLC.*
 
 [Live demo](https://dnd-demo.hematic.net/) · [See it in action](#see-it-in-action) · [Using your collection](#using-your-collection) · [Search inside your PDFs](#search-inside-your-pdfs) · [Extending the catalog](#extending-the-catalog) · [Docker hosting](#docker-hosting) · [Local hosting](#local-hosting) · [Release notes](./CHANGELOG.md)
 
@@ -79,6 +81,8 @@ curl -fLO https://raw.githubusercontent.com/hematic/dnd-collection-tracker/main/
 docker compose -f compose.local.yml up -d
 ```
 
+On Windows, or without `curl`, create an empty folder, download [`compose.local.yml`](https://raw.githubusercontent.com/hematic/dnd-collection-tracker/main/compose.local.yml) into it (right-click, **Save link as**), and run `docker compose -f compose.local.yml up -d` from that folder.
+
 Open [http://127.0.0.1:8765](http://127.0.0.1:8765). **Keep this stack local.** It has no login; anyone who can reach it can edit and open linked PDFs. For remote access, use the [authenticated setup](#authenticated-reverse-proxy) instead.
 
 The `dnd-tracker-local_tracker-data` volume holds the database and covers and survives `docker compose -f compose.local.yml down`. Do not add `-v` unless you intend to delete that data. Add PDFs to `./pdfs`, or set `DND_LOCAL_PDF_DIR` to your library path. Set `DND_LOCAL_PORT` if port `8765` is already taken. You can put these optional settings in a `.env` file next to [the local Compose file](./compose.local.yml).
@@ -87,22 +91,25 @@ To update, back up your data, then run `docker compose -f compose.local.yml pull
 
 ### Authenticated reverse proxy
 
-| What | Local (Windows) | Server |
-|---|---|---|
-| Database + covers | `data/tracker.db`, `data/covers/` | `DND_DATA_DIR` on the server (mounted at `/data`) |
-| PDFs | Your local library or network share | `DND_PDF_DIR` on the host (default `/mnt/dnd/Books`), mounted read-only at `/pdfs` |
+The app has no login of its own. For shared or remote access, put it behind a reverse proxy with an authentication layer, such as Authelia or TinyAuth. The app decides who can edit from the identity the proxy passes along.
 
-The [authenticated Compose stack](./docker-compose.yml) assumes Traefik and TinyAuth. Both containers need the same library at `/pdfs`; keep the SQLite database on the host's local disk, not a network share.
+**What the app needs from your proxy:**
 
-1. Download `docker-compose.yml` and `tracker.env.example` from the [GitHub release](https://github.com/hematic/dnd-collection-tracker/releases) you want to install. Rename `tracker.env.example` to `.env` to use that release's pinned image. From a source checkout, use [`.env.example`](./.env.example) instead. Set the host storage paths, editor usernames or emails, and `TRAEFIK_IP`. In Komodo, put those values in the Stack environment and leave **Run Build** off.
-2. Route Traefik to `DND_PORT` (default `8765`). Configure forward-auth to strip incoming identity headers and pass TinyAuth's authenticated headers. For Docker labels, the response-header setting is:
+- **Identity headers.** After login, the proxy sends the user's name or email in a `Remote-User` or `Remote-Email` header. Authelia and TinyAuth use these names. Proxies that use other names, such as Authentik (`X-authentik-username`) or oauth2-proxy (`X-Auth-Request-User`), need to copy the value into `Remote-User`.
+- **No forged headers.** The proxy must overwrite or remove any `Remote-User` or `Remote-Email` header the visitor sends, so nobody can claim to be an editor. Forward-auth setups that pass these headers from the auth server overwrite them for you.
+- **The proxy's address.** Set `TRAEFIK_IP` to the IP the proxy connects from. Despite the name, it works with any proxy. The app refuses every other client, so people on your network can't skip the login by using the published port. If the app answers "Open this app through its public address", check `docker compose logs dnd-tracker` for the address it's seeing.
+
+Anyone who gets past the login can browse and open linked PDFs. Only the users listed in `DND_TRACKER_ADMINS` can edit. For read-only access with no login, add a second hostname without authentication that removes both headers.
+
+The database and covers live in `DND_DATA_DIR`, mounted at `/data`. Keep it on the host's local disk, not a network share. The PDF library in `DND_PDF_DIR` (default `/mnt/dnd/Books`) is mounted read-only at `/pdfs` in both containers.
+
+1. Download `docker-compose.yml` and `tracker.env.example` from the [GitHub release](https://github.com/hematic/dnd-collection-tracker/releases) you want to install. Rename `tracker.env.example` to `.env` to use that release's pinned image. From a source checkout, use [`.env.example`](./.env.example) instead. Set the host storage paths, editor usernames or emails, and `TRAEFIK_IP`.
+2. Route your proxy to `DND_PORT` (default `8765`) and set up authentication as described above. For example, with Traefik forward auth (TinyAuth or Authelia), pass the identity headers with:
    ```
-   traefik.http.middlewares.tinyauth.forwardauth.authResponseHeaders: Remote-User,Remote-Email,Remote-Name,Remote-Groups
+   traefik.http.middlewares.<name>.forwardauth.authResponseHeaders: Remote-User,Remote-Email,Remote-Name,Remote-Groups
    ```
-3. Create `DND_DATA_DIR` and give `PUID:PGID` write access. If moving an existing collection, stop the old app and copy its database and covers there. If existing links use a Windows or NAS path, set `DND_TRACKER_PDF_MAP` in your `.env` or Komodo environment (for example, `\\nas\Books=/pdfs`). Compose passes it to both services; the database keeps the original paths. New Docker installs can leave the mapping blank and use **Browse PDF library** to pick files from `DND_PDF_DIR`.
-4. Deploy the stack, or run `docker compose pull && docker compose up -d`.
-
-Anyone TinyAuth lets in can browse and open linked PDFs. Only `DND_TRACKER_ADMINS` can edit. Restrict direct access to the published port so clients cannot bypass Traefik.
+3. Create `DND_DATA_DIR` and give `PUID:PGID` write access. If moving an existing collection, stop the old app and copy its database and covers there. If existing links use a Windows or NAS path, set `DND_TRACKER_PDF_MAP` in your `.env` (for example, `\\nas\Books=/pdfs`). Compose passes it to both services; the database keeps the original paths. New Docker installs can leave the mapping blank and use **Browse PDF library** to pick files from `DND_PDF_DIR`.
+4. Deploy the stack with `docker compose pull && docker compose up -d`.
 
 **Backups:** Use SQLite's `.backup` command (or stop both services before copying the database) and back up the `covers/` folder. Keep the PDF library backed up separately.
 

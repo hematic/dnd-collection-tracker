@@ -1,4 +1,5 @@
-# D&D Collection Tracker behind Traefik + TinyAuth (route defined in Traefik's file provider).
+# D&D Collection Tracker behind an authenticating reverse proxy (e.g. Traefik + TinyAuth/Authelia).
+# The proxy must send Remote-User/Remote-Email after login and drop any the client sends.
 # Komodo: put the variables from .env.example in the Stack environment; leave Run Build off.
 # Plain Docker: copy .env.example to .env, then run docker compose up -d.
 x-image: &tracker-image
@@ -15,8 +16,8 @@ services:
       DND_TRACKER_PDF_ROOT: /pdfs
       DND_TRACKER_PDF_MAP: ${DND_TRACKER_PDF_MAP:-}
       DND_TRACKER_ADMINS: ${DND_TRACKER_ADMINS:?set DND_TRACKER_ADMINS in .env}
-      # Only Traefik may talk to the app: the published port is reachable from the LAN, and
-      # Traefik is what enforces the TinyAuth login and strips forged Remote-* headers.
+      # Only the proxy may talk to the app: the published port is reachable from the LAN, and
+      # the proxy is what enforces the login and strips forged Remote-* headers.
       DND_TRACKER_TRUSTED_PROXIES: ${TRAEFIK_IP:?set TRAEFIK_IP to the proxy IP}
     cpu_shares: ${DND_TRACKER_CPU_SHARES:-1024}
     volumes:
