@@ -35,7 +35,7 @@ if (savedTheme === 'light' || savedTheme === 'dark') {
 
 const DEFAULTS = {
   page: 'collection', view: 'shelf', sort: 'year', desc: true, grouped: true, all: false, contents: false,
-  hide: [], edition: [], type: [], publisher: [], ymin: '', ymax: '', owned: false, not_physically_owned: false, pdf: false, no_pdf: false, q: '',
+  hide: [], edition: [], type: [], setting: [], publisher: [], ymin: '', ymax: '', owned: false, not_physically_owned: false, pdf: false, no_pdf: false, q: '',
 };
 let state = { ...DEFAULTS };
 let meta = null;
@@ -72,6 +72,7 @@ function readHash() {
   s.hide = list('hide');
   s.edition = list('edition');
   s.type = list('type');
+  s.setting = p.getAll('setting');
   s.publisher = p.getAll('publisher');
   s.ymin = p.get('ymin') || '';
   s.ymax = p.get('ymax') || '';
@@ -84,8 +85,8 @@ function writeHash() {
   for (const [k, v] of Object.entries(state)) {
     const d = DEFAULTS[k];
     if (Array.isArray(v)) {
-      // Publisher names are free text; repeated parameters also preserve blank selections.
-      if (k === 'publisher') v.forEach(value => p.append(k, value));
+      // Free-text names may contain pipes; repeated parameters also preserve blanks.
+      if (k === 'publisher' || k === 'setting') v.forEach(value => p.append(k, value));
       else if (v.length) p.set(k, v.join('|'));
     }
     else if (typeof v === 'boolean') { if (v !== d) p.set(k, v ? '1' : '0'); }
@@ -103,18 +104,23 @@ function buildChecklists() {
       <span class="swatch" style="background:${EDITION_COLORS[e] || '#555'}"></span>${e}</label>`).join('');
   $('#type-list').innerHTML = meta.book_types.map(t => `
     <label class="check"><input type="checkbox" data-list="type" value="${t}">${t}</label>`).join('');
-  buildPublisherChecklist();
+  buildCatalogChecklists();
   $('#export-edition').innerHTML = '<option value="">All editions</option>' +
     meta.editions.map(e => `<option value="${e}">${e}</option>`).join('');
   $('#pdf-search-edition').innerHTML += meta.editions.map(e => `<option value="${e}">${e}</option>`).join('');
   if (meta.year_min) { $('#year-min').placeholder = meta.year_min; $('#year-max').placeholder = meta.year_max; }
 }
 
-function buildPublisherChecklist() {
-  const publishers = [...new Set([...meta.publishers, ...state.publisher])]
+function buildCatalogChecklist(key, names, blankLabel) {
+  const choices = [...new Set([...names, ...state[key]])]
     .filter(Boolean).sort((a, b) => a.localeCompare(b));
-  $('#publisher-list').innerHTML = ['', ...publishers].map(publisher => `
-    <label class="check"><input type="checkbox" data-list="publisher" value="${esc(publisher)}">${esc(publisher || 'No publisher set')}</label>`).join('');
+  $(`#${key}-list`).innerHTML = ['', ...choices].map(name => `
+    <label class="check"><input type="checkbox" data-list="${key}" value="${esc(name)}">${esc(name || blankLabel)}</label>`).join('');
+}
+
+function buildCatalogChecklists() {
+  buildCatalogChecklist('setting', meta.settings, 'No setting set');
+  buildCatalogChecklist('publisher', meta.publishers, 'No publisher set');
 }
 
 function syncControls() {
@@ -452,6 +458,7 @@ function queryParams() {
   if (state.no_pdf) p.no_pdf = true;
   if (state.q) p.q = state.q;
   const params = new URLSearchParams(p);
+  state.setting.forEach(setting => params.append('setting', setting));
   state.publisher.forEach(publisher => params.append('publisher', publisher));
   return params;
 }
@@ -467,10 +474,10 @@ function exportUrl() {
 async function reloadCollection() {
   try {
     meta = await api.meta();
-    buildPublisherChecklist();
+    buildCatalogChecklists();
     syncControls();
   } catch (e) {
-    toast(`Could not refresh publisher choices: ${e.message}`, true);
+    toast(`Could not refresh setting and publisher choices: ${e.message}`, true);
   }
   await load();
 }
@@ -592,6 +599,7 @@ export function toast(msg, isError = false) {
   syncControls();
   window.addEventListener('hashchange', () => {
     state = readHash();
+    buildCatalogChecklists();
     syncControls();
     setActivePage(state.page);
     load();

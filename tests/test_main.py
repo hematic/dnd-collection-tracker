@@ -294,6 +294,36 @@ class DatabaseOptimizationTests(unittest.TestCase):
                 publisher=None, no_pdf=True, has_pdf=True, all_releases=all_releases,
             ), [])
 
+    def test_setting_choices_and_filters_use_book_metadata(self):
+        custom = 'A&B | "Worlds"'
+        with db.connect() as conn:
+            conn.execute("UPDATE work SET setting = ' Greyhawk ' WHERE id = 'book'")
+            conn.execute("INSERT INTO release (id, work_id) VALUES ('reprint', 'book')")
+            for work_id, setting in (
+                ("custom", custom), ("duplicate", "Greyhawk"), ("blank", "  "), ("unset", None),
+            ):
+                conn.execute(
+                    "INSERT INTO work (id, title, edition, book_type, setting) "
+                    "VALUES (?, ?, 'AD&D 2e', 'Sourcebook', ?)", (work_id, work_id, setting),
+                )
+                conn.execute("INSERT INTO release (id, work_id) VALUES (?, ?)", (work_id, work_id))
+
+        request = Request({"type": "http", "headers": []})
+        self.assertEqual(main.meta(request)["settings"], [custom, "Greyhawk"])
+        self.assertEqual(
+            {row["id"] for row in main.books(publisher=None, setting=[""])}, {"blank", "unset"},
+        )
+        self.assertEqual(
+            {row["id"] for row in main.books(publisher=None, setting=["Greyhawk", custom])},
+            {"release", "custom", "duplicate"},
+        )
+        self.assertEqual(
+            {row["id"] for row in main.books(
+                edition="AD&D 1e", publisher=None, setting=["Greyhawk", custom], all_releases=True,
+            )}, {"release", "reprint"},
+        )
+        self.assertEqual(main.books(publisher=None, setting=["Grey"]), [])
+
     def test_filtered_csv_matches_collection_filters_order_and_release_options(self):
         title = '=Test, "box"'
         publisher = 'A&B | "Press"'
@@ -331,12 +361,22 @@ class DatabaseOptimizationTests(unittest.TestCase):
                     "INSERT INTO release (id, work_id, publisher, year, owned_physical, pdf_path) "
                     "VALUES (?, ?, ?, ?, ?, ?)", (work_id, work_id, pub, year, owned, pdf),
                 )
+            conn.execute("UPDATE work SET setting = 'Greyhawk' WHERE id = 'book'")
+            conn.execute(
+                "INSERT INTO work (id, title, edition, book_type, setting) "
+                "VALUES ('wrong-setting', 'Test in another setting', 'AD&D 1e', 'Sourcebook', 'Mystara')"
+            )
+            conn.execute(
+                "INSERT INTO release (id, work_id, publisher, year, owned_physical) "
+                "VALUES ('wrong-setting', 'wrong-setting', ?, 1996, 1)", (publisher,),
+            )
         for all_releases, contents, count in (
             (False, False, 1), (False, True, 2), (True, False, 2), (True, True, 3),
         ):
             with self.subTest(all_releases=all_releases, contents=contents):
                 books = main.books(
                     edition="AD&D 1e", type="Boxed Set|Sourcebook", publisher=[publisher, ""],
+                    setting=["Greyhawk", ""],
                     year_min=1995, year_max=1999, owned=True, no_pdf=True,
                     sort="title", desc=True, all_releases=all_releases, contents=contents,
                 )
@@ -351,6 +391,7 @@ class DatabaseOptimizationTests(unittest.TestCase):
                 original = next(row for row in rows if row["Release kind"] == "Original"
                                 and row["Title"] == "'" + title)
                 self.assertEqual(original["Publisher"], publisher)
+                self.assertEqual(original["Setting"], "Greyhawk")
                 self.assertEqual(original["First published"], "1990")
                 self.assertEqual(original["Release year"], "1996")
                 self.assertEqual(original["Product code"], "'=CODE")

@@ -7,6 +7,7 @@ import re
 import stat
 from io import StringIO
 from pathlib import Path
+from typing import Annotated
 
 from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, Response
@@ -103,6 +104,7 @@ def meta(request: Request):
         "editions": db.EDITIONS,
         "book_types": db.BOOK_TYPES,
         "publishers": db.publisher_names(),
+        "settings": db.setting_names(),
         "release_kinds": db.RELEASE_KINDS,
         "year_min": lo,
         "year_max": hi,
@@ -127,11 +129,13 @@ def books(
     desc: bool = False,
     all_releases: bool = False,
     contents: bool = False,
+    setting: Annotated[list[str] | None, Query()] = None,
 ):
     rows = db.list_books(
         editions=_split(edition),
         types=_split(type),
         publishers=publisher,
+        settings=setting,
         kinds=_split(kinds),
         hide_kinds=_split(hide_kinds),
         year_min=year_min,

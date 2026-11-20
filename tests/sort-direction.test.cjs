@@ -97,11 +97,27 @@ test('missing PDF selection survives bookmarks and clears with default filters',
   assert.equal(new URLSearchParams(app.location.hash.slice(1)).has('no_pdf'), false);
 });
 
+test('settings preserve multiple free-text selections and blanks in bookmarks and requests', () => {
+  const app = urlState();
+  const setting = ['Greyhawk', '', 'A&B | "Worlds"'];
+  app.setState({ ...app.DEFAULTS, setting });
+  app.writeHash();
+  const restored = urlState(app.location.hash);
+  assert.deepEqual(Array.from(restored.readHash().setting), setting);
+  restored.setState(restored.readHash());
+  assert.deepEqual(restored.queryParams().getAll('setting'), setting);
+  restored.setState({ ...restored.DEFAULTS });
+  restored.writeHash();
+  assert.equal(restored.location.hash, '');
+  assert.equal(restored.queryParams().has('setting'), false);
+});
+
 test('filtered export uses collection filters, not the separate export edition', () => {
   const app = urlState('', { scope: 'filtered', edition: 'Other' });
   app.setState({
     ...app.DEFAULTS,
     edition: ['AD&D 1e', 'AD&D 2e'], type: ['Sourcebook'], publisher: ['', 'A&B | "Press"'],
+    setting: ['Greyhawk', ''],
     ymin: '1990', ymax: '1999', owned: true, no_pdf: true, q: 'Planescape',
     hide: ['Digital', 'Reprint'], sort: 'publisher', desc: false, all: true, contents: true,
   });
@@ -111,6 +127,7 @@ test('filtered export uses collection filters, not the separate export edition',
   assert.equal(params.get('edition'), 'AD&D 1e|AD&D 2e');
   assert.equal(params.get('type'), 'Sourcebook');
   assert.deepEqual(params.getAll('publisher'), ['', 'A&B | "Press"']);
+  assert.deepEqual(params.getAll('setting'), ['Greyhawk', '']);
   assert.equal(params.get('year_min'), '1990');
   assert.equal(params.get('year_max'), '1999');
   assert.equal(params.get('owned'), 'true');

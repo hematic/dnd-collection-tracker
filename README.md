@@ -22,7 +22,7 @@ Start with a built-in catalog of **1,048 books and sets across 1,115 releases**,
 
 | What you want to do | Where to start |
 |---|---|
-| Browse and compare books | Pick **Shelves**, **Grid**, or **Table**. Search by title, code, ISBN, setting, or publisher. Combine edition, type, year, ownership and PDF filters; bookmark the URL to keep the view. |
+| Browse and compare books | Pick **Shelves**, **Grid**, or **Table**. Search by title, code, ISBN, setting, or publisher. Combine setting, edition, type, year, ownership and PDF filters; bookmark the URL to keep the view. |
 | Track a specific printing | Click a book title or table row. Set **Own print copy** and **Own PDF** per release, and choose which printing is the **shelf default**. Use **Show every release separately** to compare variants side by side. |
 | Open a PDF from the shelf | In the release drawer, choose **Browse PDF library** and select a file. If no library folder is configured, paste the full path instead. The first page becomes the cover unless you upload your own image. Click the cover to open the PDF or the title to return to the drawer. |
 | Organize books not in the catalog | Use **Add book** for missing titles, **New box set** to group books, or **Select** to make changes across several entries. |

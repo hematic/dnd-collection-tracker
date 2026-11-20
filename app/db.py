@@ -140,6 +140,7 @@ def list_books(
     editions: list[str] | None = None,
     types: list[str] | None = None,
     publishers: list[str] | None = None,
+    settings: list[str] | None = None,
     kinds: list[str] | None = None,
     hide_kinds: list[str] | None = None,
     year_min: int | None = None,
@@ -181,6 +182,8 @@ def list_books(
         in_clause("w.book_type", types)
     if publishers:
         in_clause("TRIM(COALESCE(r.publisher, ''))", publishers)
+    if settings:
+        in_clause("TRIM(COALESCE(w.setting, ''))", settings)
     where.append("w.book_type != 'DM Screen/Kit'")
     if kinds:
         in_clause("r.release_kind", kinds)
@@ -321,6 +324,16 @@ def publisher_names() -> list[str]:
             "ORDER BY publisher COLLATE NOCASE"
         ).fetchall()
     return [row["publisher"] for row in rows]
+
+
+def setting_names() -> list[str]:
+    with connect() as conn:
+        rows = conn.execute(
+            "SELECT DISTINCT TRIM(setting) AS setting FROM work "
+            "WHERE TRIM(COALESCE(setting, '')) != '' "
+            "ORDER BY setting COLLATE NOCASE"
+        ).fetchall()
+    return [row["setting"] for row in rows]
 
 
 def year_bounds() -> tuple[int | None, int | None]:
