@@ -112,12 +112,6 @@ Anyone TinyAuth lets in can browse and open linked PDFs. Only `DND_TRACKER_ADMIN
 
 **OCR troubleshooting:** If the UI reports **OCR worker offline**, check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. `DND_OCR_CPU_SHARES` adjusts its relative CPU priority, not a hard cap.
 
-### Publishing a release
-
-Configure the GitHub Actions variable `DOCKERHUB_USERNAME` and secret `DOCKERHUB_TOKEN` with write access to the public Docker Hub repository. In Docker Hub, make numbered tags immutable (regex `^[0-9]+\.[0-9]+\.[0-9]+$`), but leave `latest` mutable.
-
-Prepare the version with `python -m app.version patch --note "Describe the change"` (or use `minor` or `major`), review and commit the version and changelog, and push that commit to `main`. Tag the commit `vX.Y.Z` and push the tag. Publish one release at a time; ordinary branch pushes and pull requests run checks without publishing. The workflow tests both architectures, publishes the versioned image, and then creates the GitHub release. If publishing fails after the image is pushed, rerun the workflow rather than replacing the version tag.
-
 ## Local hosting
 
 **Windows:** Install Python 3.10 or later and double-click [`run.bat`](./run.bat). It creates a virtual environment, installs dependencies, and opens [http://127.0.0.1:8000](http://127.0.0.1:8000). Use `run.bat --port 8080` if port 8000 is in use.
