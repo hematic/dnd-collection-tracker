@@ -4,7 +4,7 @@
 
 Start with a built-in catalog of **1,048 books and sets across 1,115 releases**, from original D&D through the 2024 rules, plus edition-independent companions. Run it on your own computer or host it for a group. The catalog ships with bibliographic metadata, not PDFs or cover art.
 
-[Live demo](https://dndtest.apps.hematic.net/) · [See it in action](#see-it-in-action) · [Quick start](#quick-start) · [Using your collection](#using-your-collection) · [Self-hosting](#self-host-with-docker) · [Release notes](./CHANGELOG.md)
+[Live demo](https://dndtest.apps.hematic.net/) · [See it in action](#see-it-in-action) · [Using your collection](#using-your-collection) · [Search inside your PDFs](#search-inside-your-pdfs) · [Extending the catalog](#extending-the-catalog) · [Docker hosting](#docker-hosting) · [Local hosting](#local-hosting) · [Release notes](./CHANGELOG.md)
 
 ## See it in action
 
@@ -13,21 +13,6 @@ Start with a built-in catalog of **1,048 books and sets across 1,115 releases**,
 ![Fresh install showing the AD&D 2e shelf, catalog filters, and color-coded placeholder covers](./docs/media/fresh-shelves.png)
 
 *A fresh install: pick an edition and start browsing, even before you've linked a single PDF.*
-
-## Quick start
-
-**Windows:** Install Python 3.10 or later and double-click [`run.bat`](./run.bat). It creates a virtual environment, installs dependencies, and opens [http://127.0.0.1:8000](http://127.0.0.1:8000). Use `run.bat --port 8080` if port 8000 is in use.
-
-**macOS or Linux:** From a checkout of this repository, run:
-
-```sh
-python3 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-python -m app
-```
-
-The local launcher listens on your own machine only. Use the [Docker setup](#self-host-with-docker) for shared access and PDF indexing.
 
 ## Using your collection
 
@@ -39,17 +24,33 @@ The local launcher listens on your own machine only. Use the [Docker setup](#sel
 | Organize books not in the catalog | Use **Add book** for missing titles, **New box set** to group books, or **Select** to make changes across several entries. |
 | Take an inventory with you | Under **Export**, download the **Current filtered view** or a full, physically owned, or not-physically-owned CSV. |
 
-### Search inside your PDFs
+Use the **?** buttons in the app for contextual help, version information, and release notes.
 
-In the Docker setup, open **PDF Search** and choose **Start indexing** as an editor. The worker indexes embedded text and uses local OCR for scanned pages. Search for all words, any word, or an exact phrase, optionally filter by edition, and open a result at the matching page.
+## Search inside your PDFs
+
+In the [Docker setup](#docker-hosting), open **PDF Search** and choose **Start indexing** as an editor. The worker indexes embedded text and uses local OCR for scanned pages. Search for all words, any word, or an exact phrase, optionally filter by edition, and open a result at the matching page.
 
 Indexing only starts when requested. Editors can pause, resume, re-index, or retry failures. Readers can use the completed index. Text stays in your database, and the source PDFs are never modified.
 
-Use the **?** buttons in the app for contextual help, version information, and release notes.
+## Extending the catalog
 
-For a local installation, set `DND_TRACKER_PDF_ROOT` to an absolute folder path before launching the app to enable the picker. Docker configures it automatically. Files are not uploaded or copied: picker links are relative to the library folder, so you can move the library without relinking if you keep its folder structure.
+The catalog covers the core rules, sourcebooks, setting books, adventures and
+accessories across editions, but it is not every product ever published.
+Add personal or missing books with the in-app form, or add factual entries
+to `catalog.json` in this format (`releases` is optional):
 
-## Data
+```json
+{"id": "2e-my-book", "title": "My Book", "edition": "AD&D 2e", "type": "Sourcebook",
+ "year": 1994, "code": "2150", "setting": "Forgotten Realms",
+ "releases": [
+   {"key": "orig", "kind": "Original", "primary": true, "label": "First printing"},
+   {"key": "2013", "kind": "Premium Reprint", "year": 2013}
+ ]}
+```
+
+Valid editions, types and release kinds are listed in `app/db.py`.
+
+### How catalog updates treat your data
 
 | Path | What |
 |---|---|
@@ -72,29 +73,11 @@ and shelf defaults.
 
 Deleting a catalog book or release is permanent in your database: restarting or updating the app does not bring it back. Deleting a box set keeps its contained books as separate entries. Your shelf-default release choice also survives catalog updates without preventing other unedited catalog facts from being refreshed. These preferences are stored in `tracker.db` and included in its backups. Deletions made before this behavior was added cannot be recovered automatically; delete any previously restored entries again.
 
-## Extending the catalog
-
-The catalog covers the core rules, sourcebooks, setting books, adventures and
-accessories across editions, but it is not every product ever published.
-Add personal or missing books with the in-app form, or add factual entries
-to `catalog.json` in this format (`releases` is optional):
-
-```json
-{"id": "2e-my-book", "title": "My Book", "edition": "AD&D 2e", "type": "Sourcebook",
- "year": 1994, "code": "2150", "setting": "Forgotten Realms",
- "releases": [
-   {"key": "orig", "kind": "Original", "primary": true, "label": "First printing"},
-   {"key": "2013", "kind": "Premium Reprint", "year": 2013}
- ]}
-```
-
-Valid editions, types and release kinds are listed in `app/db.py`.
-
-## Self-host with Docker
+## Docker hosting
 
 The [Docker Hub image](https://hub.docker.com/r/hematic/dnd-collection-tracker) runs on Linux amd64 and arm64. Both setups use the same image for the web app and OCR worker.
 
-### Local quick start
+### Quick start on one machine
 
 Use Docker Engine 28 or newer (or a current Docker Desktop) and Docker Compose v2. This setup needs no account, proxy, or `.env` file.
 
@@ -112,8 +95,6 @@ The `dnd-tracker-local_tracker-data` volume holds the database and covers and su
 To update, back up your data, then run `docker compose -f compose.local.yml pull` and `docker compose -f compose.local.yml up -d`. Set `DND_TRACKER_IMAGE` to an exact release tag in `.env` if you want to control when you upgrade.
 
 ### Authenticated reverse proxy
-
-Everything lives in two places, and neither is in git:
 
 | What | Local (Windows) | Server |
 |---|---|---|
@@ -145,3 +126,20 @@ Anyone TinyAuth lets in can browse and open linked PDFs. Only `DND_TRACKER_ADMIN
 Configure the GitHub Actions variable `DOCKERHUB_USERNAME` and secret `DOCKERHUB_TOKEN` with write access to the public Docker Hub repository. In Docker Hub, make numbered tags immutable (regex `^[0-9]+\.[0-9]+\.[0-9]+$`), but leave `latest` mutable.
 
 Prepare the version with `python -m app.version patch --note "Describe the change"` (or use `minor` or `major`), review and commit the version and changelog, and push that commit to `main`. Tag the commit `vX.Y.Z` and push the tag. Publish one release at a time; ordinary branch pushes and pull requests run checks without publishing. The workflow tests both architectures, publishes the versioned image, and then creates the GitHub release. If publishing fails after the image is pushed, rerun the workflow rather than replacing the version tag.
+
+## Local hosting
+
+**Windows:** Install Python 3.10 or later and double-click [`run.bat`](./run.bat). It creates a virtual environment, installs dependencies, and opens [http://127.0.0.1:8000](http://127.0.0.1:8000). Use `run.bat --port 8080` if port 8000 is in use.
+
+**macOS or Linux:** From a checkout of this repository, run:
+
+```sh
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+python -m app
+```
+
+The local launcher listens on your own machine only. Use [Docker hosting](#docker-hosting) for shared access and PDF indexing.
+
+For a local installation, set `DND_TRACKER_PDF_ROOT` to an absolute folder path before launching the app to enable the picker. [Docker hosting](#docker-hosting) configures it automatically. Files are not uploaded or copied: picker links are relative to the library folder, so you can move the library without relinking if you keep its folder structure.
