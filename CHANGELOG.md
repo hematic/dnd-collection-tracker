@@ -2,6 +2,13 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.2] - 2026-11-23
+
+### Changed
+- Run PDF searches as you type without a Search button; press Enter to search immediately.
+- Align the indexing controls and separate the currently processing PDF from the queue and OCR totals.
+- Add book type, publisher, and physical ownership per printing to the PDF search CSV. Combine release kind and label, and condense runs of three or more matching pages into ranges.
+
 ## [1.1.1] - 2026-11-23
 
 ### Changed
