@@ -42,7 +42,7 @@ In the [Docker setup](#docker-hosting), open **PDF Search** and choose **Start i
 
 Indexing only starts when requested. Editors can pause, resume, re-index, or retry failures. Readers can use the completed index. On wide screens, indexing status moves to the left of an active search. Recorded OCR page counts appear on each printing in the book details drawer. Text stays in your database, and the source PDFs are never modified.
 
-![PDF search page with match and edition filters, and index progress showing 599 of 1,122 linked PDFs indexed with OCR used on scanned pages](./docs/media/search-pdf.png)
+![PDF search for rakshasa, with indexing status on the left, edition toggles and CSV export above the results, and one book printing expanded to show two matching pages](./docs/media/search-pdf.png)
 
 ## Extending the catalog
 
