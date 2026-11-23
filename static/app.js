@@ -317,23 +317,9 @@ async function refreshPdfIndexStatus() {
   let pollDelay = PDF_INDEX_IDLE_POLL_MS;
   try {
     const status = await api.pdfIndexStatus();
-    const parts = [`${status.done} of ${status.linked} linked PDFs indexed`];
-    if (status.processing && status.current) {
-      parts.push(`Processing ${status.current.title} (${status.current.indexed_pages}/${status.current.page_count} pages; ${status.current.ocr_pages || 0} OCRed)`);
-    } else if (status.queued) {
-      parts.push(`${status.queued} queued`);
-    }
-    if (status.not_indexed) parts.push(`${status.not_indexed} not started`);
-    if (status.error) parts.push(`${status.error} failed`);
-    if (status.paused && (status.processing || status.queued)) parts.push('paused');
-    if (!status.worker_online && (status.processing || status.queued)) parts.push('OCR worker offline');
-    parts.push(`OCR used in ${status.ocr_books} PDF${status.ocr_books === 1 ? '' : 's'} (${status.ocr_pages} page${status.ocr_pages === 1 ? '' : 's'})`);
-    if (status.ocr_unrecorded) {
-      parts.push(`${status.ocr_unrecorded} PDF${status.ocr_unrecorded === 1 ? '' : 's'} without OCR details`);
-    }
-    $('#pdf-index-status').textContent = parts.join(' · ');
-    $('#pdf-index-actions').hidden = !meta.can_edit;
     const active = status.queued > 0 || status.processing > 0;
+    renderPdfIndexStatus(status, active);
+    $('#pdf-index-actions').hidden = !meta.can_edit;
     if (active && !status.paused && status.worker_online) pollDelay = PDF_INDEX_ACTIVE_POLL_MS;
     const needsIndex = status.not_indexed > 0 || status.error > 0 || status.ocr_unrecorded > 0;
     $('#index-pdfs').textContent = status.paused && active
@@ -344,13 +330,10 @@ async function refreshPdfIndexStatus() {
     $('#pause-pdfs').disabled = !meta.can_edit || status.paused || !active;
     $('#reindex-pdfs').disabled = !meta.can_edit || active || status.linked === 0;
     $('#retry-pdfs').disabled = !meta.can_edit || status.error === 0 || active;
-    $('#pdf-index-failures').innerHTML = status.failures.map(f => `
-      <div class="pdf-index-failure">
-        <span><b>${esc(f.title)}</b>: ${esc(f.error || 'Indexing failed')}</span>
-        ${meta.can_edit ? `<button class="secondary" type="button" data-retry-pdf="${esc(f.release_id)}">Retry</button>` : ''}
-      </div>`).join('');
   } catch (error) {
     $('#pdf-index-status').textContent = `Could not load PDF index status: ${error.message}`;
+    $('#pdf-index-progress').hidden = true;
+    $('#pdf-index-details').hidden = true;
   } finally {
     pdfIndexRefreshing = false;
     const delay = pdfIndexRefreshPending ? 0 : pollDelay;
@@ -359,6 +342,48 @@ async function refreshPdfIndexStatus() {
       pdfSearchPoll = setTimeout(refreshPdfIndexStatus, delay);
     }
   }
+}
+
+function renderPdfIndexStatus(status, active) {
+  const number = value => value.toLocaleString();
+  const overview = $('#pdf-index-status');
+  const count = `${number(status.done)} of ${number(status.linked)} linked PDFs indexed`;
+  if (overview.textContent !== count) overview.textContent = count;
+  const progress = $('#pdf-index-progress');
+  progress.hidden = !status.linked;
+  progress.max = status.linked || 1;
+  progress.value = status.done;
+  $('#pdf-index-details').hidden = false;
+
+  const current = status.processing ? status.current : null;
+  const activity = [
+    status.paused && active ? 'Paused' : '',
+    !status.worker_online && active ? 'OCR worker offline' : '',
+  ].filter(Boolean).join(' · ');
+  $('#pdf-index-current').hidden = !current && !activity;
+  $('#pdf-index-activity').textContent = activity || (current ? 'Processing' : '');
+  $('#pdf-index-current-title').textContent = current?.title || '';
+  $('#pdf-index-current-pages').textContent = current
+    ? `${number(current.indexed_pages)} of ${number(current.page_count)} pages · ${number(current.ocr_pages ?? 0)} OCRed`
+    : '';
+  const metrics = [
+    status.queued ? `${number(status.queued)} queued` : '',
+    status.not_indexed ? `${number(status.not_indexed)} not started` : '',
+    `OCR: ${number(status.ocr_books)} PDF${status.ocr_books === 1 ? '' : 's'}, ${number(status.ocr_pages)} page${status.ocr_pages === 1 ? '' : 's'}`,
+    status.ocr_unrecorded ? `${number(status.ocr_unrecorded)} without OCR details` : '',
+  ];
+  $('#pdf-index-metrics').innerHTML = metrics.filter(Boolean).map(text => `<li>${text}</li>`).join('');
+
+  $('#pdf-index-issues').hidden = !status.error;
+  $('#pdf-index-issues-label').textContent = `Indexing failures (${number(status.error)})`;
+  const failures = $('#pdf-index-failures');
+  const markup = status.failures.map(f => `
+    <li class="pdf-index-failure">
+      <strong>${esc(f.title)}</strong>
+      <span class="rmeta">${esc(f.error || 'Indexing failed')}</span>
+      ${meta.can_edit ? `<button class="secondary" type="button" data-retry-pdf="${esc(f.release_id)}">Retry</button>` : ''}
+    </li>`).join('');
+  if (failures.innerHTML !== markup) failures.innerHTML = markup;
 }
 
 async function startPdfIndex(mode) {

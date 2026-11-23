@@ -198,3 +198,28 @@ test('status failures remain visible and recover on the next poll', async () => 
   assert.equal(app.timers.size, 1);
   assert.ok([...app.timers.values()][0].delay <= 2500);
 });
+
+test('index progress, current PDF, OCR totals and failures are reported separately', async () => {
+  const app = polling({
+    ...idleStatus, linked: 12, done: 8, queued: 2, processing: 1, error: 1,
+    ocr_books: 6, ocr_pages: 42, ocr_unrecorded: 1,
+    current: { title: 'Sample bestiary', indexed_pages: 12, page_count: 20, ocr_pages: 3 },
+    failures: [{ title: 'Sample adventure', error: 'PDF not found', release_id: 'failed' }],
+  });
+  await app.refreshPdfIndexStatus();
+  const element = id => app.elements.get(`#pdf-index-${id}`);
+  assert.equal(element('status').textContent, '8 of 12 linked PDFs indexed');
+  assert.equal(element('progress').value, 8);
+  assert.equal(element('progress').max, 12);
+  assert.equal(element('current-title').textContent, 'Sample bestiary');
+  assert.match(element('current-pages').textContent, /12 of 20 pages.*3 OCRed/);
+  assert.match(element('metrics').innerHTML, /<li>2 queued<\/li>.*<li>OCR: 6 PDFs, 42 pages<\/li>/);
+  assert.equal(element('issues').hidden, false);
+  assert.equal(element('issues-label').textContent, 'Indexing failures (1)');
+  assert.match(element('failures').innerHTML, /data-retry-pdf="failed"/);
+
+  app.setResponse(() => Promise.resolve(idleStatus));
+  await app.refreshPdfIndexStatus();
+  assert.equal(element('current').hidden, true);
+  assert.equal(element('issues').hidden, true);
+});

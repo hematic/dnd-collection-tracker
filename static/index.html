@@ -164,20 +164,42 @@
             <button class="primary" type="submit">Search</button>
           </form>
         </div>
-        <section class="pdf-index-panel">
-          <div class="helpable-heading">
-            <h3>PDF indexing</h3>
-            <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-indexing" aria-label="Help: PDF indexing" title="Help: PDF indexing">?</button>
-          </div>
-          <div id="pdf-index-status" class="rmeta" aria-live="polite">Loading index status…</div>
-          <div id="pdf-index-actions" class="actions" hidden>
-            <button id="index-pdfs" class="secondary" type="button">Start indexing</button>
-            <button id="pause-pdfs" class="secondary" type="button">Pause indexing</button>
-            <button id="reindex-pdfs" class="secondary" type="button">Re-index all</button>
-            <button id="retry-pdfs" class="secondary" type="button">Retry failures</button>
-          </div>
-          <div id="pdf-index-failures" class="pdf-index-failures"></div>
-        </section>
+        <aside class="pdf-index-panel" aria-labelledby="pdf-index-title">
+          <section class="pdf-index-card">
+            <div class="helpable-heading">
+              <h3 id="pdf-index-title">PDF indexing</h3>
+              <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-indexing" aria-label="Help: PDF indexing" title="Help: PDF indexing">?</button>
+            </div>
+            <p id="pdf-index-status" role="status">Loading index status...</p>
+            <progress id="pdf-index-progress" aria-label="Linked PDFs indexed" hidden></progress>
+            <div id="pdf-index-details" hidden>
+              <div id="pdf-index-current" class="pdf-index-current" hidden>
+                <span id="pdf-index-activity" class="rmeta"></span>
+                <strong id="pdf-index-current-title"></strong>
+                <span id="pdf-index-current-pages" class="rmeta"></span>
+              </div>
+              <ul id="pdf-index-metrics" class="pdf-index-metrics rmeta"></ul>
+            </div>
+          </section>
+          <section id="pdf-index-actions" class="pdf-index-card" hidden>
+            <h4>Indexing controls</h4>
+            <div class="actions">
+              <button id="index-pdfs" class="secondary" type="button">Start indexing</button>
+              <button id="pause-pdfs" class="secondary" type="button">Pause indexing</button>
+            </div>
+            <details class="pdf-index-maintenance">
+              <summary>Maintenance</summary>
+              <div class="actions">
+                <button id="reindex-pdfs" class="secondary" type="button">Re-index all</button>
+                <button id="retry-pdfs" class="secondary" type="button">Retry failures</button>
+              </div>
+            </details>
+          </section>
+          <details id="pdf-index-issues" class="pdf-index-card" hidden>
+            <summary id="pdf-index-issues-label">Indexing failures</summary>
+            <ul id="pdf-index-failures" class="pdf-index-failures"></ul>
+          </details>
+        </aside>
         <div class="pdf-search-output" id="pdf-search-output" hidden>
           <div id="pdf-search-editions" class="pdf-search-editions" role="group" aria-label="Filter results by edition"></div>
           <div class="pdf-search-toolbar">
