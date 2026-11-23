@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.1] - 2026-11-23
+
+### Changed
+- Split the PDF indexing sidebar into progress, controls, and expandable failure details. Move bulk actions into Maintenance.
+
 ## [1.1.0] - 2026-11-23
 
 ### Added
