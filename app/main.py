@@ -6,6 +6,7 @@ import os
 import re
 import stat
 from io import StringIO
+from itertools import groupby
 from pathlib import Path
 from typing import Annotated
 
@@ -212,49 +213,96 @@ def retry_pdf_index(release_id: str):
     return {"queued": True, "release_id": release_id}
 
 
-@app.get("/api/search/pdf")
-def search_pdf_text(
+def _pdf_search_criteria(
     q: str = Query(..., min_length=1, max_length=200),
-    limit: int = Query(30, ge=1, le=100),
-    offset: int = Query(0, ge=0),
     match: str = Query("all", pattern="^(all|any|phrase)$"),
     edition: str | None = None,
+    editions: Annotated[list[str] | None, Query()] = None,
 ):
     edition = edition or None
     _check_enum(edition, db.EDITIONS, "edition")
+    selected = list(dict.fromkeys(editions or []))
+    for item in selected:
+        _check_enum(item, db.EDITIONS, "edition")
     terms = re.findall(r"[\w]+", q, flags=re.UNICODE)
-    if not terms:
-        return {"query": q, "match": match, "edition": edition, "total": 0, "results": []}
-    if match == "phrase":
+    if match == "phrase" and terms:
         match_query = f'"{" ".join(terms)}"*'
     else:
         operator = " AND " if match == "all" else " OR "
         match_query = operator.join(f'"{term}"*' for term in terms)
-    with db.connect() as conn:
-        total = conn.execute(
-            "SELECT COUNT(*) FROM pdf_text_fts "
-            "JOIN pdf_text_page ON pdf_text_page.id = pdf_text_fts.rowid "
-            "JOIN pdf_index ON pdf_index.release_id = pdf_text_page.release_id "
-            "JOIN release r ON r.id = pdf_text_page.release_id "
-            "JOIN work w ON w.id = r.work_id "
-            "WHERE pdf_text_fts MATCH ? AND pdf_index.status = 'done' "
-            "AND (? IS NULL OR w.edition = ?)",
-            (match_query, edition, edition),
-        ).fetchone()[0]
+    return q, match, edition, selected, match_query
+
+
+PdfSearchCriteria = Annotated[
+    tuple[str, str, str | None, list[str], str], Depends(_pdf_search_criteria)
+]
+PDF_MATCH_COLUMNS = "r.id AS release_id, w.title, w.edition, r.release_kind, r.label, pdf_text_page.page_number"
+PDF_MATCH_ORDER = (
+    " ORDER BY w.title COLLATE NOCASE, w.id, r.is_primary DESC, r.year, r.id, pdf_text_page.page_number"
+)
+
+
+def _pdf_match_sql(edition: str | None, editions: list[str]) -> str:
+    sql = (
+        " FROM pdf_text_fts "
+        "JOIN pdf_text_page ON pdf_text_page.id = pdf_text_fts.rowid "
+        "JOIN pdf_index ON pdf_index.release_id = pdf_text_page.release_id "
+        "JOIN release r ON r.id = pdf_text_page.release_id "
+        "JOIN work w ON w.id = r.work_id "
+        "WHERE pdf_text_fts MATCH ? AND pdf_index.status = 'done' "
+        "AND r.pdf_path IS NOT NULL "
+    )
+    if edition is not None:
+        sql += "AND w.edition = ? "
+    if editions:
+        sql += "AND w.edition IN (" + ", ".join("?" for _ in editions) + ") "
+    return sql
+
+
+@app.get("/api/search/pdf")
+def search_pdf_text(
+    criteria: PdfSearchCriteria,
+    limit: int = Query(30, ge=1, le=100),
+    offset: int = Query(0, ge=0),
+):
+    q, match, edition, editions, match_query = criteria
+    result = {"query": q, "match": match, "edition": edition, "editions": editions}
+    if not match_query:
+        return {**result, "total": 0, "results": []}
+    sql = _pdf_match_sql(edition, editions)
+    params = (match_query, *([edition] if edition else []), *editions)
+    with db.connect(read_only=True) as conn:
+        conn.execute("BEGIN")
+        total = conn.execute("SELECT COUNT(*)" + sql, params).fetchone()[0]
         rows = conn.execute(
-            "SELECT r.id AS release_id, w.title, w.edition, r.release_kind, r.label, "
-            "pdf_text_page.page_number, snippet(pdf_text_fts, 0, ?, ?, ' … ', 22) AS snippet "
-            "FROM pdf_text_fts "
-            "JOIN pdf_text_page ON pdf_text_page.id = pdf_text_fts.rowid "
-            "JOIN pdf_index ON pdf_index.release_id = pdf_text_page.release_id "
-            "JOIN release r ON r.id = pdf_text_page.release_id "
-            "JOIN work w ON w.id = r.work_id "
-            "WHERE pdf_text_fts MATCH ? AND pdf_index.status = 'done' "
-            "AND (? IS NULL OR w.edition = ?) "
-            "ORDER BY bm25(pdf_text_fts), w.title, pdf_text_page.page_number LIMIT ? OFFSET ?",
-            ("\x1f", "\x1e", match_query, edition, edition, limit, offset),
+            "SELECT " + PDF_MATCH_COLUMNS + ", "
+            "snippet(pdf_text_fts, 0, ?, ?, ' … ', 22) AS snippet"
+            + sql + PDF_MATCH_ORDER + " LIMIT ? OFFSET ?",
+            ("\x1f", "\x1e", *params, limit, offset),
         ).fetchall()
-    return {"query": q, "match": match, "edition": edition, "total": total, "results": [dict(row) for row in rows]}
+    return {**result, "total": total, "results": [dict(row) for row in rows]}
+
+
+@app.get("/api/search/pdf.csv")
+def export_pdf_search(criteria: PdfSearchCriteria):
+    _, _, edition, editions, match_query = criteria
+    output = StringIO(newline="")
+    writer = csv.writer(output, lineterminator="\r\n")
+    writer.writerow(["Title", "Edition", "Release kind", "Release label", "Matching PDF pages"])
+    if match_query:
+        with db.connect(read_only=True) as conn:
+            rows = conn.execute(
+                "SELECT " + PDF_MATCH_COLUMNS + _pdf_match_sql(edition, editions) + PDF_MATCH_ORDER,
+                (match_query, *([edition] if edition else []), *editions),
+            )
+            for _, matching_pages in groupby(rows, key=lambda row: row["release_id"]):
+                first = next(matching_pages)
+                pages = [str(first["page_number"]), *(str(row["page_number"]) for row in matching_pages)]
+                writer.writerow([
+                    *(_csv_cell(first[key]) for key in ("title", "edition", "release_kind", "label")),
+                    ", ".join(pages),
+                ])
+    return _csv_response(output, "dnd-pdf-search.csv")
 
 
 @app.get("/api/export.csv")
@@ -298,6 +346,10 @@ def _inventory_csv(rows: list[dict], filename: str) -> Response:
         ]
         writer.writerow([_csv_cell(value) for value in values])
 
+    return _csv_response(output, filename)
+
+
+def _csv_response(output: StringIO, filename: str) -> Response:
     return Response(
         content="\ufeff" + output.getvalue(),
         media_type="text/csv; charset=utf-8",
@@ -331,7 +383,9 @@ def work_detail(work_id: str):
         if w is None:
             raise HTTPException(404, "Book not found")
         rels = conn.execute(
-            "SELECT * FROM release WHERE work_id = ? ORDER BY is_primary DESC, year, id",
+            "SELECT r.*, i.ocr_pages, i.page_count AS pdf_page_count "
+            "FROM release r LEFT JOIN pdf_index i ON i.release_id = r.id "
+            "WHERE r.work_id = ? ORDER BY r.is_primary DESC, r.year, r.id",
             (work_id,),
         ).fetchall()
         parent = conn.execute("SELECT id, title FROM work WHERE id = ?", (w["parent_id"],)).fetchone()

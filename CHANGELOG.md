@@ -2,6 +2,15 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.0] - 2026-11-23
+
+### Added
+- Filter PDF search results with multi-select edition toggles and export all matching PDF pages as a CSV grouped by book printing.
+
+### Changed
+- Group PDF search matches by printing in alphabetical title order, with expandable page matches in PDF page order.
+- Move the PDF indexing panel to the left of active searches on wide screens and show recorded OCR counts in book details instead of a library-wide list.
+
 ## [1.0.0] - 2026-11-20
 
 ### Changed

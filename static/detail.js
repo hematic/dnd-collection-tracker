@@ -53,6 +53,7 @@ function releaseHTML(r, work, focus) {
       ${r.notes ? `<div class="rmeta">${esc(r.notes)}</div>` : ''}
       <div class="flags">${flags}</div>
       ${r.pdf_path ? `<div class="pdf-path" title="Linked PDF">📄 ${esc(libraryPath ? r.pdf_path.slice('library:'.length) : r.pdf_path)}</div>` : ''}
+      ${r.has_pdf && r.ocr_pages != null ? `<div class="rmeta">OCR: ${r.ocr_pages} of ${r.pdf_page_count} PDF pages</div>` : ''}
       <div class="pdf-link" ${r.has_pdf || libraryEnabled ? 'hidden' : ''} data-pdf-form>
         <input type="text" aria-label="PDF path on the server" placeholder='Paste full PDF path, e.g. D:\\Books\\DnD\\PHB.pdf' value="${esc(libraryPath ? '' : r.pdf_path || '')}">
         <button class="secondary" data-act="save-pdf">Link</button>

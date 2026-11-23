@@ -146,30 +146,27 @@
       <div id="content"></div>
       </div>
       <section id="pdf-search-page" class="pdf-search-page" hidden aria-labelledby="pdf-search-title">
-        <div class="helpable-heading">
-          <h2 id="pdf-search-title">Search PDF contents</h2>
-          <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-search" aria-label="Help: PDF search" title="Help: PDF search">?</button>
+        <div class="pdf-search-controls">
+          <div class="helpable-heading">
+            <h2 id="pdf-search-title">Search PDF contents</h2>
+            <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-search" aria-label="Help: PDF search" title="Help: PDF search">?</button>
+          </div>
+          <p class="rmeta">Search text from linked PDFs. Scanned pages are OCRed locally; original files are unchanged.</p>
+          <form id="pdf-search-form" class="pdf-search-form">
+            <input id="pdf-search-query" type="search" aria-label="Search PDF text" placeholder="Search PDF text, e.g. Rakshasa" maxlength="200" required>
+            <label>Match
+              <select id="pdf-search-match">
+                <option value="all">All words</option>
+                <option value="any">Any word</option>
+                <option value="phrase">Exact phrase</option>
+              </select>
+            </label>
+            <button class="primary" type="submit">Search</button>
+          </form>
         </div>
-        <p class="rmeta">Search text from linked PDFs. Scanned pages are OCRed locally; original files are unchanged.</p>
-        <form id="pdf-search-form" class="pdf-search-form">
-          <input id="pdf-search-query" type="search" placeholder="Search PDF text, e.g. Rakshasa" maxlength="200" required>
-          <label>Match
-            <select id="pdf-search-match">
-              <option value="all">All words</option>
-              <option value="any">Any word</option>
-              <option value="phrase">Exact phrase</option>
-            </select>
-          </label>
-          <label>Edition
-            <select id="pdf-search-edition">
-              <option value="">All editions</option>
-            </select>
-          </label>
-          <button class="primary" type="submit">Search</button>
-        </form>
         <section class="pdf-index-panel">
           <div class="helpable-heading">
-            <h3>PDF text index</h3>
+            <h3>PDF indexing</h3>
             <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-indexing" aria-label="Help: PDF indexing" title="Help: PDF indexing">?</button>
           </div>
           <div id="pdf-index-status" class="rmeta" aria-live="polite">Loading index status…</div>
@@ -180,16 +177,17 @@
             <button id="retry-pdfs" class="secondary" type="button">Retry failures</button>
           </div>
           <div id="pdf-index-failures" class="pdf-index-failures"></div>
-          <details id="pdf-index-ocr" class="pdf-index-ocr">
-            <summary>Books with OCR</summary>
-            <p id="pdf-index-ocr-empty" class="rmeta">No OCR-processed PDFs recorded yet.</p>
-            <div id="pdf-index-ocr-books" class="pdf-index-ocr-books"></div>
-          </details>
         </section>
-        <div id="pdf-search-error" class="form-error" hidden></div>
-        <div id="pdf-search-summary" class="rmeta" aria-live="polite"></div>
-        <div id="pdf-search-results" class="pdf-search-results"></div>
-        <button id="pdf-search-more" class="secondary wide" type="button" hidden>Load more results</button>
+        <div class="pdf-search-output" id="pdf-search-output" hidden>
+          <div id="pdf-search-editions" class="pdf-search-editions" role="group" aria-label="Filter results by edition"></div>
+          <div class="pdf-search-toolbar">
+            <div id="pdf-search-summary" class="rmeta" role="status"></div>
+            <a id="pdf-search-export" class="secondary export-download" hidden>Export matches (CSV)</a>
+          </div>
+          <div id="pdf-search-error" class="form-error" role="alert" hidden></div>
+          <div id="pdf-search-results" class="pdf-search-results"></div>
+          <button id="pdf-search-more" class="secondary wide" type="button" hidden>Load more matching pages</button>
+        </div>
       </section>
     </main>
   </div>
@@ -223,11 +221,11 @@
     </details>
     <details data-help-section="pdf-search">
       <summary>Searching PDF contents</summary>
-      <p>PDF Search is separate from the collection search. Choose whether all words, any word, or an exact phrase must match. Search terms also match word endings (for example, “troll” matches “trolls”). Results include snippets and page numbers.</p>
+      <p>PDF Search is separate from the collection search. Choose whether all words, any word, or an exact phrase must match. Search terms also match word endings (for example, “troll” matches “trolls”). Toggle editions to show or hide their results. Matches are grouped by book printing, sorted by title, and listed in PDF page order. The CSV includes every matching PDF page for the selected editions, even if you haven't loaded it on screen.</p>
     </details>
     <details data-help-section="pdf-indexing">
       <summary>Indexing PDFs</summary>
-      <p>PDF text must be indexed before it can be searched. Editors start indexing from the PDF Search page; it runs in the separate Docker OCR worker and does not start automatically. Pause takes effect after the current page; resume continues queued work. Scanned pages are OCRed locally, and original PDFs are unchanged.</p>
+      <p>PDF text must be indexed before it can be searched. Editors start indexing from the PDF Search page; it runs in the separate Docker OCR worker and does not start automatically. Pause takes effect after the current page; resume continues queued work. Scanned pages are OCRed locally, and original PDFs are unchanged. When OCR counts are recorded, they appear on each printing in the book details drawer.</p>
     </details>
     <details data-help-section="editing">
       <summary>Editing and access</summary>

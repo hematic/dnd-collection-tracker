@@ -44,11 +44,12 @@ let collapsed = new Set();
 const PDF_SEARCH_PAGE_SIZE = 30;
 let pdfSearchQuery = '';
 let pdfSearchOffset = 0;
+let pdfSearchRevision = 0;
+const pdfSearchGroups = new Map();
 let pdfSearchPoll = null;
 let pdfIndexRefreshing = false;
 let pdfIndexRefreshPending = false;
 let pdfSearchMatch = 'all';
-let pdfSearchEdition = '';
 try { collapsed = new Set(JSON.parse(localStorage.getItem('collapsedShelves') || '[]')); } catch { /* storage unavailable */ }
 
 // ---------------------------------------------------------------- URL hash <-> state
@@ -107,7 +108,9 @@ function buildChecklists() {
   buildCatalogChecklists();
   $('#export-edition').innerHTML = '<option value="">All editions</option>' +
     meta.editions.map(e => `<option value="${e}">${e}</option>`).join('');
-  $('#pdf-search-edition').innerHTML += meta.editions.map(e => `<option value="${e}">${e}</option>`).join('');
+  $('#pdf-search-editions').innerHTML =
+    '<button class="secondary" type="button" data-all-editions aria-pressed="true">All editions</button>' +
+    meta.editions.map(e => `<button class="secondary" type="button" data-edition="${esc(e)}" aria-pressed="true">${esc(e)}</button>`).join('');
   if (meta.year_min) { $('#year-min').placeholder = meta.year_min; $('#year-max').placeholder = meta.year_max; }
 }
 
@@ -240,17 +243,24 @@ function bindPdfSearch() {
     setActivePage('pdf-search');
     $('#pdf-search-query').focus();
   });
-  $('#pdf-index-ocr').addEventListener('toggle', () => {
-    if (state.page === 'pdf-search' && $('#pdf-index-ocr').open) refreshPdfOcrBooks();
-  });
   $('#pdf-search-form').addEventListener('submit', (e) => {
     e.preventDefault();
     pdfSearchQuery = $('#pdf-search-query').value.trim();
     pdfSearchMatch = $('#pdf-search-match').value;
-    pdfSearchEdition = $('#pdf-search-edition').value;
-    pdfSearchOffset = 0;
-    $('#pdf-search-results').innerHTML = '';
-    searchPdfPages();
+    $('#pdf-search-page').classList.toggle('has-search', Boolean(pdfSearchQuery));
+    $('#pdf-search-output').hidden = !pdfSearchQuery;
+    resetPdfSearch();
+  });
+  $('#pdf-search-editions').addEventListener('click', (e) => {
+    const button = e.target.closest('button');
+    if (!button) return;
+    const all = $('#pdf-search-editions [data-all-editions]');
+    const editions = $$('#pdf-search-editions [data-edition]');
+    const pressed = button.getAttribute('aria-pressed') !== 'true';
+    if (button === all) editions.forEach(item => item.setAttribute('aria-pressed', String(pressed)));
+    else button.setAttribute('aria-pressed', String(pressed));
+    all.setAttribute('aria-pressed', String(editions.every(item => item.getAttribute('aria-pressed') === 'true')));
+    resetPdfSearch();
   });
   $('#pdf-search-more').addEventListener('click', searchPdfPages);
   $('#index-pdfs').addEventListener('click', () => startPdfIndex('all'));
@@ -339,7 +349,6 @@ async function refreshPdfIndexStatus() {
         <span><b>${esc(f.title)}</b>: ${esc(f.error || 'Indexing failed')}</span>
         ${meta.can_edit ? `<button class="secondary" type="button" data-retry-pdf="${esc(f.release_id)}">Retry</button>` : ''}
       </div>`).join('');
-    if ($('#pdf-index-ocr').open) await refreshPdfOcrBooks();
   } catch (error) {
     $('#pdf-index-status').textContent = `Could not load PDF index status: ${error.message}`;
   } finally {
@@ -349,29 +358,6 @@ async function refreshPdfIndexStatus() {
     if (state.page === 'pdf-search' && !document.hidden) {
       pdfSearchPoll = setTimeout(refreshPdfIndexStatus, delay);
     }
-  }
-}
-
-async function refreshPdfOcrBooks() {
-  const empty = $('#pdf-index-ocr-empty');
-  try {
-    const ocrBooks = await api.pdfIndexBooks();
-    const list = $('#pdf-index-ocr-books');
-    const scrollTop = list.scrollTop;
-    const markup = ocrBooks.results.map(book => `
-      <div class="pdf-index-book">
-        <span><b>${esc(book.title)}</b> <span class="rmeta">${esc(book.edition)} · ${esc(book.release_kind)}${book.label ? ` · ${esc(book.label)}` : ''} · ${book.ocr_pages} OCRed page${book.ocr_pages === 1 ? '' : 's'} of ${book.page_count}${book.status === 'processing' ? ' · processing' : book.status === 'error' ? ' · failed' : ''}</span></span>
-        <a href="${api.pdfUrl(book.release_id)}" target="_blank" rel="noopener" aria-label="Open PDF for ${esc(book.title)}">Open</a>
-      </div>`).join('');
-    if (list.innerHTML !== markup) {
-      list.innerHTML = markup;
-      list.scrollTop = scrollTop;
-    }
-    empty.textContent = 'No OCR-processed PDFs recorded yet.';
-    empty.hidden = ocrBooks.results.length > 0;
-  } catch (error) {
-    empty.textContent = `Could not load OCR book list: ${error.message}`;
-    empty.hidden = false;
   }
 }
 
@@ -387,44 +373,81 @@ async function startPdfIndex(mode) {
   }
 }
 
-async function searchPdfPages() {
-  const errorEl = $('#pdf-search-error');
-  errorEl.hidden = true;
+function resetPdfSearch() {
+  pdfSearchRevision++;
+  pdfSearchOffset = 0;
+  pdfSearchGroups.clear();
+  $('#pdf-search-results').replaceChildren();
+  $('#pdf-search-error').hidden = true;
+  $('#pdf-search-export').hidden = true;
   $('#pdf-search-more').hidden = true;
+  $('#pdf-search-more').disabled = false;
+  if (pdfSearchQuery) searchPdfPages();
+}
+
+async function searchPdfPages() {
+  const summary = $('#pdf-search-summary');
+  const more = $('#pdf-search-more');
+  const download = $('#pdf-search-export');
+  const errorEl = $('#pdf-search-error');
+  if (more.disabled || !pdfSearchQuery) return;
+  const activeEditions = $$('#pdf-search-editions [data-edition][aria-pressed="true"]');
+  if (!activeEditions.length) {
+    summary.textContent = 'Select at least one edition to show matches.';
+    return;
+  }
+  const revision = pdfSearchRevision;
+  const params = new URLSearchParams({ q: pdfSearchQuery, match: pdfSearchMatch });
+  if (activeEditions.length !== meta.editions.length) {
+    activeEditions.forEach(item => params.append('editions', item.dataset.edition));
+  }
+  const pageParams = new URLSearchParams(params);
+  pageParams.set('limit', PDF_SEARCH_PAGE_SIZE);
+  pageParams.set('offset', pdfSearchOffset);
+  errorEl.hidden = true;
+  more.disabled = true;
+  if (!pdfSearchOffset) summary.textContent = 'Searching indexed PDFs…';
   try {
-    const result = await api.searchPdfText({
-      q: pdfSearchQuery,
-      limit: PDF_SEARCH_PAGE_SIZE,
-      offset: pdfSearchOffset,
-      match: pdfSearchMatch,
-      edition: pdfSearchEdition,
-    });
+    const result = await api.searchPdfText(pageParams);
+    if (revision !== pdfSearchRevision) return;
     const matchDescription = { all: 'all words', any: 'any word', phrase: 'the exact phrase' }[pdfSearchMatch];
-    const editionDescription = pdfSearchEdition ? ` in ${pdfSearchEdition}` : '';
-    $('#pdf-search-summary').textContent =
-      `${result.total} matching page${result.total === 1 ? '' : 's'} for ${matchDescription} “${pdfSearchQuery}”${editionDescription}`;
-    const results = $('#pdf-search-results');
-    if (!result.results.length && pdfSearchOffset === 0) {
-      results.innerHTML = '<p class="rmeta">No matching indexed pages. The PDF index may still be processing.</p>';
-      return;
-    }
-    results.insertAdjacentHTML('beforeend', result.results.map(row => `
-      <article class="pdf-search-result">
-        <div class="pdf-search-result-head">
-          <b>${esc(row.title)}</b>
-          <span>${esc(row.edition)} · ${esc(row.release_kind)}${row.label ? ` · ${esc(row.label)}` : ''}</span>
-        </div>
-        <p>${esc(row.snippet).replaceAll('\u001f', '<mark>').replaceAll('\u001e', '</mark>')}</p>
-        <a href="${api.pdfUrl(row.release_id)}#page=${row.page_number}" target="_blank" rel="noopener">
-          Open PDF at page ${row.page_number}
-        </a>
-      </article>`).join(''));
+    const count = `${result.total} matching page${result.total === 1 ? '' : 's'}`;
+    for (const row of result.results) appendPdfSearchPage(row);
     pdfSearchOffset += result.results.length;
-    $('#pdf-search-more').hidden = pdfSearchOffset >= result.total;
+    summary.textContent = result.total
+      ? `${count} for ${matchDescription} “${pdfSearchQuery}”${pdfSearchOffset < result.total ? ` · ${pdfSearchOffset} loaded` : ''}`
+      : `No matching indexed pages for “${pdfSearchQuery}”. The PDF index may still be processing.`;
+    more.hidden = pdfSearchOffset >= result.total || !result.results.length;
+    download.hidden = !result.total;
+    if (result.total) download.href = api.exportPdfSearchUrl(params);
   } catch (error) {
+    if (revision !== pdfSearchRevision) return;
+    if (!pdfSearchOffset) summary.textContent = '';
     errorEl.textContent = error.message;
     errorEl.hidden = false;
+  } finally {
+    if (revision === pdfSearchRevision) more.disabled = false;
   }
+}
+
+function appendPdfSearchPage(row) {
+  let group = pdfSearchGroups.get(row.release_id);
+  if (!group) {
+    group = document.createElement('details');
+    group.className = 'pdf-search-result';
+    group.innerHTML = `<summary><b>${esc(row.title)}</b>
+      <span>${esc(row.edition)} · ${esc(row.release_kind)}${row.label ? ` · ${esc(row.label)}` : ''}</span>
+    </summary>`;
+    $('#pdf-search-results').append(group);
+    pdfSearchGroups.set(row.release_id, group);
+  }
+  group.insertAdjacentHTML('beforeend', `
+    <div class="pdf-search-page-match">
+      <a href="${api.pdfUrl(row.release_id)}#page=${row.page_number}" target="_blank" rel="noopener">
+        Open PDF at page ${row.page_number}
+      </a>
+      <p>${esc(row.snippet).replaceAll('\u001f', '<mark>').replaceAll('\u001e', '</mark>')}</p>
+    </div>`);
 }
 
 // ---------------------------------------------------------------- cover size

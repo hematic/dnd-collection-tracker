@@ -101,6 +101,75 @@ class DatabaseOptimizationTests(unittest.TestCase):
         self.assertEqual(release["cover_source"], "pdf")
         self.assertTrue((db.COVERS_DIR / release["cover_path"]).is_file())
 
+    def test_pdf_search_filters_and_export_includes_unloaded_matching_pages(self):
+        with db.connect() as conn:
+            conn.executemany(
+                "INSERT INTO work (id, title, edition, book_type) VALUES (?, ?, ?, 'Sourcebook')",
+                [
+                    ("alpha", "alpha, Bestiary", "AD&D 2e"),
+                    ("basic", "Basic bestiary", "Basic"),
+                    ("zebra", "Zebra monsters", "5e (2024)"),
+                ],
+            )
+            conn.executemany(
+                "INSERT INTO release (id, work_id, pdf_path, label) VALUES (?, ?, '/test.pdf', ?)",
+                [
+                    ("alpha", "alpha", None),
+                    ("alpha-alt", "alpha", "Alt cover"),
+                    ("basic", "basic", None),
+                    ("zebra", "zebra", None),
+                    ("queued", "zebra", None),
+                ],
+            )
+            conn.execute(
+                "INSERT INTO pdf_index (release_id, status) "
+                "SELECT id, CASE WHEN id = 'queued' THEN 'queued' ELSE 'done' END "
+                "FROM release WHERE pdf_path IS NOT NULL"
+            )
+            conn.executemany(
+                "INSERT INTO pdf_text_page (release_id, page_number, text) VALUES (?, ?, ?)",
+                [
+                    ("alpha", 22, "A red dragon"),
+                    ("alpha", 3, "Red dragons"),
+                    ("alpha", 5, "The red beast is a dragon"),
+                    ("alpha-alt", 6, "A red dragon"),
+                    ("basic", 4, "A red dragon"),
+                    ("zebra", 2, "A red dragon"),
+                    ("queued", 1, "A red dragon"),
+                ],
+            )
+        criteria = main._pdf_search_criteria(
+            "red dragon", match="phrase", edition=None, editions=["AD&D 2e", "5e (2024)"],
+        )
+        first = main.search_pdf_text(criteria, limit=2, offset=0)
+        second = main.search_pdf_text(criteria, limit=2, offset=2)
+        self.assertEqual(first["total"], 4)
+        self.assertEqual(
+            [(page["release_id"], page["page_number"]) for page in first["results"] + second["results"]],
+            [("alpha", 3), ("alpha", 22), ("alpha-alt", 6), ("zebra", 2)],
+        )
+        self.assertIn("\x1fRed dragons\x1e", first["results"][0]["snippet"])
+        export = main.export_pdf_search(criteria)
+        self.assertEqual(list(csv.reader(StringIO(export.body.decode("utf-8-sig")))), [
+            ["Title", "Edition", "Release kind", "Release label", "Matching PDF pages"],
+            ["alpha, Bestiary", "AD&D 2e", "Original", "", "3, 22"],
+            ["alpha, Bestiary", "AD&D 2e", "Original", "Alt cover", "6"],
+            ["Zebra monsters", "5e (2024)", "Original", "", "2"],
+        ])
+
+    def test_book_detail_reports_recorded_ocr_counts_per_printing(self):
+        with db.connect() as conn:
+            conn.execute("UPDATE release SET pdf_path = '/test.pdf' WHERE id = 'release'")
+            conn.execute("INSERT INTO release (id, work_id) VALUES ('other', 'book')")
+            conn.execute(
+                "INSERT INTO pdf_index (release_id, status, ocr_pages, page_count) "
+                "VALUES ('release', 'done', 0, 12)"
+            )
+        releases = {row["id"]: row for row in main.work_detail("book")["releases"]}
+        self.assertEqual(releases["release"]["ocr_pages"], 0)
+        self.assertEqual(releases["release"]["pdf_page_count"], 12)
+        self.assertIsNone(releases["other"]["ocr_pages"])
+
     def test_library_picker_lists_only_folders_and_pdfs_and_requires_editor(self):
         root = self.pdf_path.parent / "library"
         root.mkdir()
