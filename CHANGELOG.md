@@ -2,6 +2,12 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.3] - 2026-11-23
+
+### Fixed
+- Retry OCR at a lower resolution when an image exceeds the renderer's size limit, and identify the PDF page if it still fails.
+- Hide the redundant linked-PDF count when the collection is already filtered by PDF presence.
+
 ## [1.1.2] - 2026-11-23
 
 ### Changed

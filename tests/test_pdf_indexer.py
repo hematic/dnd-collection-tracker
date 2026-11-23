@@ -103,6 +103,33 @@ class ForcedReindexTests(unittest.TestCase):
         pdf_indexer._queue_forced_followup("book--orig")
         self.assertIsNone(pdf_indexer._claim_next_job(self.worker_id))
 
+    def test_ocr_retries_an_oversized_render_at_lower_resolution(self):
+        error = pymupdf.mupdf.FzErrorLimit("Overly large image")
+        pdf_indexer.enqueue("book--orig")
+        with patch.object(pymupdf.Page, "get_images", return_value=[object()]), \
+                patch.object(pymupdf.Page, "get_text", side_effect=["", "Recovered scan text", self.page_texts[1]]), \
+                patch.object(pymupdf.Page, "get_textpage_ocr", side_effect=[error, object()]) as ocr:
+            self.index_job(pdf_indexer._claim_next_job(self.worker_id))
+        resolutions = [call.kwargs["dpi"] for call in ocr.call_args_list]
+        self.assertEqual(len(resolutions), 2)
+        self.assertLess(resolutions[1], resolutions[0])
+        self.assertEqual(self.indexed_texts(), ["Recovered scan text", self.page_texts[1]])
+        self.assertEqual(pdf_indexer.status()["ocr_pages"], 1)
+        self.assertEqual(pdf_indexer.status()["done"], 1)
+
+    def test_persistent_image_limit_reports_the_failed_page(self):
+        error = pymupdf.mupdf.FzErrorLimit("Overly large image")
+        pdf_indexer.enqueue("book--orig")
+        with patch.object(pymupdf.Page, "get_images", return_value=[object()]), \
+                patch.object(pymupdf.Page, "get_text", side_effect=[self.page_texts[0], ""]), \
+                patch.object(pymupdf.Page, "get_textpage_ocr", side_effect=error):
+            with self.assertRaisesRegex(ValueError, "Page 2 of 2.*image"):
+                self.index_job(pdf_indexer._claim_next_job(self.worker_id))
+        status = pdf_indexer.status()
+        self.assertEqual(status["error"], 1)
+        self.assertIn("Page 2 of 2", status["failures"][0]["error"])
+        self.assertEqual(self.indexed_texts(), [self.page_texts[0]])
+
     def test_enqueue_all_batches_writes_and_preserves_job_state(self):
         file_stat = self.pdf_path.stat()
         with db.connect() as conn:

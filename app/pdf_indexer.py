@@ -16,6 +16,7 @@ from . import db, settings
 logger = logging.getLogger(__name__)
 MIN_EMBEDDED_CHARS = 30
 OCR_DPI = 200
+OCR_FALLBACK_DPI = 100
 WORKER_LEASE_SECONDS = 60
 WORKER_HEARTBEAT_SECONDS = 10
 WORKER_POLL_SECONDS = 1
@@ -384,6 +385,7 @@ def _index_release(
         )
 
     page_count = 0
+    page_number = None
     try:
         logger.info(
             "Opening PDF for indexing: %r (release %s)%s",
@@ -428,6 +430,7 @@ def _index_release(
                 if linked["pdf_path"] != raw_path:
                     return
 
+                page_number = page_index + 1
                 page = document.load_page(page_index)
                 text = page.get_text("text", sort=True).strip()
                 if len(re.sub(r"\s+", "", text)) < MIN_EMBEDDED_CHARS and page.get_images():
@@ -439,7 +442,16 @@ def _index_release(
                         page_index + 1,
                         page_count,
                     )
-                    text_page = page.get_textpage_ocr(language="eng", dpi=OCR_DPI, full=True)
+                    try:
+                        text_page = page.get_textpage_ocr(language="eng", dpi=OCR_DPI, full=True)
+                    except pymupdf.mupdf.FzErrorLimit as exc:
+                        if "Overly large image" not in str(exc):
+                            raise
+                        logger.warning(
+                            "Retrying OCR for %r (release %s), page %d/%d at %d DPI after an image size limit",
+                            title, release_id, page_number, page_count, OCR_FALLBACK_DPI,
+                        )
+                        text_page = page.get_textpage_ocr(language="eng", dpi=OCR_FALLBACK_DPI, full=True)
                     text = page.get_text("text", textpage=text_page, sort=True).strip()
                     ocr_pages += 1
                     logger.info(
@@ -452,6 +464,7 @@ def _index_release(
                         len(text),
                     )
 
+                page_number = None
                 with db.connect() as conn:
                     if text:
                         conn.execute(
@@ -510,12 +523,21 @@ def _index_release(
             time.monotonic() - started_at,
         )
     except Exception as exc:
+        image_error = None
+        if page_number is not None and isinstance(exc, pymupdf.mupdf.FzErrorLimit) and "Overly large image" in str(exc):
+            image_error = ValueError(
+                f"Page {page_number} of {page_count}: image exceeds the PDF renderer's size limit. "
+                "Link a smaller or optimized copy of the PDF and retry."
+            )
+        error = image_error if image_error is not None else exc
         with db.connect() as conn:
             conn.execute(
                 "UPDATE pdf_index SET status = 'error', page_count = ?, error = ?, "
                 "updated_at = CURRENT_TIMESTAMP WHERE release_id = ?",
-                (page_count, f"{type(exc).__name__}: {exc}"[:1000], release_id),
+                (page_count, f"{type(error).__name__}: {error}"[:1000], release_id),
             )
+        if image_error is not None:
+            raise image_error from exc
         raise
 
 

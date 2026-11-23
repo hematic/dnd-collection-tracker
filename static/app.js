@@ -561,12 +561,13 @@ async function load() {
 
 function render() {
   const el = $('#content');
-  const withPdf = books.filter(b => b.has_pdf).length;
   const filtered = JSON.stringify({ ...state, page: 0, view: 0, sort: 0, desc: 0, grouped: 0 }) !==
     JSON.stringify({ ...DEFAULTS, page: 0, view: 0, sort: 0, desc: 0, grouped: 0 });
-  $('#summary').textContent =
-    `${books.length} ${state.all ? 'release' : 'book'}${books.length === 1 ? '' : 's'}` +
-    (filtered ? ' match your filters' : '') + ` · ${withPdf} with a linked PDF`;
+  const singular = books.length === 1;
+  const unit = state.all ? 'release' : 'book';
+  const pdfSummary = state.pdf || state.no_pdf ? '' : ` · ${books.filter(b => b.has_pdf).length} with a linked PDF`;
+  $('#summary').textContent = `${books.length} ${unit}${singular ? '' : 's'}` +
+    (filtered ? ` match${singular ? 'es' : ''} your filters` : '') + pdfSummary;
   if (!books.length) {
     el.innerHTML = '<div class="empty">No books match these filters.</div>';
     return;

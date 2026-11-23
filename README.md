@@ -34,6 +34,8 @@ Here's what a more complete collection can look like after linking PDFs and mark
 
 Use the **?** buttons in the app for contextual help, version information, and release notes.
 
+The collection summary shows how many results have a linked PDF, unless you're already filtering by whether a PDF is linked.
+
 ![Browse PDF library dialog open on the Official folder, listing Adventures, Campaign Setting, Core Rulebook, Monster Book, Other and Sourcebook](./docs/media/pdf-add.png)
 
 ![Edit book form for Arcana Unleashed with edition, type, box set, release kind, publisher, product code, ISBN and ownership fields](./docs/media/edit-book.png)
@@ -47,6 +49,8 @@ In the [Docker setup](#docker-hosting), open **PDF Search** and choose **Start i
 Indexing only starts when requested. Editors can pause or resume under **Indexing controls**, use **Maintenance** to re-index or retry failures in bulk, or expand **Indexing failures** to inspect and retry individual PDFs. Readers can use the completed index. On wide screens, indexing status moves to the left of an active search. Recorded OCR page counts appear on each printing in the book details drawer. Text stays in your database, and the source PDFs are never modified.
 
 The PDF search CSV includes the book type, publisher, and physical ownership for the matching printing. Three or more consecutive PDF pages are shown as a range (for example, `187-190`).
+
+If a scan hits the PDF renderer's image-size limit during OCR, the worker retries that page at a lower resolution. If the page still cannot be read, **Indexing failures** identifies the PDF page; link a smaller or optimized copy and retry.
 
 ![PDF search for rakshasa, with separate progress, controls, and failure cards on the left and an expanded book printing showing two matching pages on the right](./docs/media/search-pdf.png)
 

@@ -15,6 +15,28 @@ const pollingSource = source.slice(
 );
 const flush = () => new Promise(resolve => setImmediate(resolve));
 
+test('collection summary omits the linked PDF count when filtering by PDF presence', () => {
+  const render = new Script(source.slice(source.indexOf('function render()'), source.indexOf('function update(')) + '\nrender;');
+  for (const [filters, books, expected] of [
+    [{ pdf: true }, [{ has_pdf: true }, { has_pdf: true }], '2 books match your filters'],
+    [{ no_pdf: true, all: true }, [{ has_pdf: false }], '1 release matches your filters'],
+    [{ owned: true }, [{ has_pdf: true }, { has_pdf: false }], '2 books match your filters · 1 with a linked PDF'],
+  ]) {
+    const summary = {};
+    render.runInNewContext({
+      $: selector => selector === '#summary' ? summary : {},
+      state: { ...filters, view: 'grid' },
+      DEFAULTS: {},
+      books,
+      meta: {},
+      collapsed: new Set(),
+      renderGrid() {},
+      paint() {},
+    })();
+    assert.equal(summary.textContent, expected);
+  }
+});
+
 test('companion shelves render separately after RPG editions and before Other with independent collapse state', () => {
   const shelfSource = readFileSync(join(__dirname, '../static/shelf.js'), 'utf8')
     .replace(/^export \{ esc \};$/m, '').replace(/^export /gm, '');
