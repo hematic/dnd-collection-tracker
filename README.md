@@ -38,9 +38,11 @@ Use the **?** buttons in the app for contextual help, version information, and r
 
 ## Search inside your PDFs
 
-In the [Docker setup](#docker-hosting), open **PDF Search** and choose **Start indexing** as an editor. The worker indexes embedded text and uses local OCR for scanned pages. Search for all words, any word, or an exact phrase, then toggle editions to refine the results. Matches are grouped by printing in alphabetical book-title order. Expand a printing to see snippets and open the PDF at a matching page. **Export matches (CSV)** lists every matching PDF page for the selected editions, including results not yet loaded on screen.
+In the [Docker setup](#docker-hosting), open **PDF Search** and choose **Start indexing** as an editor. The worker indexes embedded text and uses local OCR for scanned pages. Results update when you pause typing or press Enter. Choose all words, any word, or an exact phrase, then toggle editions to refine the results. Matches are grouped by printing in alphabetical book-title order. Expand a printing to see snippets and open the PDF at a matching page. **Export matches (CSV)** lists every matching PDF page for the selected editions, including results not yet loaded on screen.
 
 Indexing only starts when requested. Editors can pause or resume under **Indexing controls**, use **Maintenance** to re-index or retry failures in bulk, or expand **Indexing failures** to inspect and retry individual PDFs. Readers can use the completed index. On wide screens, indexing status moves to the left of an active search. Recorded OCR page counts appear on each printing in the book details drawer. Text stays in your database, and the source PDFs are never modified.
+
+The PDF search CSV includes the book type, publisher, and physical ownership for the matching printing. Three or more consecutive PDF pages are shown as a range (for example, `187-190`).
 
 ![PDF search for rakshasa, with separate progress, controls, and failure cards on the left and an expanded book printing showing two matching pages on the right](./docs/media/search-pdf.png)
 

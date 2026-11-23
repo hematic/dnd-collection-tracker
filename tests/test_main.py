@@ -122,6 +122,9 @@ class DatabaseOptimizationTests(unittest.TestCase):
                 ],
             )
             conn.execute(
+                "UPDATE release SET publisher = 'Example Press', owned_physical = 1 WHERE id = 'alpha'"
+            )
+            conn.execute(
                 "INSERT INTO pdf_index (release_id, status) "
                 "SELECT id, CASE WHEN id = 'queued' THEN 'queued' ELSE 'done' END "
                 "FROM release WHERE pdf_path IS NOT NULL"
@@ -130,9 +133,15 @@ class DatabaseOptimizationTests(unittest.TestCase):
                 "INSERT INTO pdf_text_page (release_id, page_number, text) VALUES (?, ?, ?)",
                 [
                     ("alpha", 22, "A red dragon"),
+                    ("alpha", 23, "A red dragon"),
+                    ("alpha", 24, "A red dragon"),
+                    ("alpha", 25, "A red dragon"),
                     ("alpha", 3, "Red dragons"),
+                    ("alpha", 4, "A red dragon"),
                     ("alpha", 5, "The red beast is a dragon"),
                     ("alpha-alt", 6, "A red dragon"),
+                    ("alpha-alt", 7, "A red dragon"),
+                    ("alpha-alt", 8, "A red dragon"),
                     ("basic", 4, "A red dragon"),
                     ("zebra", 2, "A red dragon"),
                     ("queued", 1, "A red dragon"),
@@ -143,18 +152,18 @@ class DatabaseOptimizationTests(unittest.TestCase):
         )
         first = main.search_pdf_text(criteria, limit=2, offset=0)
         second = main.search_pdf_text(criteria, limit=2, offset=2)
-        self.assertEqual(first["total"], 4)
+        self.assertEqual(first["total"], 10)
         self.assertEqual(
             [(page["release_id"], page["page_number"]) for page in first["results"] + second["results"]],
-            [("alpha", 3), ("alpha", 22), ("alpha-alt", 6), ("zebra", 2)],
+            [("alpha", 3), ("alpha", 4), ("alpha", 22), ("alpha", 23)],
         )
         self.assertIn("\x1fRed dragons\x1e", first["results"][0]["snippet"])
         export = main.export_pdf_search(criteria)
         self.assertEqual(list(csv.reader(StringIO(export.body.decode("utf-8-sig")))), [
-            ["Title", "Edition", "Release kind", "Release label", "Matching PDF pages"],
-            ["alpha, Bestiary", "AD&D 2e", "Original", "", "3, 22"],
-            ["alpha, Bestiary", "AD&D 2e", "Original", "Alt cover", "6"],
-            ["Zebra monsters", "5e (2024)", "Original", "", "2"],
+            ["Title", "Edition", "Book type", "Publisher", "Release", "Physical copy owned", "Matching PDF pages"],
+            ["alpha, Bestiary", "AD&D 2e", "Sourcebook", "Example Press", "Original", "Yes", "3, 4, 22-25"],
+            ["alpha, Bestiary", "AD&D 2e", "Sourcebook", "", "Original (Alt cover)", "No", "6-8"],
+            ["Zebra monsters", "5e (2024)", "Sourcebook", "", "Original", "No", "2"],
         ])
 
     def test_book_detail_reports_recorded_ocr_counts_per_printing(self):

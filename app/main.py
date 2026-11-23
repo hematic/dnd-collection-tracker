@@ -288,21 +288,41 @@ def export_pdf_search(criteria: PdfSearchCriteria):
     _, _, edition, editions, match_query = criteria
     output = StringIO(newline="")
     writer = csv.writer(output, lineterminator="\r\n")
-    writer.writerow(["Title", "Edition", "Release kind", "Release label", "Matching PDF pages"])
+    writer.writerow([
+        "Title", "Edition", "Book type", "Publisher", "Release",
+        "Physical copy owned", "Matching PDF pages",
+    ])
     if match_query:
         with db.connect(read_only=True) as conn:
             rows = conn.execute(
-                "SELECT " + PDF_MATCH_COLUMNS + _pdf_match_sql(edition, editions) + PDF_MATCH_ORDER,
+                "SELECT " + PDF_MATCH_COLUMNS + ", w.book_type, r.publisher, r.owned_physical"
+                + _pdf_match_sql(edition, editions) + PDF_MATCH_ORDER,
                 (match_query, *([edition] if edition else []), *editions),
             )
             for _, matching_pages in groupby(rows, key=lambda row: row["release_id"]):
                 first = next(matching_pages)
-                pages = [str(first["page_number"]), *(str(row["page_number"]) for row in matching_pages)]
+                pages = [first["page_number"], *(row["page_number"] for row in matching_pages)]
+                release = first["release_kind"]
+                if first["label"]:
+                    release = f"{release} ({first['label']})"
                 writer.writerow([
-                    *(_csv_cell(first[key]) for key in ("title", "edition", "release_kind", "label")),
-                    ", ".join(pages),
+                    *(_csv_cell(first[key]) for key in ("title", "edition", "book_type", "publisher")),
+                    _csv_cell(release),
+                    "Yes" if first["owned_physical"] else "No",
+                    _format_pdf_pages(pages),
                 ])
     return _csv_response(output, "dnd-pdf-search.csv")
+
+
+def _format_pdf_pages(pages: list[int]) -> str:
+    parts = []
+    for _, run in groupby(enumerate(pages), key=lambda item: item[1] - item[0]):
+        consecutive = [page for _, page in run]
+        if len(consecutive) >= 3:
+            parts.append(f"{consecutive[0]}-{consecutive[-1]}")
+        else:
+            parts.extend(str(page) for page in consecutive)
+    return ", ".join(parts)
 
 
 @app.get("/api/export.csv")

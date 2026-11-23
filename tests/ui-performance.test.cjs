@@ -67,6 +67,7 @@ function polling(status) {
   const timers = new Map();
   const elements = new Map();
   const listeners = new Map();
+  const searches = [];
   let nextTimer = 0;
   let requests = 0;
   let getStatus = () => Promise.resolve(status);
@@ -79,9 +80,10 @@ function polling(status) {
     if (!elements.has(selector)) {
       elements.set(selector, {
         open: false,
-        classList: { remove() {} },
+        classList: { remove() {}, toggle() {} },
         setAttribute() {},
-        addEventListener() {},
+        replaceChildren() {},
+        addEventListener(name, handler) { listeners.set(`${selector}:${name}`, handler); },
       });
     }
     return elements.get(selector);
@@ -93,24 +95,26 @@ function polling(status) {
   };
   const app = new Script(`
     let state = { page: 'pdf-search' };
-    let meta = { can_edit: true };
-    let pdfSearchPoll = null;
-    let pdfIndexRefreshing = false;
-    let pdfIndexRefreshPending = false;
+    let meta = { can_edit: true, editions: ['Basic'] };
+    ${source.slice(source.indexOf('const PDF_SEARCH_PAGE_SIZE'), source.indexOf('try { collapsed'))}
     ${pollingSource}
     ({ bindPdfSearch, setActivePage, refreshPdfIndexStatus });
   `).runInNewContext({
-    $, document,
+    $, document, URLSearchParams,
+    $$: () => [{ dataset: { edition: 'Basic' } }],
     writeHash() {},
     esc: value => value,
-    api: { pdfIndexStatus: () => { requests += 1; return getStatus(); } },
+    api: {
+      pdfIndexStatus: () => { requests += 1; return getStatus(); },
+      searchPdfText: params => new Promise(resolve => searches.push({ params, resolve })),
+    },
     setTimeout: schedule,
     setInterval: schedule,
     clearTimeout: id => timers.delete(id),
     clearInterval: id => timers.delete(id),
   });
   return {
-    ...app, timers, document, listeners, elements,
+    ...app, timers, document, listeners, elements, searches,
     requests: () => requests,
     setResponse: handler => { getStatus = handler; },
   };
@@ -121,6 +125,38 @@ const idleStatus = {
   ocr_books: 0, ocr_pages: 0, ocr_unrecorded: 0, failures: [],
   worker_online: true, paused: false,
 };
+
+test('live PDF search coalesces typing, submits on Enter, and ignores results after clearing', async () => {
+  const app = polling(idleStatus);
+  app.bindPdfSearch();
+  const input = app.elements.get('#pdf-search-query');
+  app.elements.get('#pdf-search-match').value = 'all';
+  const type = value => {
+    input.value = value;
+    app.listeners.get('#pdf-search-query:input')({ isComposing: false });
+  };
+  type('rak');
+  type('rakshasa');
+  assert.equal(app.timers.size, 1);
+  assert.equal(app.searches.length, 0);
+  const [id, timer] = [...app.timers][0];
+  app.timers.delete(id);
+  const first = timer.callback();
+  assert.equal(app.searches[0].params.get('q'), 'rakshasa');
+
+  type('dragon');
+  app.listeners.get('#pdf-search-form:submit')({ preventDefault() {} });
+  assert.equal(app.timers.size, 0);
+  assert.equal(app.searches[1].params.get('q'), 'dragon');
+  type('  ');
+  assert.equal(app.timers.size, 0);
+  assert.equal(app.elements.get('#pdf-search-output').hidden, true);
+  app.searches[0].resolve({ total: 0, results: [] });
+  app.searches[1].resolve({ total: 0, results: [] });
+  await first;
+  await flush();
+  assert.equal(app.elements.get('#pdf-search-summary').textContent, '');
+});
 
 test('PDF status polling slows down when idle and waits for each response', async () => {
   const app = polling({ ...idleStatus, done: 0, queued: 1 });

@@ -42,6 +42,7 @@ let meta = null;
 let books = [];
 let collapsed = new Set();
 const PDF_SEARCH_PAGE_SIZE = 30;
+const PDF_SEARCH_DELAY_MS = 350;
 let pdfSearchQuery = '';
 let pdfSearchOffset = 0;
 let pdfSearchRevision = 0;
@@ -243,13 +244,28 @@ function bindPdfSearch() {
     setActivePage('pdf-search');
     $('#pdf-search-query').focus();
   });
-  $('#pdf-search-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-    pdfSearchQuery = $('#pdf-search-query').value.trim();
+  const queryInput = $('#pdf-search-query');
+  let searchTimer;
+  function updateSearch(delay = 0) {
+    clearTimeout(searchTimer);
+    pdfSearchQuery = queryInput.value.trim();
     pdfSearchMatch = $('#pdf-search-match').value;
     $('#pdf-search-page').classList.toggle('has-search', Boolean(pdfSearchQuery));
     $('#pdf-search-output').hidden = !pdfSearchQuery;
     resetPdfSearch();
+    if (!pdfSearchQuery) return;
+    if (delay) searchTimer = setTimeout(searchPdfPages, delay);
+    else searchPdfPages();
+  }
+  queryInput.addEventListener('input', (e) => {
+    if (!e.isComposing) updateSearch(PDF_SEARCH_DELAY_MS);
+    else clearTimeout(searchTimer);
+  });
+  queryInput.addEventListener('compositionend', () => updateSearch(PDF_SEARCH_DELAY_MS));
+  $('#pdf-search-match').addEventListener('change', () => updateSearch());
+  $('#pdf-search-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    updateSearch();
   });
   $('#pdf-search-editions').addEventListener('click', (e) => {
     const button = e.target.closest('button');
@@ -260,7 +276,7 @@ function bindPdfSearch() {
     if (button === all) editions.forEach(item => item.setAttribute('aria-pressed', String(pressed)));
     else button.setAttribute('aria-pressed', String(pressed));
     all.setAttribute('aria-pressed', String(editions.every(item => item.getAttribute('aria-pressed') === 'true')));
-    resetPdfSearch();
+    updateSearch();
   });
   $('#pdf-search-more').addEventListener('click', searchPdfPages);
   $('#index-pdfs').addEventListener('click', () => startPdfIndex('all'));
@@ -403,11 +419,11 @@ function resetPdfSearch() {
   pdfSearchOffset = 0;
   pdfSearchGroups.clear();
   $('#pdf-search-results').replaceChildren();
+  $('#pdf-search-summary').textContent = '';
   $('#pdf-search-error').hidden = true;
   $('#pdf-search-export').hidden = true;
   $('#pdf-search-more').hidden = true;
   $('#pdf-search-more').disabled = false;
-  if (pdfSearchQuery) searchPdfPages();
 }
 
 async function searchPdfPages() {
