@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.7] - 2026-11-24
+
+### Changed
+- Fill in the catalog setting on books you edited or mapped to a local record when their setting is blank, so earlier setting updates now reach existing collections. A setting you chose yourself is never replaced.
+
 ## [1.1.6] - 2026-11-24
 
 ### Changed

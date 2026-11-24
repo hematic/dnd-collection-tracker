@@ -22,6 +22,7 @@ box's edition/year/setting unless overridden, so it can have its own PDF/cover.
 If "releases" is omitted a single Original release is created from the work's
 year/code. Release ids are "<work id>--<key>". Re-running the seed updates
 catalog fields only; user fields (PDF path, cover, owned flags, notes) are kept.
+A blank setting is filled from the catalog even on edited or mapped books.
 Deleted entries and explicitly chosen shelf defaults are also preserved.
 An empty collection with no deletion or approval history receives the full catalog.
 On subsequent imports, entries marked requires_reconciliation reuse approved
@@ -150,6 +151,13 @@ def seed_catalog(conn: sqlite3.Connection, catalog_works: list[dict], *,
                    WHERE work.source = 'catalog' AND NOT ?""",
                 (local_id, w["title"], w["edition"], w["type"], w.get("year"), w.get("setting"), local_parent,
                  bool(w.get("preserve_existing_bibliography"))),
+            )
+        if w.get("setting") and not w.get("preserve_existing_bibliography"):
+            # A blank setting is never a user choice worth keeping, so fill it even on
+            # edited or mapped books; any setting the user did choose is left alone.
+            conn.execute(
+                "UPDATE work SET setting = ? WHERE id = ? AND TRIM(COALESCE(setting, '')) = ''",
+                (w["setting"], local_id),
             )
         n_work += 1
         for r in _expand(w):

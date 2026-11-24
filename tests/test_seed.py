@@ -300,6 +300,27 @@ class ReseedingTests(unittest.TestCase):
         self.assertEqual((pdf.read_bytes(), cover.read_bytes(), backup.read_bytes()),
                          (b"PRIVATE-PDF", b"PRIVATE-COVER", b"PRIVATE-EXISTING-BACKUP"))
 
+    def test_blank_settings_are_filled_on_edited_and_mapped_books_without_overwriting_choices(self):
+        main.update_work("book", main.WorkUpdate(title="My title"))
+        main.update_work("box", main.WorkUpdate(setting="My world"))
+        self.add_mapped_box()
+        self.catalog["works"][0]["setting"] = "Greyhawk"
+        self.catalog["works"][1]["setting"] = "Mystara"
+        self.catalog["works"][-1]["setting"] = "Planescape"
+        self.reseed()
+        self.reseed()
+        self.assertEqual(
+            self.rows("SELECT id, title, setting, source FROM work "
+                      "WHERE id IN ('book','box','local-box') ORDER BY id"),
+            [
+                {"id": "book", "title": "My title", "setting": "Greyhawk", "source": "user"},
+                {"id": "box", "title": "Catalog box", "setting": "My world", "source": "user"},
+                {"id": "local-box", "title": "My box title", "setting": "Planescape", "source": "catalog"},
+            ],
+        )
+        # Contents inherit the box's catalog setting even when the user changed the box.
+        self.assertEqual(self.rows("SELECT setting FROM work WHERE id='box--child'"), [{"setting": "Mystara"}])
+
     def test_protected_existing_bibliography_and_new_release_gates_remain_effective(self):
         self.catalog["works"][0]["preserve_existing_bibliography"] = True
         self.catalog["works"][0]["releases"].append(
