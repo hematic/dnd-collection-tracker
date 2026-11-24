@@ -405,7 +405,8 @@
    "edition": "Basic",
    "type": "Adventure",
    "year": 1978,
-   "code": "B1"
+   "code": "B1",
+   "setting": "Mystara"
   },
   {
    "id": "basic-b2-the-keep-on-the-borderlands",
@@ -413,7 +414,8 @@
    "edition": "Basic",
    "type": "Adventure",
    "year": 1979,
-   "code": "B2"
+   "code": "B2",
+   "setting": "Mystara"
   },
   {
    "id": "basic-b4-the-lost-city",
@@ -430,7 +432,8 @@
    "edition": "Basic",
    "type": "Adventure",
    "year": 1983,
-   "code": "B5"
+   "code": "B5",
+   "setting": "Mystara"
   },
   {
    "id": "basic-b6-the-veiled-society",
@@ -447,7 +450,8 @@
    "edition": "Basic",
    "type": "Adventure",
    "year": 1984,
-   "code": "B7"
+   "code": "B7",
+   "setting": "Mystara"
   },
   {
    "id": "basic-b8-journey-to-the-rock",
@@ -464,7 +468,8 @@
    "edition": "Basic",
    "type": "Adventure",
    "year": 1985,
-   "code": "B9"
+   "code": "B9",
+   "setting": "Mystara"
   },
   {
    "id": "basic-b10-night-s-dark-terror",
@@ -570,7 +575,7 @@
    "title": "X9 The Savage Coast",
    "edition": "Basic",
    "type": "Adventure",
-   "setting": "Savage Coast",
+   "setting": "Mystara",
    "year": 1985,
    "code": "X9"
   },
@@ -1927,6 +1932,7 @@
    "title": "The Rod of Seven Parts",
    "edition": "AD&D 2e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1996
   },
   {
@@ -2237,6 +2243,7 @@
    "title": "The Sunless Citadel",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 2000
   },
   {
@@ -2244,6 +2251,7 @@
    "title": "The Forge of Fury",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 2000
   },
   {
@@ -2251,6 +2259,7 @@
    "title": "The Speaker in Dreams",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 2001
   },
   {
@@ -2258,6 +2267,7 @@
    "title": "The Standing Stone",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 2001
   },
   {
@@ -2265,6 +2275,7 @@
    "title": "Heart of Nightfang Spire",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 2001
   },
   {
@@ -2272,6 +2283,7 @@
    "title": "Deep Horizon",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 2001
   },
   {
@@ -2279,6 +2291,7 @@
    "title": "Lord of the Iron Fortress",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Acheron",
    "year": 2001
   },
   {
@@ -2286,6 +2299,7 @@
    "title": "Bastion of Broken Souls",
    "edition": "3.0",
    "type": "Adventure",
+   "setting": "Multiverse",
    "year": 2002
   },
   {
@@ -2868,6 +2882,7 @@
    "title": "Barrow of the Forgotten King",
    "edition": "3.5",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2907,6 +2922,7 @@
    "title": "Fortress of the Yuan-Ti",
    "edition": "3.5",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 2007
   },
   {
@@ -4142,6 +4158,7 @@
    "title": "Keys from the Golden Vault",
    "edition": "5e (2014)",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 2023,
    "releases": [
     {
@@ -4279,6 +4296,7 @@
    "title": "Vecna: Eve of Ruin",
    "edition": "5e (2014)",
    "type": "Adventure",
+   "setting": "Multiverse",
    "year": 2024,
    "releases": [
     {
@@ -4458,6 +4476,7 @@
    "code": "9060",
    "module": "MSOLO2",
    "module_aliases": ["M2"],
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.drivethrurpg.com/en/product/202689/m2-msolo2-maze-of-the-riddling-minotaur-basic",
@@ -4537,6 +4556,7 @@
    "publisher": "TSR",
    "code": "9114",
    "module": "XL1",
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://tomeoftreasures.com/tot_dnd/modules/xl1.htm",
@@ -4585,6 +4605,7 @@
    "publisher": "TSR",
    "code": "9154",
    "module": "CM5",
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://tomeoftreasures.com/tot_dnd/modules/cm5.htm",
@@ -4601,6 +4622,7 @@
    "code": "9157",
    "module": "XS2",
    "module_aliases": ["XSOLO2"],
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://tomeoftreasures.com/tot_dnd/modules/xs2.htm",
@@ -4616,6 +4638,7 @@
    "publisher": "TSR",
    "code": "9158",
    "module": "CM6",
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://tomeoftreasures.com/tot_dnd/modules/cm6.htm",
@@ -4627,7 +4650,7 @@
    "title": "Adventures in Blackmoor",
    "edition": "Basic",
    "type": "Adventure",
-   "setting": "Blackmoor",
+   "setting": "Mystara",
    "year": 1986,
    "publisher": "TSR",
    "code": "9172",
@@ -4640,7 +4663,7 @@
    "title": "Temple of the Frog",
    "edition": "Basic",
    "type": "Adventure",
-   "setting": "Blackmoor",
+   "setting": "Mystara",
    "year": 1986,
    "publisher": "TSR",
    "code": "9175",
@@ -4653,7 +4676,7 @@
    "title": "City of the Gods",
    "edition": "Basic",
    "type": "Adventure",
-   "setting": "Blackmoor",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9191",
@@ -4666,7 +4689,7 @@
    "title": "The Duchy of Ten",
    "edition": "Basic",
    "type": "Adventure",
-   "setting": "Blackmoor",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9205",
@@ -4774,6 +4797,7 @@
    "publisher": "TSR",
    "code": "9171",
    "module": "IM1",
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": ["https://www.tsrarchive.com/dd/dd2-im.html"]
   },
@@ -6408,6 +6432,7 @@
    "publisher": "TSR",
    "code": "9052",
    "module": "I3",
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-i.html"
@@ -6422,6 +6447,7 @@
    "publisher": "TSR",
    "code": "9053",
    "module": "I4",
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-i.html"
@@ -6436,6 +6462,7 @@
    "publisher": "TSR",
    "code": "9054",
    "module": "I5",
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-i.html"
@@ -6566,6 +6593,7 @@
    "publisher": "TSR",
    "code": "9126",
    "module": "UK6",
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-uk.html"
@@ -6803,6 +6831,7 @@
    "publisher": "TSR",
    "code": "6060",
    "module": "R1",
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-r.html"
@@ -6817,6 +6846,7 @@
    "publisher": "TSR",
    "code": "6061",
    "module": "R2",
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-r.html"
@@ -10203,7 +10233,7 @@
    "publisher": "TSR",
    "code": "9050",
    "module": "O1",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/dd/dd2-o.html",
@@ -10284,7 +10314,7 @@
    "publisher": "TSR",
    "code": "9206",
    "module": "C6",
-   "setting": null,
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-c.html",
@@ -10507,7 +10537,7 @@
    "publisher": "TSR",
    "code": "6063",
    "module": "R4",
-   "setting": null,
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://www.acaeum.com/indexes/modules/r.html",
@@ -11278,7 +11308,7 @@
     "type": "Adventure",
     "year": 2019,
     "code": "DMsGuild:294711",
-    "setting": null,
+    "setting": "Multiverse",
     "publisher": "Wizards of the Coast",
     "requires_reconciliation": true,
     "metadata_repair_id": "fifth-edition-pdf-infernal-machine-rebuild",
@@ -13411,7 +13441,7 @@
       "year": 1987,
       "publisher": "TSR",
       "code": "9201",
-      "setting": null,
+      "setting": "Aquaria",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-i.html",
@@ -13430,7 +13460,7 @@
       "year": 1982,
       "publisher": "TSR",
       "code": "6062",
-      "setting": null,
+      "setting": "Greyhawk",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-r.html",

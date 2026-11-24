@@ -2,10 +2,23 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.5] - 2026-11-24
+
+### Changed
+- Update 41 catalog settings. See the [complete change list since v1.1.4](./docs/catalog-setting-changes-1.1.5.csv).
+- Tag the standalone Basic D&D modules B1, B2, B5, B7, and B9 as Mystara.
+- Tag the original *Pharaoh*, *Oasis of the White Palm*, and *Lost Tomb of Martek* modules as Setting Agnostic; the later *Desert of Desolation* compilation remains Forgotten Realms.
+- Tag the standalone 3.0 editions of *The Sunless Citadel* and *The Forge of Fury* as Setting Agnostic.
+- Tag the original R1–R4 modules as Greyhawk and the I12 *Egg of the Phoenix* compilation as Aquaria.
+- Tag *Vecna: Eve of Ruin* as Multiverse.
+- Assign settings to 13 more reviewed adventures, including Acheron for *Lord of the Iron Fortress*, Greyhawk for *The Rod of Seven Parts*, and Setting Agnostic for *Keys from the Golden Vault*.
+- Use Mystara for the modules listed in the [Vaults of Pandius placement guide](https://pandius.ix.iq.pl/modules.html), including the DA1–DA4 Blackmoor adventures, X9, and XL1.
+- Tag UK6 *All That Glitters...* and C6 *The Official RPGA Tournament Handbook* as Greyhawk. B1 and X1 remain Mystara.
+
 ## [1.1.4] - 2026-11-24
 
 ### Changed
-- Fill in missing settings for 196 catalog entries, including *Tales from the Yawning Portal* (Forgotten Realms). See the [complete change list](./docs/catalog-setting-changes-1.1.4.csv) and [upgrade instructions](./README.md#applying-the-114-setting-updates).
+- Fill in missing settings for 196 catalog entries, including *Tales from the Yawning Portal* (Forgotten Realms). See the [complete change list](./docs/catalog-setting-changes-1.1.4.csv) and [upgrade instructions](./README.md#applying-the-catalog-setting-updates).
 - Tag 157 entries as **Setting Agnostic** so they can be filtered separately from books that still have no setting assigned.
 
 ## [1.1.3] - 2026-11-23
