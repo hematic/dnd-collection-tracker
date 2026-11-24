@@ -90,7 +90,7 @@ Deleting a catalog book or release is permanent in your database: restarting or 
 
 #### Applying the catalog setting updates
 
-Change lists: [1.1.5 (since 1.1.4)](./docs/catalog-setting-changes-1.1.5.csv) · [1.1.4 (since 1.1.3)](./docs/catalog-setting-changes-1.1.4.csv).
+Change lists: [1.1.6 (since 1.1.5)](./docs/catalog-setting-changes-1.1.6.csv) · [1.1.5 (since 1.1.4)](./docs/catalog-setting-changes-1.1.5.csv) · [1.1.4 (since 1.1.3)](./docs/catalog-setting-changes-1.1.4.csv).
 
 [Back up your collection](#back-up-and-restore), then upgrade and restart the app. It fills in the new settings on eligible catalog entries automatically; no CSV import or database commands are needed. Your ownership, PDF links, covers, and notes are kept.
 

@@ -2,6 +2,15 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.6] - 2026-11-24
+
+### Changed
+- Assign a setting to the remaining 185 catalog entries, so every catalog book now has one. See the [complete change list since v1.1.5](./docs/catalog-setting-changes-1.1.6.csv).
+- Tag 163 rulebooks, supplements, and generic adventures as Setting Agnostic, including the 3.0/3.5/4e supplements, the 2e Monstrous Arcana and Dungeon Crawl adventures, and the 5e/2024 books not tied to one world.
+- Tag the Cook/Marsh Expert Set, Moldvay Basic Set, Mentzer Rules Sets 1–5, Rules Cyclopedia, AC7, AC9, DMR2, RPGA1, RPGA2, and the Thunder Rift adventure *In the Phantom's Wake* as Mystara, following the [Vaults of Pandius product index](https://pandius.ix.iq.pl/prodlist.html).
+- Add the **Historical Earth** setting for the six 2e historical campaign sourcebooks (Vikings, Celts, Charlemagne's Paladins, The Glory of Rome, The Crusades, Age of Heroes).
+- Tag UK4 *When a Star Falls* as Greyhawk and *The Worlds of TSR* as Multiverse.
+
 ## [1.1.5] - 2026-11-24
 
 ### Changed

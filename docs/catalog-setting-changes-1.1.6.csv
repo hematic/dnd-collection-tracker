@@ -1,0 +1,186 @@
+work_id,title,edition,old_setting,new_setting
+basic-dungeons-dragons-basic-set-holmes,Dungeons & Dragons Basic Set (Holmes),Basic,,Setting Agnostic
+basic-dungeons-dragons-basic-set-moldvay,Dungeons & Dragons Basic Set (Moldvay),Basic,,Mystara
+basic-dungeons-dragons-expert-set-cook-marsh,Dungeons & Dragons Expert Set (Cook/Marsh),Basic,,Mystara
+basic-basic-rules-set-1-mentzer-red-box,"Basic Rules Set 1 (Mentzer, red box)",Basic,,Mystara
+basic-expert-rules-set-2-mentzer-blue-box,"Expert Rules Set 2 (Mentzer, blue box)",Basic,,Mystara
+basic-companion-rules-set-3,Companion Rules Set 3,Basic,,Mystara
+basic-master-rules-set-4,Master Rules Set 4,Basic,,Mystara
+basic-immortals-rules-set-5,Immortals Rules Set 5,Basic,,Mystara
+basic-dungeons-dragons-rules-cyclopedia,Dungeons & Dragons Rules Cyclopedia,Basic,,Mystara
+basic-dungeons-dragons-game-black-box,Dungeons & Dragons Game (black box),Basic,,Setting Agnostic
+basic-classic-dungeons-dragons-game,Classic Dungeons & Dragons Game,Basic,,Setting Agnostic
+basic-ac9-creature-catalogue,AC9 Creature Catalogue,Basic,,Mystara
+basic-dmr2-creature-catalog,DMR2 Creature Catalog,Basic,,Mystara
+1e-deities-demigods,Deities & Demigods,AD&D 1e,,Setting Agnostic
+1e-manual-of-the-planes,Manual of the Planes,AD&D 1e,,Setting Agnostic
+2e-the-book-of-artifacts,The Book of Artifacts,AD&D 2e,,Setting Agnostic
+2e-dmgr4-monster-mythology,DMGR4 Monster Mythology,AD&D 2e,,Setting Agnostic
+2e-labyrinth-of-madness,Labyrinth of Madness,AD&D 2e,,Setting Agnostic
+2e-axe-of-the-dwarvish-lords,Axe of the Dwarvish Lords,AD&D 2e,,Setting Agnostic
+30-defenders-of-the-faith,Defenders of the Faith,3.0,,Setting Agnostic
+30-sword-and-fist,Sword and Fist,3.0,,Setting Agnostic
+30-tome-and-blood,Tome and Blood,3.0,,Setting Agnostic
+30-song-and-silence,Song and Silence,3.0,,Setting Agnostic
+30-masters-of-the-wild,Masters of the Wild,3.0,,Setting Agnostic
+30-manual-of-the-planes,Manual of the Planes,3.0,,Setting Agnostic
+30-epic-level-handbook,Epic Level Handbook,3.0,,Setting Agnostic
+30-deities-and-demigods,Deities and Demigods,3.0,,Setting Agnostic
+30-book-of-vile-darkness,Book of Vile Darkness,3.0,,Setting Agnostic
+35-draconomicon,Draconomicon,3.5,,Setting Agnostic
+35-book-of-exalted-deeds,Book of Exalted Deeds,3.5,,Setting Agnostic
+35-planar-handbook,Planar Handbook,3.5,,Setting Agnostic
+35-libris-mortis,Libris Mortis,3.5,,Setting Agnostic
+35-races-of-stone,Races of Stone,3.5,,Setting Agnostic
+35-races-of-destiny,Races of Destiny,3.5,,Setting Agnostic
+35-races-of-the-wild,Races of the Wild,3.5,,Setting Agnostic
+35-races-of-the-dragon,Races of the Dragon,3.5,,Setting Agnostic
+35-lords-of-madness,Lords of Madness,3.5,,Setting Agnostic
+35-weapons-of-legacy,Weapons of Legacy,3.5,,Setting Agnostic
+35-fiendish-codex-i-hordes-of-the-abyss,Fiendish Codex I: Hordes of the Abyss,3.5,,Setting Agnostic
+35-fiendish-codex-ii-tyrants-of-the-nine-hells,Fiendish Codex II: Tyrants of the Nine Hells,3.5,,Setting Agnostic
+35-tome-of-battle-the-book-of-nine-swords,Tome of Battle: The Book of Nine Swords,3.5,,Setting Agnostic
+35-tome-of-magic,Tome of Magic,3.5,,Setting Agnostic
+35-exemplars-of-evil,Exemplars of Evil,3.5,,Setting Agnostic
+35-shattered-gates-of-slaughtergarde,Shattered Gates of Slaughtergarde,3.5,,Setting Agnostic
+4e-dungeon-master-s-guide,Dungeon Master's Guide,4e,,Setting Agnostic
+4e-dungeon-master-s-guide-2,Dungeon Master's Guide 2,4e,,Setting Agnostic
+4e-manual-of-the-planes,Manual of the Planes,4e,,Setting Agnostic
+4e-draconomicon-chromatic-dragons,Draconomicon: Chromatic Dragons,4e,,Setting Agnostic
+4e-open-grave-secrets-of-the-undead,Open Grave: Secrets of the Undead,4e,,Setting Agnostic
+4e-draconomicon-metallic-dragons,Draconomicon: Metallic Dragons,4e,,Setting Agnostic
+4e-the-plane-below-secrets-of-the-elemental-chaos,The Plane Below: Secrets of the Elemental Chaos,4e,,Setting Agnostic
+4e-the-plane-above-secrets-of-the-astral-sea,The Plane Above: Secrets of the Astral Sea,4e,,Setting Agnostic
+4e-underdark,Underdark,4e,,Setting Agnostic
+4e-demonomicon,Demonomicon,4e,,Setting Agnostic
+4e-player-s-handbook-races-dragonborn,Player's Handbook Races: Dragonborn,4e,,Setting Agnostic
+4e-player-s-handbook-races-tieflings,Player's Handbook Races: Tieflings,4e,,Setting Agnostic
+4e-heroes-of-the-fallen-lands,Heroes of the Fallen Lands,4e,,Setting Agnostic
+4e-heroes-of-the-forgotten-kingdoms,Heroes of the Forgotten Kingdoms,4e,,Setting Agnostic
+4e-heroes-of-shadow,Heroes of Shadow,4e,,Setting Agnostic
+4e-heroes-of-the-feywild,Heroes of the Feywild,4e,,Setting Agnostic
+4e-mordenkainen-s-magnificent-emporium,Mordenkainen's Magnificent Emporium,4e,,Setting Agnostic
+4e-book-of-vile-darkness,Book of Vile Darkness,4e,,Setting Agnostic
+4e-heroes-of-the-elemental-chaos,Heroes of the Elemental Chaos,4e,,Setting Agnostic
+4e-into-the-unknown-the-dungeon-survival-handbook,Into the Unknown: The Dungeon Survival Handbook,4e,,Setting Agnostic
+5e-volo-s-guide-to-monsters,Volo's Guide to Monsters,5e (2014),,Setting Agnostic
+5e-mordenkainen-s-tome-of-foes,Mordenkainen's Tome of Foes,5e (2014),,Setting Agnostic
+5e-fizban-s-treasury-of-dragons,Fizban's Treasury of Dragons,5e (2014),,Setting Agnostic
+5e-bigby-presents-glory-of-the-giants,Bigby Presents: Glory of the Giants,5e (2014),,Setting Agnostic
+5e-the-book-of-many-things,The Book of Many Things,5e (2014),,Setting Agnostic
+5r-dungeon-master-s-guide,Dungeon Master's Guide,5e (2024),,Setting Agnostic
+5r-starter-set-heroes-of-the-borderlands,Starter Set: Heroes of the Borderlands,5e (2024),,Setting Agnostic
+2e-hhq1-fighters-challenge,Fighter's Challenge,AD&D 2e,,Setting Agnostic
+2e-hhq2-wizards-challenge,Wizard's Challenge,AD&D 2e,,Setting Agnostic
+2e-hhq3-thiefs-challenge,Thief's Challenge,AD&D 2e,,Setting Agnostic
+2e-hhq4-clerics-challenge,Cleric's Challenge,AD&D 2e,,Setting Agnostic
+2e-hhq5-fighters-challenge-ii,Fighter's Challenge II,AD&D 2e,,Setting Agnostic
+2e-hhq6-wizards-challenge-ii,Wizard's Challenge II,AD&D 2e,,Setting Agnostic
+2e-hhq7-thiefs-challenge-ii-beacon-point,Thief's Challenge II: Beacon Point,AD&D 2e,,Setting Agnostic
+2e-hhq8-clerics-challenge-ii,Cleric's Challenge II,AD&D 2e,,Setting Agnostic
+2e-a-heros-tale,A Hero's Tale,AD&D 2e,,Setting Agnostic
+2e-ga1-the-murky-deep,The Murky Deep,AD&D 2e,,Setting Agnostic
+2e-ga2-swamplight,Swamplight,AD&D 2e,,Setting Agnostic
+2e-ga3-tales-of-enchantment,Tales of Enchantment,AD&D 2e,,Setting Agnostic
+1e-i8-ravager-of-time,Ravager of Time,AD&D 1e,,Setting Agnostic
+1e-i13-adventure-pack-i,Adventure Pack I,AD&D 1e,,Setting Agnostic
+1e-uk4-when-a-star-falls,When a Star Falls,AD&D 1e,,Greyhawk
+1e-uk5-eye-of-the-serpent,Eye of the Serpent,AD&D 1e,,Setting Agnostic
+1e-uk7-dark-clouds-gather,Dark Clouds Gather,AD&D 1e,,Setting Agnostic
+1e-c3-the-lost-island-of-castanamir,The Lost Island of Castanamir,AD&D 1e,,Setting Agnostic
+1e-n2-the-forest-oracle,The Forest Oracle,AD&D 1e,,Setting Agnostic
+1e-rpga3-the-forgotten-king,The Forgotten King,AD&D 1e,,Setting Agnostic
+1e-mv1-midnight-on-dagger-alley,Midnight on Dagger Alley,AD&D 1e,,Setting Agnostic
+1e-op1-tales-of-the-outer-planes,Tales of the Outer Planes,AD&D 1e,,Setting Agnostic
+2e-eye-of-pain,Eye of Pain,AD&D 2e,,Setting Agnostic
+2e-eye-of-doom,Eye of Doom,AD&D 2e,,Setting Agnostic
+2e-eye-to-eye,Eye to Eye,AD&D 2e,,Setting Agnostic
+2e-evil-tide,Evil Tide,AD&D 2e,,Setting Agnostic
+2e-night-of-the-shark,Night of the Shark,AD&D 2e,,Setting Agnostic
+2e-sea-of-blood,Sea of Blood,AD&D 2e,,Setting Agnostic
+2e-a-darkness-gathering,A Darkness Gathering,AD&D 2e,,Setting Agnostic
+2e-masters-of-eternal-night,Masters of Eternal Night,AD&D 2e,,Setting Agnostic
+2e-dawn-of-the-overmind,Dawn of the Overmind,AD&D 2e,,Setting Agnostic
+1e-the-rogues-gallery,The Rogues Gallery,AD&D 1e,,Setting Agnostic
+1e-ref4-the-book-of-lairs-ii,The Book of Lairs II,AD&D 1e,,Setting Agnostic
+2e-the-gates-of-firestorm-peak,The Gates of Firestorm Peak,AD&D 2e,,Setting Agnostic
+2e-a-paladin-in-hell,A Paladin in Hell,AD&D 2e,,Setting Agnostic
+2e-road-to-danger,Road to Danger,AD&D 2e,,Setting Agnostic
+2e-the-shattered-circle,The Shattered Circle,AD&D 2e,,Setting Agnostic
+2e-dungeons-of-despair,Dungeons of Despair,AD&D 2e,,Setting Agnostic
+2e-reverse-dungeon,Reverse Dungeon,AD&D 2e,,Setting Agnostic
+2e-the-apocalypse-stone,The Apocalypse Stone,AD&D 2e,,Setting Agnostic
+2e-warriors-of-heaven,Warriors of Heaven,AD&D 2e,,Setting Agnostic
+2e-guide-to-hell,Guide to Hell,AD&D 2e,,Setting Agnostic
+2e-i-tyrant,"I, Tyrant",AD&D 2e,,Setting Agnostic
+2e-the-sea-devils,The Sea Devils,AD&D 2e,,Setting Agnostic
+2e-the-illithiad,The Illithiad,AD&D 2e,,Setting Agnostic
+2e-monstrous-compendium-annual-volume-one,Monstrous Compendium Annual Volume One,AD&D 2e,,Setting Agnostic
+2e-monstrous-compendium-annual-volume-three,Monstrous Compendium Annual Volume Three,AD&D 2e,,Setting Agnostic
+2e-monstrous-compendium-annual-volume-four,Monstrous Compendium Annual Volume Four,AD&D 2e,,Setting Agnostic
+2e-s5-the-dancing-hut-of-baba-yaga,The Dancing Hut of Baba Yaga,AD&D 2e,,Setting Agnostic
+2e-monstrous-compendium-annual-volume-two,Monstrous Compendium Annual Volume Two,AD&D 2e,,Setting Agnostic
+35-dragon-compendium-volume-1,Dragon Compendium Volume 1,3.5,,Setting Agnostic
+35-dragon-magic,Dragon Magic,3.5,,Setting Agnostic
+35-fantastic-locations-dragondown-grotto,Fantastic Locations: Dragondown Grotto,3.5,,Setting Agnostic
+35-fantastic-locations-fane-of-the-drow,Fantastic Locations: Fane of the Drow,3.5,,Setting Agnostic
+35-fantastic-locations-fields-of-ruin,Fantastic Locations: Fields of Ruin,3.5,,Setting Agnostic
+35-fantastic-locations-hellspike-prison,Fantastic Locations: Hellspike Prison,3.5,,Setting Agnostic
+35-fantastic-locations-the-frostfell-rift,Fantastic Locations: The Frostfell Rift,3.5,,Setting Agnostic
+35-map-folio-3-d,Map Folio 3-D,3.5,,Setting Agnostic
+35-map-folio-i,Map Folio I,3.5,,Setting Agnostic
+35-map-folio-ii,Map Folio II,3.5,,Setting Agnostic
+35-scourge-of-the-howling-horde,Scourge of the Howling Horde,3.5,,Setting Agnostic
+basic-ac7-master-player-screen,Master Player Screen (AC7),Basic,,Mystara
+1e-c5-the-bane-of-llywelyn,The Bane of Llywelyn,AD&D 1e,,Setting Agnostic
+1e-i11-needle,Needle,AD&D 1e,,Setting Agnostic
+1e-monster-cards-set-1,Monster Cards: Set 1,AD&D 1e,,Setting Agnostic
+1e-monster-cards-set-2,Monster Cards: Set 2,AD&D 1e,,Setting Agnostic
+1e-monster-cards-set-3,Monster Cards: Set 3,AD&D 1e,,Setting Agnostic
+1e-monster-cards-set-4,Monster Cards: Set 4,AD&D 1e,,Setting Agnostic
+1e-n3-destiny-of-kings,Destiny of Kings,AD&D 1e,,Setting Agnostic
+1e-ref3-the-book-of-lairs,The Book of Lairs,AD&D 1e,,Setting Agnostic
+2e-chronomancer,Chronomancer,AD&D 2e,,Setting Agnostic
+2e-mc14-monstrous-compendium-fiend-folio-appendix,Monstrous Compendium Fiend Folio Appendix (MC14),AD&D 2e,,Setting Agnostic
+2e-mc8-monstrous-compendium-outer-planes-appendix,Monstrous Compendium Outer Planes Appendix (MC8),AD&D 2e,,Setting Agnostic
+2e-priest-s-screen,Priest's Screen,AD&D 2e,,Setting Agnostic
+2e-shaman,Shaman,AD&D 2e,,Setting Agnostic
+2e-temple-tower-and-tomb,"Temple, Tower, and Tomb",AD&D 2e,,Setting Agnostic
+2e-thief-s-screen,Thief's Screen,AD&D 2e,,Setting Agnostic
+2e-wizard-s-screen,Wizard's Screen,AD&D 2e,,Setting Agnostic
+basic-dungeons-dragons-basic-rulebook-moldvay,Dungeons & Dragons Basic Rulebook,Basic,,Setting Agnostic
+2e-college-of-wizardry,College of Wizardry,AD&D 2e,,Setting Agnostic
+2e-den-of-thieves,Den of Thieves,AD&D 2e,,Setting Agnostic
+2e-gr3-treasure-maps,GR3 Treasure Maps,AD&D 2e,,Setting Agnostic
+2e-the-silver-key,The Silver Key,AD&D 2e,,Setting Agnostic
+2e-treasure-tales,Treasure Tales,AD&D 2e,,Setting Agnostic
+2e-age-of-heroes-campaign-sourcebook,Age of Heroes Campaign Sourcebook,AD&D 2e,,Historical Earth
+2e-celts-campaign-sourcebook,Celts Campaign Sourcebook,AD&D 2e,,Historical Earth
+2e-charlemagne-s-paladins-campaign-sourcebook,Charlemagne's Paladins Campaign Sourcebook,AD&D 2e,,Historical Earth
+2e-the-crusades-campaign-sourcebook,The Crusades Campaign Sourcebook,AD&D 2e,,Historical Earth
+2e-the-glory-of-rome-campaign-sourcebook,The Glory of Rome Campaign Sourcebook,AD&D 2e,,Historical Earth
+2e-the-magic-encyclopedia-volume-one,The Magic Encyclopedia: Volume One,AD&D 2e,,Setting Agnostic
+2e-the-magic-encyclopedia-volume-two,The Magic Encyclopedia: Volume Two,AD&D 2e,,Setting Agnostic
+2e-vikings-campaign-sourcebook,Vikings Campaign Sourcebook,AD&D 2e,,Historical Earth
+1e-i9-day-of-al-akbar,I9 Day of Al'Akbar,AD&D 1e,,Setting Agnostic
+basic-in-the-phantoms-wake,In the Phantom's Wake,Basic,,Mystara
+1e-rpga4-the-elixir-of-life,RPGA4 The Elixir of Life,AD&D 1e,,Setting Agnostic
+2e-gr4-treasure-chest,GR4 Treasure Chest,AD&D 2e,,Setting Agnostic
+2e-castles,Castles,AD&D 2e,,Setting Agnostic
+2e-fighters-player-pack,Fighter's Player Pack,AD&D 2e,,Setting Agnostic
+2e-priests-player-pack,Priest's Player Pack,AD&D 2e,,Setting Agnostic
+2e-thiefs-player-pack,Thief's Player Pack,AD&D 2e,,Setting Agnostic
+2e-wizards-player-pack,Wizard's Player Pack,AD&D 2e,,Setting Agnostic
+1e-c4-to-find-a-king,C4 To Find A King,AD&D 1e,,Setting Agnostic
+2e-eye-of-the-wyvern,Eye of the Wyvern,AD&D 2e,,Setting Agnostic
+2e-wrath-of-the-minotaur,Wrath of the Minotaur,AD&D 2e,,Setting Agnostic
+2e-the-vortex-of-madness-and-other-planar-perils,The Vortex of Madness and Other Planar Perils,AD&D 2e,,Setting Agnostic
+basic-rpga1-rahasia,Rahasia (RPGA1),Basic,,Mystara
+basic-rpga2-black-opal-eye,RPGA2 Black Opal Eye,Basic,,Mystara
+2e-dungeons-and-dragons-adventure-game,Dungeons & Dragons Adventure Game,AD&D 2e,,Setting Agnostic
+basic-ac3-3d-dragon-tiles,3-D Dragon Tiles featuring The Kidnapping of Princess Arelina (AC3),Basic,,Setting Agnostic
+basic-ac8-3d-dragon-tiles,3-D Dragon Tiles featuring The Revenge of Rusak (AC8),Basic,,Setting Agnostic
+other-tsr-art-of-dragon-magazine,The Art of Dragon Magazine,D&D Companions,,Setting Agnostic
+other-tsr-art-of-the-advanced-dungeons-and-dragons-fantasy-game,The Art of the Advanced Dungeons & Dragons Fantasy Game,D&D Companions,,Setting Agnostic
+other-tsr-art-of-the-dungeons-and-dragons-fantasy-game,The Art of the Dungeons & Dragons Fantasy Game,D&D Companions,,Setting Agnostic
+companion-tsr-8441p-worlds-of-tsr,The Worlds of TSR,D&D Companions,,Multiverse
