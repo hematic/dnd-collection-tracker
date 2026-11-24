@@ -2,6 +2,12 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.4] - 2026-11-24
+
+### Changed
+- Fill in missing settings for 196 catalog entries, including *Tales from the Yawning Portal* (Forgotten Realms). See the [complete change list](./docs/catalog-setting-changes-1.1.4.csv) and [upgrade instructions](./README.md#applying-the-114-setting-updates).
+- Tag 157 entries as **Setting Agnostic** so they can be filtered separately from books that still have no setting assigned.
+
 ## [1.1.3] - 2026-11-23
 
 ### Fixed

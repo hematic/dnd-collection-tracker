@@ -6,6 +6,7 @@
    "title": "Dungeons & Dragons (Original Collector's Set)",
    "edition": "OD&D",
    "type": "Boxed Set",
+   "setting": "Setting Agnostic",
    "year": 1974,
    "releases": [
     {
@@ -64,6 +65,7 @@
    "title": "Supplement III: Eldritch Wizardry",
    "edition": "OD&D",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1976
   },
   {
@@ -71,6 +73,7 @@
    "title": "Supplement IV: Gods, Demi-Gods & Heroes",
    "edition": "OD&D",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1976
   },
   {
@@ -78,6 +81,7 @@
    "title": "Swords & Spells",
    "edition": "OD&D",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1976
   },
   {
@@ -416,6 +420,7 @@
    "title": "B4 The Lost City",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1982,
    "code": "B4"
   },
@@ -432,6 +437,7 @@
    "title": "B6 The Veiled Society",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "code": "B6"
   },
@@ -448,6 +454,7 @@
    "title": "B8 Journey to the Rock",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "code": "B8"
   },
@@ -464,6 +471,7 @@
    "title": "B10 Night's Dark Terror",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1986,
    "code": "B10"
   },
@@ -472,6 +480,7 @@
    "title": "B11 King's Festival",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1989,
    "code": "B11"
   },
@@ -480,6 +489,7 @@
    "title": "B12 Queen's Harvest",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1989,
    "code": "B12"
   },
@@ -488,6 +498,7 @@
    "title": "X1 The Isle of Dread",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1981,
    "code": "X1"
   },
@@ -496,6 +507,7 @@
    "title": "X2 Castle Amber",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1981,
    "code": "X2"
   },
@@ -504,6 +516,7 @@
    "title": "X3 Curse of Xanathon",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1982,
    "code": "X3"
   },
@@ -512,6 +525,7 @@
    "title": "X4 Master of the Desert Nomads",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1983,
    "code": "X4"
   },
@@ -520,6 +534,7 @@
    "title": "X5 Temple of Death",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1983,
    "code": "X5"
   },
@@ -528,6 +543,7 @@
    "title": "X6 Quagmire!",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "code": "X6"
   },
@@ -536,6 +552,7 @@
    "title": "X7 The War Rafts of Kron",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "code": "X7"
   },
@@ -544,6 +561,7 @@
    "title": "X8 Drums on Fire Mountain",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "code": "X8"
   },
@@ -552,6 +570,7 @@
    "title": "X9 The Savage Coast",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Savage Coast",
    "year": 1985,
    "code": "X9"
   },
@@ -560,6 +579,7 @@
    "title": "X10 Red Arrow, Black Shield",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1985,
    "code": "X10"
   },
@@ -568,6 +588,7 @@
    "title": "X11 Saga of the Shadow Lord",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1986,
    "code": "X11"
   },
@@ -576,6 +597,7 @@
    "title": "X12 Skarda's Mirror",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "code": "X12"
   },
@@ -584,6 +606,7 @@
    "title": "X13 Crown of Ancient Glory",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "code": "X13"
   },
@@ -592,6 +615,7 @@
    "title": "B3 Palace of the Silver Princess",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1981,
    "code": "B3",
    "releases": [
@@ -615,6 +639,7 @@
    "title": "Monster Manual",
    "edition": "AD&D 1e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 1977,
    "code": "2009",
    "releases": [
@@ -644,6 +669,7 @@
    "title": "Players Handbook",
    "edition": "AD&D 1e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 1978,
    "code": "2010",
    "releases": [
@@ -673,6 +699,7 @@
    "title": "Dungeon Masters Guide",
    "edition": "AD&D 1e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 1979,
    "code": "2011",
    "releases": [
@@ -730,6 +757,7 @@
    "title": "Fiend Folio",
    "edition": "AD&D 1e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 1981,
    "code": "2012"
   },
@@ -738,6 +766,7 @@
    "title": "Monster Manual II",
    "edition": "AD&D 1e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 1983,
    "code": "2016"
   },
@@ -746,6 +775,7 @@
    "title": "Unearthed Arcana",
    "edition": "AD&D 1e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1985,
    "code": "2017",
    "releases": [
@@ -777,6 +807,7 @@
    "title": "Dungeoneer's Survival Guide",
    "edition": "AD&D 1e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1986,
    "code": "2019"
   },
@@ -785,6 +816,7 @@
    "title": "Wilderness Survival Guide",
    "edition": "AD&D 1e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1986,
    "code": "2020"
   },
@@ -1057,6 +1089,7 @@
    "title": "I1 Dwellers of the Forbidden City",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1981,
    "code": "I1"
   },
@@ -1128,6 +1161,7 @@
    "title": "UK1 Beyond the Crystal Cave",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1983,
    "code": "UK1"
   },
@@ -1352,6 +1386,7 @@
    "title": "Player's Handbook",
    "edition": "AD&D 2e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 1989,
    "code": "2101",
    "releases": [
@@ -1381,6 +1416,7 @@
    "title": "Dungeon Master Guide",
    "edition": "AD&D 2e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 1989,
    "code": "2100",
    "releases": [
@@ -1410,6 +1446,7 @@
    "title": "Monstrous Compendium Volume One",
    "edition": "AD&D 2e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 1989,
    "code": "2102"
   },
@@ -1418,6 +1455,7 @@
    "title": "Monstrous Compendium Volume Two",
    "edition": "AD&D 2e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 1989,
    "code": "2103"
   },
@@ -1426,6 +1464,7 @@
    "title": "Monstrous Manual",
    "edition": "AD&D 2e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 1993,
    "code": "2140",
    "releases": [
@@ -1448,6 +1487,7 @@
    "title": "Legends & Lore",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1990,
    "code": "2108"
   },
@@ -1456,6 +1496,7 @@
    "title": "Tome of Magic",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1991
   },
   {
@@ -1470,6 +1511,7 @@
    "title": "Encyclopedia Magica Volume One",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1994
   },
   {
@@ -1477,6 +1519,7 @@
    "title": "Encyclopedia Magica Volume Two",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1484,6 +1527,7 @@
    "title": "Encyclopedia Magica Volume Three",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1491,6 +1535,7 @@
    "title": "Encyclopedia Magica Volume Four",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1498,6 +1543,7 @@
    "title": "Player's Option: Combat & Tactics",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1505,6 +1551,7 @@
    "title": "Player's Option: Skills & Powers",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1512,6 +1559,7 @@
    "title": "Player's Option: Spells & Magic",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1996
   },
   {
@@ -1519,6 +1567,7 @@
    "title": "DUNGEON MASTER Option: High-Level Campaigns",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1526,6 +1575,7 @@
    "title": "PHBR1 The Complete Fighter's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1989,
    "code": "PHBR1"
   },
@@ -1534,6 +1584,7 @@
    "title": "PHBR2 The Complete Thief's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1989,
    "code": "PHBR2"
   },
@@ -1542,6 +1593,7 @@
    "title": "PHBR3 The Complete Priest's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1990,
    "code": "PHBR3"
   },
@@ -1550,6 +1602,7 @@
    "title": "PHBR4 The Complete Wizard's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1990,
    "code": "PHBR4"
   },
@@ -1558,6 +1611,7 @@
    "title": "PHBR5 The Complete Psionics Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1991,
    "code": "PHBR5"
   },
@@ -1566,6 +1620,7 @@
    "title": "PHBR6 The Complete Book of Dwarves",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1991,
    "code": "PHBR6"
   },
@@ -1574,6 +1629,7 @@
    "title": "PHBR7 The Complete Bard's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1991,
    "code": "PHBR7"
   },
@@ -1582,6 +1638,7 @@
    "title": "PHBR8 The Complete Book of Elves",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1992,
    "code": "PHBR8"
   },
@@ -1590,6 +1647,7 @@
    "title": "PHBR9 The Complete Book of Gnomes & Halflings",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1993,
    "code": "PHBR9"
   },
@@ -1598,6 +1656,7 @@
    "title": "PHBR10 The Complete Book of Humanoids",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1993,
    "code": "PHBR10"
   },
@@ -1606,6 +1665,7 @@
    "title": "PHBR11 The Complete Ranger's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1993,
    "code": "PHBR11"
   },
@@ -1614,6 +1674,7 @@
    "title": "PHBR12 The Complete Paladin's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1994,
    "code": "PHBR12"
   },
@@ -1622,6 +1683,7 @@
    "title": "PHBR13 The Complete Druid's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1994,
    "code": "PHBR13"
   },
@@ -1630,6 +1692,7 @@
    "title": "PHBR14 The Complete Barbarian's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995,
    "code": "PHBR14"
   },
@@ -1638,6 +1701,7 @@
    "title": "PHBR15 The Complete Ninja's Handbook",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995,
    "code": "PHBR15"
   },
@@ -1646,6 +1710,7 @@
    "title": "DMGR1 Campaign Sourcebook and Catacomb Guide",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1990,
    "code": "DMGR1"
   },
@@ -1654,6 +1719,7 @@
    "title": "DMGR2 The Castle Guide",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1990,
    "code": "DMGR2"
   },
@@ -1662,6 +1728,7 @@
    "title": "DMGR3 Arms and Equipment Guide",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1991,
    "code": "DMGR3"
   },
@@ -1678,6 +1745,7 @@
    "title": "DMGR5 Creative Campaigning",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1993,
    "code": "DMGR5"
   },
@@ -1686,6 +1754,7 @@
    "title": "DMGR6 The Complete Book of Villains",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1994,
    "code": "DMGR6"
   },
@@ -1694,6 +1763,7 @@
    "title": "DMGR7 The Complete Book of Necromancers",
    "edition": "AD&D 2e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 1995,
    "code": "DMGR7"
   },
@@ -1794,6 +1864,7 @@
    "title": "Council of Wyrms",
    "edition": "AD&D 2e",
    "type": "Campaign Setting",
+   "setting": "Council of Wyrms",
    "year": 1994
   },
   {
@@ -1833,6 +1904,7 @@
    "title": "Dragon Mountain",
    "edition": "AD&D 2e",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 1993
   },
   {
@@ -1840,6 +1912,7 @@
    "title": "Night Below: An Underdark Campaign",
    "edition": "AD&D 2e",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 1995
   },
   {
@@ -1877,6 +1950,7 @@
    "title": "Return to the Keep on the Borderlands",
    "edition": "AD&D 2e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1999
   },
   {
@@ -1979,6 +2053,7 @@
    "title": "Player's Handbook",
    "edition": "3.0",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2000
   },
   {
@@ -1986,6 +2061,7 @@
    "title": "Dungeon Master's Guide",
    "edition": "3.0",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2000
   },
   {
@@ -1993,6 +2069,7 @@
    "title": "Monster Manual",
    "edition": "3.0",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2000,
    "code": "11552"
   },
@@ -2036,6 +2113,7 @@
    "title": "Psionics Handbook",
    "edition": "3.0",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2001
   },
   {
@@ -2098,6 +2176,7 @@
    "title": "Monster Manual II",
    "edition": "3.0",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2002
   },
   {
@@ -2126,6 +2205,7 @@
    "title": "Stronghold Builder's Guidebook",
    "edition": "3.0",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2002
   },
   {
@@ -2133,6 +2213,7 @@
    "title": "Fiend Folio",
    "edition": "3.0",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2003
   },
   {
@@ -2140,6 +2221,7 @@
    "title": "Savage Species",
    "edition": "3.0",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2003
   },
   {
@@ -2147,6 +2229,7 @@
    "title": "Ghostwalk",
    "edition": "3.0",
    "type": "Campaign Setting",
+   "setting": "Ghostwalk",
    "year": 2003
   },
   {
@@ -2226,6 +2309,7 @@
    "title": "Player's Handbook",
    "edition": "3.5",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2003,
    "releases": [
     {
@@ -2246,6 +2330,7 @@
    "title": "Dungeon Master's Guide",
    "edition": "3.5",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2003,
    "releases": [
     {
@@ -2266,6 +2351,7 @@
    "title": "Monster Manual",
    "edition": "3.5",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2003,
    "releases": [
     {
@@ -2286,6 +2372,7 @@
    "title": "Player's Handbook II",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2293,6 +2380,7 @@
    "title": "Dungeon Master's Guide II",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2300,6 +2388,7 @@
    "title": "Monster Manual III",
    "edition": "3.5",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2004
   },
   {
@@ -2307,6 +2396,7 @@
    "title": "Monster Manual IV",
    "edition": "3.5",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2314,6 +2404,7 @@
    "title": "Monster Manual V",
    "edition": "3.5",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2007
   },
   {
@@ -2335,6 +2426,7 @@
    "title": "Miniatures Handbook",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2003
   },
   {
@@ -2342,6 +2434,7 @@
    "title": "Complete Warrior",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2003
   },
   {
@@ -2349,6 +2442,7 @@
    "title": "Complete Divine",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2004
   },
   {
@@ -2356,6 +2450,7 @@
    "title": "Complete Arcane",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2004
   },
   {
@@ -2363,6 +2458,7 @@
    "title": "Complete Adventurer",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2370,6 +2466,7 @@
    "title": "Complete Psionic",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2377,6 +2474,7 @@
    "title": "Complete Mage",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2384,6 +2482,7 @@
    "title": "Complete Scoundrel",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2007
   },
   {
@@ -2391,6 +2490,7 @@
    "title": "Complete Champion",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2007
   },
   {
@@ -2398,6 +2498,7 @@
    "title": "Expanded Psionics Handbook",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2004
   },
   {
@@ -2405,6 +2506,7 @@
    "title": "Unearthed Arcana",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2004
   },
   {
@@ -2426,6 +2528,7 @@
    "title": "Frostburn",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2004
   },
   {
@@ -2461,6 +2564,7 @@
    "title": "Sandstorm",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2468,6 +2572,7 @@
    "title": "Stormwrack",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2482,6 +2587,7 @@
    "title": "Heroes of Horror",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2489,6 +2595,7 @@
    "title": "Heroes of Battle",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2503,6 +2610,7 @@
    "title": "Spell Compendium",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2005
   },
   {
@@ -2538,6 +2646,7 @@
    "title": "Cityscape",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2545,6 +2654,7 @@
    "title": "Dungeonscape",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2007
   },
   {
@@ -2552,6 +2662,7 @@
    "title": "Magic Item Compendium",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2007
   },
   {
@@ -2559,6 +2670,7 @@
    "title": "Rules Compendium",
    "edition": "3.5",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2007
   },
   {
@@ -2733,6 +2845,7 @@
    "title": "Red Hand of Doom",
    "edition": "3.5",
    "type": "Adventure",
+   "setting": "Setting Agnostic",
    "year": 2006
   },
   {
@@ -2762,6 +2875,7 @@
    "title": "Sons of Gruumsh",
    "edition": "3.5",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 2006
   },
   {
@@ -2800,6 +2914,7 @@
    "title": "Player's Handbook",
    "edition": "4e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2008
   },
   {
@@ -2814,6 +2929,7 @@
    "title": "Monster Manual",
    "edition": "4e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2008
   },
   {
@@ -2821,6 +2937,7 @@
    "title": "Player's Handbook 2",
    "edition": "4e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2009
   },
   {
@@ -2835,6 +2952,7 @@
    "title": "Monster Manual 2",
    "edition": "4e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2009
   },
   {
@@ -2842,6 +2960,7 @@
    "title": "Player's Handbook 3",
    "edition": "4e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2010
   },
   {
@@ -2849,6 +2968,7 @@
    "title": "Monster Manual 3",
    "edition": "4e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2010
   },
   {
@@ -2856,6 +2976,7 @@
    "title": "Martial Power",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2008
   },
   {
@@ -2863,6 +2984,7 @@
    "title": "Adventurer's Vault",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2008
   },
   {
@@ -2884,6 +3006,7 @@
    "title": "Arcane Power",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2009
   },
   {
@@ -2891,6 +3014,7 @@
    "title": "Divine Power",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2009
   },
   {
@@ -2898,6 +3022,7 @@
    "title": "Primal Power",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2009
   },
   {
@@ -2905,6 +3030,7 @@
    "title": "Adventurer's Vault 2",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2009
   },
   {
@@ -2933,6 +3059,7 @@
    "title": "Martial Power 2",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2010
   },
   {
@@ -2940,6 +3067,7 @@
    "title": "Psionic Power",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2010
   },
   {
@@ -2982,6 +3110,7 @@
    "title": "Hammerfast",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Points of Light",
    "year": 2010
   },
   {
@@ -2989,6 +3118,7 @@
    "title": "Vor Rukoth",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Points of Light",
    "year": 2010
   },
   {
@@ -3010,6 +3140,7 @@
    "title": "Rules Compendium",
    "edition": "4e",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2010
   },
   {
@@ -3017,6 +3148,7 @@
    "title": "Monster Vault",
    "edition": "4e",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2010
   },
   {
@@ -3024,6 +3156,7 @@
    "title": "Dungeons & Dragons Starter Set (red box)",
    "edition": "4e",
    "type": "Boxed Set",
+   "setting": "Points of Light",
    "year": 2010,
    "contents": [
     {
@@ -3055,6 +3188,7 @@
    "title": "Monster Vault: Threats to the Nentir Vale",
    "edition": "4e",
    "type": "Monster Book",
+   "setting": "Points of Light",
    "year": 2011
   },
   {
@@ -3069,6 +3203,7 @@
    "title": "The Shadowfell: Gloomwrought and Beyond",
    "edition": "4e",
    "type": "Sourcebook",
+   "setting": "Points of Light",
    "year": 2011
   },
   {
@@ -3161,6 +3296,7 @@
    "title": "H1 Keep on the Shadowfell",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2008,
    "code": "H1"
   },
@@ -3169,6 +3305,7 @@
    "title": "H2 Thunderspire Labyrinth",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2008,
    "code": "H2"
   },
@@ -3177,6 +3314,7 @@
    "title": "H3 Pyramid of Shadows",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2008,
    "code": "H3"
   },
@@ -3185,6 +3323,7 @@
    "title": "P1 King of the Trollhaunt Warrens",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2008,
    "code": "P1"
   },
@@ -3193,6 +3332,7 @@
    "title": "P2 Demon Queen's Enclave",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2008,
    "code": "P2"
   },
@@ -3201,6 +3341,7 @@
    "title": "P3 Assault on Nightwyrm Fortress",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2009,
    "code": "P3"
   },
@@ -3209,6 +3350,7 @@
    "title": "E1 Death's Reach",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2009,
    "code": "E1"
   },
@@ -3217,6 +3359,7 @@
    "title": "E2 Kingdom of the Ghouls",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2009,
    "code": "E2"
   },
@@ -3225,6 +3368,7 @@
    "title": "E3 Prince of Undeath",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2009,
    "code": "E3"
   },
@@ -3233,6 +3377,7 @@
    "title": "Revenge of the Giants",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2009
   },
   {
@@ -3240,6 +3385,7 @@
    "title": "Tomb of Horrors",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2010
   },
   {
@@ -3247,6 +3393,7 @@
    "title": "The Slaying Stone",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2010
   },
   {
@@ -3254,6 +3401,7 @@
    "title": "Madness at Gardmore Abbey",
    "edition": "4e",
    "type": "Adventure",
+   "setting": "Points of Light",
    "year": 2011
   },
   {
@@ -3261,6 +3409,7 @@
    "title": "Player's Handbook",
    "edition": "5e (2014)",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2014,
    "releases": [
     {
@@ -3281,6 +3430,7 @@
    "title": "Monster Manual",
    "edition": "5e (2014)",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2014,
    "releases": [
     {
@@ -3301,6 +3451,7 @@
    "title": "Dungeon Master's Guide",
    "edition": "5e (2014)",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2014,
    "releases": [
     {
@@ -3444,6 +3595,7 @@
    "title": "Tales from the Yawning Portal",
    "edition": "5e (2014)",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 2017,
    "releases": [
     {
@@ -3485,6 +3637,7 @@
    "title": "Xanathar's Guide to Everything",
    "edition": "5e (2014)",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2017,
    "releases": [
     {
@@ -3740,6 +3893,7 @@
    "title": "Tasha's Cauldron of Everything",
    "edition": "5e (2014)",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2020,
    "releases": [
     {
@@ -3864,6 +4018,7 @@
    "title": "Mordenkainen Presents: Monsters of the Multiverse",
    "edition": "5e (2014)",
    "type": "Monster Book",
+   "setting": "Setting Agnostic",
    "year": 2022,
    "releases": [
     {
@@ -3892,6 +4047,7 @@
    "title": "Journeys through the Radiant Citadel",
    "edition": "5e (2014)",
    "type": "Adventure",
+   "setting": "Radiant Citadel",
    "year": 2022,
    "releases": [
     {
@@ -4102,6 +4258,7 @@
    "title": "Quests from the Infinite Staircase",
    "edition": "5e (2014)",
    "type": "Adventure",
+   "setting": "Infinite Staircase",
    "year": 2024,
    "releases": [
     {
@@ -4142,6 +4299,7 @@
    "title": "Player's Handbook",
    "edition": "5e (2024)",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2024,
    "releases": [
     {
@@ -4182,6 +4340,7 @@
    "title": "Monster Manual",
    "edition": "5e (2024)",
    "type": "Core Rulebook",
+   "setting": "Setting Agnostic",
    "year": 2025,
    "releases": [
     {
@@ -4241,6 +4400,7 @@
    "title": "Arcana Unleashed",
    "edition": "5e (2024)",
    "type": "Sourcebook",
+   "setting": "Setting Agnostic",
    "year": 2026,
    "releases": [
     {
@@ -4261,6 +4421,7 @@
    "title": "Arcana Unleashed: Deadfall",
    "edition": "5e (2024)",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 2026
   },
   {
@@ -4276,6 +4437,7 @@
    "title": "Blizzard Pass",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1983,
    "publisher": "TSR",
    "code": "9067",
@@ -4307,6 +4469,7 @@
    "title": "Ghost of Lion Castle",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "publisher": "TSR",
    "code": "9097",
@@ -4322,6 +4485,7 @@
    "title": "Test of the Warlords",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "publisher": "TSR",
    "code": "9117",
@@ -4337,6 +4501,7 @@
    "title": "Death's Ride",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "publisher": "TSR",
    "code": "9118",
@@ -4352,6 +4517,7 @@
    "title": "Sabre River",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "publisher": "TSR",
    "code": "9119",
@@ -4382,6 +4548,7 @@
    "title": "Lathan's Gold",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1984,
    "publisher": "TSR",
    "code": "9082",
@@ -4398,6 +4565,7 @@
    "title": "Into the Maelstrom",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1985,
    "publisher": "TSR",
    "code": "9159",
@@ -4459,6 +4627,7 @@
    "title": "Adventures in Blackmoor",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Blackmoor",
    "year": 1986,
    "publisher": "TSR",
    "code": "9172",
@@ -4471,6 +4640,7 @@
    "title": "Temple of the Frog",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Blackmoor",
    "year": 1986,
    "publisher": "TSR",
    "code": "9175",
@@ -4483,6 +4653,7 @@
    "title": "City of the Gods",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Blackmoor",
    "year": 1987,
    "publisher": "TSR",
    "code": "9191",
@@ -4495,6 +4666,7 @@
    "title": "The Duchy of Ten",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Blackmoor",
    "year": 1987,
    "publisher": "TSR",
    "code": "9205",
@@ -4507,6 +4679,7 @@
    "title": "The Tree of Life",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1986,
    "publisher": "TSR",
    "code": "9166",
@@ -4519,6 +4692,7 @@
    "title": "The Endless Stair",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9192",
@@ -4531,6 +4705,7 @@
    "title": "Legacy of Blood",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9210",
@@ -4543,6 +4718,7 @@
    "title": "Vengeance of Alphaks",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1986,
    "publisher": "TSR",
    "code": "9148",
@@ -4555,6 +4731,7 @@
    "title": "Twilight Calling",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1986,
    "publisher": "TSR",
    "code": "9174",
@@ -4567,6 +4744,7 @@
    "title": "Five Coins for a Kingdom",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9204",
@@ -4579,6 +4757,7 @@
    "title": "Talons of Night",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9214",
@@ -4603,6 +4782,7 @@
    "title": "The Wrath of Olympus",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9189",
@@ -4615,6 +4795,7 @@
    "title": "The Best of Intentions",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1987,
    "publisher": "TSR",
    "code": "9207",
@@ -4627,6 +4808,7 @@
    "title": "Arena of Thyatis",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1990,
    "publisher": "TSR",
    "code": "9284",
@@ -4639,6 +4821,7 @@
    "title": "Legions of Thyatis",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1990,
    "publisher": "TSR",
    "code": "9296",
@@ -4651,6 +4834,7 @@
    "title": "Eye of Traldar",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1991,
    "publisher": "TSR",
    "code": "9271",
@@ -4663,6 +4847,7 @@
    "title": "The Dymrak Dread",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1991,
    "publisher": "TSR",
    "code": "9272",
@@ -4675,6 +4860,7 @@
    "title": "Nightwail",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1990,
    "publisher": "TSR",
    "code": "9303",
@@ -4687,6 +4873,7 @@
    "title": "Nightrage",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1990,
    "publisher": "TSR",
    "code": "9310",
@@ -4699,6 +4886,7 @@
    "title": "Nightstorm",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1991,
    "publisher": "TSR",
    "code": "9311",
@@ -4711,6 +4899,7 @@
    "title": "The Milenian Scepter",
    "edition": "Basic",
    "type": "Adventure",
+   "setting": "Mystara",
    "year": 1992,
    "publisher": "TSR",
    "code": "9378",
@@ -6200,6 +6389,7 @@
    "title": "Tomb of the Lizard King",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1982,
    "publisher": "TSR",
    "code": "9055",
@@ -6256,6 +6446,7 @@
    "title": "Desert of Desolation",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 1987,
    "publisher": "TSR",
    "code": "9199",
@@ -6270,6 +6461,7 @@
    "title": "Baltron's Beacon",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1985,
    "publisher": "TSR",
    "code": "9152",
@@ -6312,6 +6504,7 @@
    "title": "The Sentinel",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1983,
    "publisher": "TSR",
    "code": "9101",
@@ -6326,6 +6519,7 @@
    "title": "The Gauntlet",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1984,
    "publisher": "TSR",
    "code": "9111",
@@ -6396,6 +6590,7 @@
    "title": "Dungeonland",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1983,
    "publisher": "TSR",
    "code": "9072",
@@ -6410,6 +6605,7 @@
    "title": "The Land Beyond the Magic Mirror",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Greyhawk",
    "year": 1983,
    "publisher": "TSR",
    "code": "9073",
@@ -6529,6 +6725,7 @@
    "title": "Conan Unchained!",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Hyborian Age",
    "year": 1984,
    "publisher": "TSR",
    "code": "9123",
@@ -6543,6 +6740,7 @@
    "title": "Conan Against Darkness!",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Hyborian Age",
    "year": 1984,
    "publisher": "TSR",
    "code": "9124",
@@ -6643,6 +6841,7 @@
    "title": "Under Illefarn",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Forgotten Realms",
    "year": 1987,
    "publisher": "TSR",
    "code": "9212",
@@ -6686,6 +6885,7 @@
    "title": "Red Sonja Unconquered",
    "edition": "AD&D 1e",
    "type": "Adventure",
+   "setting": "Hyborian Age",
    "year": 1986,
    "publisher": "TSR",
    "code": "9183",
@@ -7619,6 +7819,7 @@
    "title": "Of Ships and the Sea",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1997,
    "publisher": "TSR",
    "code": "2170",
@@ -8769,6 +8970,7 @@
    "title": "Wizard's Spell Compendium Volume One",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1996,
    "publisher": "TSR",
    "code": "2165",
@@ -8783,6 +8985,7 @@
    "title": "Wizard's Spell Compendium Volume Two",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1997,
    "publisher": "TSR",
    "code": "2168",
@@ -8797,6 +9000,7 @@
    "title": "Wizard's Spell Compendium Volume Three",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1998,
    "publisher": "TSR",
    "code": "2175",
@@ -8811,6 +9015,7 @@
    "title": "Wizard's Spell Compendium Volume Four",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1998,
    "publisher": "TSR",
    "code": "2177",
@@ -8825,6 +9030,7 @@
    "title": "Priest's Spell Compendium Volume One",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1999,
    "publisher": "TSR",
    "code": "11359",
@@ -8839,6 +9045,7 @@
    "title": "Priest's Spell Compendium Volume Two",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1999,
    "publisher": "TSR",
    "code": "11421",
@@ -8853,6 +9060,7 @@
    "title": "Priest's Spell Compendium Volume Three",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 2000,
    "publisher": "TSR",
    "code": "11611",
@@ -8867,6 +9075,7 @@
    "title": "City Sites",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1994,
    "publisher": "TSR",
    "code": "9464",
@@ -8881,6 +9090,7 @@
    "title": "Castle Sites",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1995,
    "publisher": "TSR",
    "code": "9479",
@@ -8895,6 +9105,7 @@
    "title": "Country Sites",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1995,
    "publisher": "TSR",
    "code": "9482",
@@ -8909,6 +9120,7 @@
    "title": "World Builder's Guidebook",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1996,
    "publisher": "TSR",
    "code": "9532",
@@ -8923,6 +9135,7 @@
    "title": "Dungeon Builder's Guidebook",
    "edition": "AD&D 2e",
    "type": "Supplement",
+   "setting": "Setting Agnostic",
    "year": 1998,
    "publisher": "TSR",
    "code": "9556",
@@ -9269,7 +9482,7 @@
    "year": 2003,
    "publisher": "Wizards of the Coast",
    "code": "88159",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-arms-and-equipment-guide",
    "sources": [
@@ -9285,7 +9498,7 @@
    "year": 2002,
    "publisher": "Wizards of the Coast",
    "code": "88168",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-book-of-challenges-dungeon-rooms-puzzles-and-traps",
    "sources": [
@@ -9300,7 +9513,7 @@
    "year": 2001,
    "publisher": "Wizards of the Coast",
    "code": "11852",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-enemies-and-allies",
    "sources": [
@@ -9493,7 +9706,7 @@
    "year": 2006,
    "publisher": "Wizards of the Coast",
    "code": "10768",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-dt1-dungeon-tiles",
    "sources": [
@@ -9508,7 +9721,7 @@
    "year": 2006,
    "publisher": "Wizards of the Coast",
    "code": "95730",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-dt2-dungeon-tiles-ii-arcane-corridors",
    "sources": [
@@ -9525,7 +9738,7 @@
    "year": 2007,
    "publisher": "Wizards of the Coast",
    "code": "95731",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-dt3-dungeon-tiles-iii-hidden-crypts",
    "sources": [
@@ -9542,7 +9755,7 @@
    "year": 2007,
    "publisher": "Wizards of the Coast",
    "code": "21528",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-dt4-dungeon-tiles-iv-ruins-of-the-wild",
    "sources": [
@@ -9650,7 +9863,7 @@
    "year": 2005,
    "publisher": "Wizards of the Coast",
    "code": "88579",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "third-edition-magic-of-incarnum",
    "sources": [
@@ -9839,7 +10052,7 @@
    "publisher": "TSR",
    "code": "9108",
    "module": "O2",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/dd/dd2-o.html",
@@ -9863,7 +10076,7 @@
    "publisher": "TSR",
    "code": "9308",
    "module": "DDREF1",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/dd/dd2-ddref.html"
@@ -9878,7 +10091,7 @@
    "publisher": "TSR",
    "code": "9437",
    "module": "DMR1",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/dd/dd.html",
@@ -9903,7 +10116,7 @@
    "publisher": "TSR",
    "code": "9128",
    "module": "CM4",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/dd/dd2-cm.html",
@@ -9919,7 +10132,7 @@
    "publisher": "TSR",
    "code": "9339",
    "module": "HWR2",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/hw/hw-acc.html",
@@ -9959,7 +10172,7 @@
    "publisher": "TSR",
    "code": "9332",
    "module": "HWR1",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/hw/hw-acc.html"
@@ -9974,7 +10187,7 @@
    "publisher": "TSR",
    "code": "9404",
    "module": "TM2",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-tm.html",
@@ -10015,7 +10228,7 @@
    "publisher": "TSR",
    "code": "9384",
    "module": "HWR3",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/hw/hw-acc.html"
@@ -10030,7 +10243,7 @@
    "publisher": "TSR",
    "code": "9403",
    "module": "TM1",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-tm.html",
@@ -10097,7 +10310,7 @@
    "year": 1988,
    "publisher": "TSR",
    "code": "9234",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-dmacc.html"
@@ -10111,7 +10324,7 @@
    "year": 1980,
    "publisher": "TSR",
    "code": "9036",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-dmacc.html"
@@ -10165,7 +10378,7 @@
    "publisher": "TSR",
    "code": "9226",
    "module": "I14",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-i.html",
@@ -10335,7 +10548,7 @@
    "publisher": "TSR",
    "code": "9240",
    "module": "REF5",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-ref-2e.html",
@@ -10360,7 +10573,7 @@
    "publisher": "TSR",
    "code": "9209",
    "module": "S1-4",
-   "setting": null,
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-s.html",
@@ -10383,7 +10596,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "9266",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-bs.html"
@@ -10397,7 +10610,7 @@
    "year": 1998,
    "publisher": "TSR",
    "code": "9589",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-acc.html"
@@ -10425,7 +10638,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "9410",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-acc.html"
@@ -10439,7 +10652,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "2433",
-   "setting": null,
+   "setting": "Dark Sun",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-mc.html"
@@ -10454,7 +10667,7 @@
    "publisher": "TSR",
    "code": "9244",
    "module": "DLE2",
-   "setting": null,
+   "setting": "Dragonlance",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/dl/dl-dle.html",
@@ -10470,7 +10683,7 @@
    "publisher": "TSR",
    "code": "9395",
    "module": "DLT1",
-   "setting": null,
+   "setting": "Dragonlance",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/dl/dl-dlt.html",
@@ -10486,7 +10699,7 @@
    "publisher": "TSR",
    "code": "9297",
    "module": "FOR1",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-for.html"
@@ -10501,7 +10714,7 @@
    "publisher": "TSR",
    "code": "9547",
    "module": "FOR11",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-for.html"
@@ -10516,7 +10729,7 @@
    "publisher": "TSR",
    "code": "9326",
    "module": "FOR2",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-for.html"
@@ -10530,7 +10743,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "9510",
-   "setting": null,
+   "setting": "Ravenloft",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/rv/rv-acc.html"
@@ -10545,7 +10758,7 @@
    "publisher": "TSR",
    "code": "9320",
    "module": "FR13",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-fr.html"
@@ -10560,7 +10773,7 @@
    "publisher": "TSR",
    "code": "9388",
    "module": "FR16",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-fr.html"
@@ -10575,7 +10788,7 @@
    "publisher": "TSR",
    "code": "9247",
    "module": "FRE1",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-fre.html",
@@ -10591,7 +10804,7 @@
    "publisher": "TSR",
    "code": "9249",
    "module": "FRE3",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-fre.html"
@@ -10605,7 +10818,7 @@
    "year": 1998,
    "publisher": "TSR",
    "code": "9512",
-   "setting": null,
+   "setting": "Jakandor",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-ody.html"
@@ -10619,7 +10832,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "2137",
-   "setting": null,
+   "setting": "Lankhmar",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/lm/lm-box.html",
@@ -10635,7 +10848,7 @@
    "publisher": "TSR",
    "code": "9305",
    "module": "LNA2",
-   "setting": null,
+   "setting": "Lankhmar",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/lm/lm-lna.html"
@@ -10650,7 +10863,7 @@
    "publisher": "TSR",
    "code": "9295",
    "module": "LNR1",
-   "setting": null,
+   "setting": "Lankhmar",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/lm/lm-lnr.html"
@@ -10665,7 +10878,7 @@
    "publisher": "TSR",
    "code": "2129",
    "module": "MC13",
-   "setting": null,
+   "setting": "Al-Qadim",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10680,7 +10893,7 @@
    "publisher": "TSR",
    "code": "2405",
    "module": "MC12",
-   "setting": null,
+   "setting": "Dark Sun",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10710,7 +10923,7 @@
    "publisher": "TSR",
    "code": "2125",
    "module": "MC11",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10725,7 +10938,7 @@
    "publisher": "TSR",
    "code": "2107",
    "module": "MC5",
-   "setting": null,
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10740,7 +10953,7 @@
    "publisher": "TSR",
    "code": "2116",
    "module": "MC6",
-   "setting": null,
+   "setting": "Kara-Tur",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10770,7 +10983,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "2602",
-   "setting": null,
+   "setting": "Planescape",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/ps/ps-mc.html",
@@ -10785,7 +10998,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "2613",
-   "setting": null,
+   "setting": "Planescape",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/ps/ps-mc.html",
@@ -10800,7 +11013,7 @@
    "year": 1998,
    "publisher": "TSR",
    "code": "2635",
-   "setting": null,
+   "setting": "Planescape",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/ps/ps-mc.html",
@@ -10816,7 +11029,7 @@
    "publisher": "TSR",
    "code": "2122",
    "module": "MC10",
-   "setting": null,
+   "setting": "Ravenloft",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10831,7 +11044,7 @@
    "publisher": "TSR",
    "code": "2139",
    "module": "MC15",
-   "setting": null,
+   "setting": "Ravenloft",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10846,7 +11059,7 @@
    "publisher": "TSR",
    "code": "2109",
    "module": "MC7",
-   "setting": null,
+   "setting": "Spelljammer",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10861,7 +11074,7 @@
    "publisher": "TSR",
    "code": "2119",
    "module": "MC9",
-   "setting": null,
+   "setting": "Spelljammer",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-2e-core-mc.html"
@@ -10875,7 +11088,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "2501",
-   "setting": null,
+   "setting": "Mystara",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-mc.html"
@@ -10890,7 +11103,7 @@
    "publisher": "TSR",
    "code": "2142",
    "module": "PG2",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-pg.html"
@@ -10933,7 +11146,7 @@
    "publisher": "TSR",
    "code": "9374",
    "module": "SJR6",
-   "setting": null,
+   "setting": "Spelljammer",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/sj/sj-sjr.html"
@@ -10948,7 +11161,7 @@
    "publisher": "TSR",
    "code": "9409",
    "module": "SJR7",
-   "setting": null,
+   "setting": "Spelljammer",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/sj/sj-sjr.html"
@@ -10962,7 +11175,7 @@
    "year": 1999,
    "publisher": "TSR",
    "code": "11348",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-acc.html"
@@ -10990,7 +11203,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "9474",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-acc.html"
@@ -11004,7 +11217,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "9520",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/fr/fr-acc.html"
@@ -11033,7 +11246,7 @@
    "publisher": "TSR",
    "code": "9251",
    "module": "WG9",
-   "setting": null,
+   "setting": "Greyhawk",
    "releases": [
     {"key": "orig", "kind": "Original", "primary": true, "isbn": "0-88038-719-X"}
    ],
@@ -11090,7 +11303,7 @@
     "type": "Adventure",
     "year": 2019,
     "code": "DMsGuild:289261",
-    "setting": null,
+    "setting": "Forgotten Realms",
     "publisher": "Wizards of the Coast",
     "requires_reconciliation": true,
     "metadata_repair_id": "fifth-edition-pdf-locathah-rising",
@@ -11115,7 +11328,7 @@
     "type": "Adventure",
     "year": 2018,
     "code": "DMsGuild:258047",
-    "setting": null,
+    "setting": "Greyhawk",
     "publisher": "Wizards of the Coast",
     "requires_reconciliation": true,
     "metadata_repair_id": "fifth-edition-pdf-lost-laboratory-of-kwalish",
@@ -11157,7 +11370,7 @@
    "year": 1987,
    "code": "9190",
    "module": "B1-9",
-   "setting": null,
+   "setting": "Mystara",
    "publisher": "TSR",
    "requires_reconciliation": true,
    "metadata_repair_id": "basic-in-search-of-adventure-year",
@@ -11175,7 +11388,7 @@
    "year": 1999,
    "publisher": "TSR",
    "code": "11442",
-   "setting": null,
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "metadata_repair_id": "adnd-second-edition-bastion-of-faith",
    "sources": [
@@ -11272,7 +11485,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "2146",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "metadata_repair_id": "adnd-second-edition-sages-specialists",
    "sources": [
@@ -11428,7 +11641,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "9264",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://tsrarchive.com/add/add-ref-2e.html",
@@ -11782,7 +11995,7 @@
    "year": 1979,
    "publisher": "TSR",
    "code": "9030",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-rec.html"
@@ -11797,7 +12010,7 @@
    "year": 1979,
    "publisher": "TSR",
    "code": "9029",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.tsrarchive.com/add/add-rec.html"
@@ -11916,7 +12129,7 @@
    "year": 2000,
    "publisher": "Wizards of the Coast",
    "code": "11647",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "sources": [
     "https://www.dmsguild.com/product/153641/Hero-Builders-Guidebook-3e",
@@ -11958,7 +12171,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "1141",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -11993,7 +12206,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "1088",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12011,7 +12224,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "1109",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12029,7 +12242,7 @@
    "year": 1988,
    "publisher": "TSR",
    "code": "1040",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12047,7 +12260,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "1037",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12065,7 +12278,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "1086",
-   "setting": null,
+   "setting": "Dragonlance",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12082,7 +12295,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "1111",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12100,7 +12313,7 @@
    "year": 1998,
    "publisher": "TSR",
    "code": "9561",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12118,7 +12331,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "1079",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12135,7 +12348,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "9262",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12154,7 +12367,7 @@
    "year": 1991,
    "publisher": "TSR",
    "code": "1068",
-   "setting": null,
+   "setting": "Greyhawk",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12172,7 +12385,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "2621",
-   "setting": null,
+   "setting": "Planescape",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12189,7 +12402,7 @@
    "year": 1988,
    "publisher": "TSR",
    "code": "1032",
-   "setting": null,
+   "setting": "Kara-Tur",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12207,7 +12420,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "2500",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12225,7 +12438,7 @@
    "year": 1997,
    "publisher": "TSR",
    "code": "1159",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12243,7 +12456,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "1103",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12261,7 +12474,7 @@
    "year": 1991,
    "publisher": "TSR",
    "code": "1066",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12279,7 +12492,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "1147",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12297,7 +12510,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "2504",
-   "setting": null,
+   "setting": "Savage Coast",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12315,7 +12528,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "1146",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12333,7 +12546,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "1104",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12350,7 +12563,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "1120",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12368,7 +12581,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "1121",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12386,7 +12599,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "1087",
-   "setting": null,
+   "setting": "Spelljammer",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12404,7 +12617,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "1043",
-   "setting": null,
+   "setting": "Greyhawk",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12422,7 +12635,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "1076",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12440,7 +12653,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "1081",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12458,7 +12671,7 @@
    "year": 1990,
    "publisher": "TSR",
    "code": "1055",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12476,7 +12689,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "1124",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12494,7 +12707,7 @@
    "year": 1996,
    "publisher": "TSR",
    "code": "1142",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12512,7 +12725,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "1050",
-   "setting": null,
+   "setting": "Dragonlance",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12529,7 +12742,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "1072",
-   "setting": null,
+   "setting": "Spelljammer",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12547,7 +12760,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "2610",
-   "setting": null,
+   "setting": "Planescape",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12565,7 +12778,7 @@
    "year": 1991,
    "publisher": "TSR",
    "code": "1065",
-   "setting": null,
+   "setting": "Spelljammer",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12583,7 +12796,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "1084",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12601,7 +12814,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "1094",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12627,7 +12840,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "1073",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-box",
    "requires_reconciliation": true,
    "sources": [
@@ -12645,7 +12858,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "9368",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12664,7 +12877,7 @@
    "year": 1990,
    "publisher": "TSR",
    "code": "9277",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12684,7 +12897,7 @@
    "year": 1989,
    "publisher": "TSR",
    "code": "9255",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12704,7 +12917,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "9494",
-   "setting": null,
+   "setting": "Ravenloft",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12722,7 +12935,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "1090",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12748,7 +12961,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "9356",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12767,7 +12980,7 @@
    "year": 1992,
    "publisher": "TSR",
    "code": "9362",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12786,7 +12999,7 @@
    "year": 1993,
    "publisher": "TSR",
    "code": "9423",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12805,7 +13018,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "2502",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12822,7 +13035,7 @@
    "year": 1990,
    "publisher": "TSR",
    "code": "2105",
-   "setting": null,
+   "setting": "Dragonlance",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12849,7 +13062,7 @@
    "year": 1994,
    "publisher": "TSR",
    "code": "2509",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12866,7 +13079,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "9500",
-   "setting": null,
+   "setting": "Savage Coast",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12884,7 +13097,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "2512",
-   "setting": null,
+   "setting": "Mystara",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12902,7 +13115,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "9489",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -12928,7 +13141,7 @@
    "year": 1995,
    "publisher": "TSR",
    "code": "9490",
-   "setting": null,
+   "setting": "Forgotten Realms",
    "identity_scope": "whole-product",
    "requires_reconciliation": true,
    "sources": [
@@ -13045,7 +13258,7 @@
       "year": 1988,
       "publisher": "TSR",
       "code": "9221",
-      "setting": null,
+      "setting": "Forgotten Realms",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-dq.html",
@@ -13064,7 +13277,7 @@
       "year": 1991,
       "publisher": "TSR",
       "code": "9318",
-      "setting": null,
+      "setting": "Lankhmar",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/lm/lm-lna.html",
@@ -13090,7 +13303,7 @@
       "year": 1990,
       "publisher": "TSR",
       "code": "9291",
-      "setting": null,
+      "setting": "Dragonlance",
       "requires_reconciliation": true,
       "sources": [
         "https://tsrarchive.com/dl/dl-dlc.html",
@@ -13108,7 +13321,7 @@
       "year": 1998,
       "publisher": "TSR",
       "code": "9472",
-      "setting": null,
+      "setting": "Jakandor",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-ody.html",
@@ -13178,7 +13391,7 @@
       "year": 1991,
       "publisher": "TSR",
       "code": "9313",
-      "setting": null,
+      "setting": "Spelljammer",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/sj/sj-sjr.html",
@@ -13235,7 +13448,7 @@
       "year": 1979,
       "publisher": "TSR",
       "code": "9024",
-      "setting": null,
+      "setting": "Setting Agnostic",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-dmacc.html",
@@ -13253,7 +13466,7 @@
       "year": 1985,
       "publisher": "TSR",
       "code": "9146",
-      "setting": null,
+      "setting": "Setting Agnostic",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-ref-1e.html",
@@ -13271,7 +13484,7 @@
       "year": 1986,
       "publisher": "TSR",
       "code": "9028",
-      "setting": null,
+      "setting": "Setting Agnostic",
       "requires_reconciliation": true,
       "sources": [
         "https://www.tsrarchive.com/add/add-ref-1e.html",
@@ -13327,7 +13540,7 @@
       "year": 1985,
       "publisher": "TSR",
       "code": "1019",
-      "setting": null,
+      "setting": "Setting Agnostic",
       "identity_scope": "whole-box",
       "requires_reconciliation": true,
       "metadata_repair_id": "bundle-1e-battlesystem-fantasy-combat-supplement",
@@ -13402,7 +13615,7 @@
       "year": 2010,
       "publisher": "Wizards of the Coast",
       "code": "24464",
-      "setting": null,
+      "setting": "Points of Light",
       "identity_scope": "whole-box",
       "requires_reconciliation": true,
       "metadata_repair_id": "bundle-4e-dungeon-masters-kit-2010",
@@ -13646,7 +13859,7 @@
    "year": 1980,
    "publisher": "TSR",
    "code": "9047",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "identity_scope": "whole-product",
    "metadata_repair_id": "remaining-basic-tsr-9047-monster-treasure-assortment-sets-one-three",
@@ -13719,7 +13932,7 @@
    "year": 1985,
    "publisher": "TSR",
    "code": "9116",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "module": "AC4",
    "metadata_repair_id": "remaining-basic-tsr-9116-book-of-marvelous-magic",
@@ -13738,7 +13951,7 @@
    "year": 1999,
    "publisher": "TSR",
    "code": "9844",
-   "setting": null,
+   "setting": "Greyhawk",
    "requires_reconciliation": true,
    "module": "L3",
    "sources": [
@@ -13778,7 +13991,7 @@
    "year": 1980,
    "publisher": "TSR",
    "code": "9048",
-   "setting": null,
+   "setting": "Setting Agnostic",
    "requires_reconciliation": true,
    "identity_scope": "whole-product",
    "reviewed_reprint": true,

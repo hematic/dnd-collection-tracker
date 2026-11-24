@@ -88,6 +88,14 @@ On an existing collection, updates are careful not to undo your choices. Books y
 
 Deleting a catalog book or release is permanent in your database: restarting or updating the app does not bring it back. Deleting a box set keeps its contained books as separate entries. Your shelf-default release choice also survives catalog updates without preventing other unedited catalog facts from being refreshed. These preferences are stored in `tracker.db` and included in its backups.
 
+#### Applying the 1.1.4 setting updates
+
+[Back up your collection](#back-up-and-restore), then upgrade and restart the app. It fills in the new settings on eligible catalog entries automatically; no CSV import or database commands are needed. Your ownership, PDF links, covers, and notes are kept.
+
+The [title-by-title change list](./docs/catalog-setting-changes-1.1.4.csv) includes the catalog work ID, title, edition, and old and new settings (a blank old setting means unassigned). If a book was edited locally, is mapped to a local record, or is a custom entry, the app leaves it alone. To apply a suggestion to one of those books, find it by title and edition, open **Edit book**, and update **Setting**. Deleted entries are not restored, and entries held back by the existing catalog reconciliation rules are not added by this update.
+
+The review uses the published setting or a named framing location, such as Waterdeep's Yawning Portal. **Setting Agnostic** identifies books designed for use without a specific campaign setting, such as general rulebooks and reference books. Use **No setting set** for entries that still lack an assignment; it does not mean they are setting agnostic. References include [TSR Archive](https://www.tsrarchive.com/), the [Mystara product index](https://www.pandius.com/prodlist.html), the [Great Library of Greyhawk](https://greyhawkonline.com/greyhawkwiki/Category:Adventures), and the [4e published adventure index](https://dnd4.fandom.com/wiki/List_of_Published_Adventures).
+
 ## Docker hosting
 
 The [Docker Hub image](https://hub.docker.com/r/hematic/dnd-collection-tracker) runs on Linux amd64 and arm64. Both setups use the same image for the web app and OCR worker.
