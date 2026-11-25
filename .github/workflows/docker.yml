@@ -52,6 +52,8 @@ jobs:
           export PUID="$(id -u)" PGID="$(id -g)"
           mkdir -p "$DND_DATA_DIR" "$DND_PDF_DIR"
           docker build --tag "$DND_TRACKER_IMAGE" .
+          docker run --rm -i --user "$PUID:$PGID" -v "$DND_PDF_DIR:/out" --entrypoint python \
+            "$DND_TRACKER_IMAGE" - make-pdf /out < tests/docker_smoke.py
 
           check_stack() (
             compose() { docker compose -f "$file" "$@"; }
@@ -59,24 +61,9 @@ jobs:
             # --wait fails unless both containers pass the image's health check.
             compose up -d --pull never --wait --wait-timeout 120
             compose exec -T dnd-tracker-ocr tesseract --list-langs | grep -Fx eng
-            compose exec -T dnd-tracker python - "$expected_edit" <<'PY'
-          import json, sys, time, urllib.request
-          from app.version import APP_VERSION
-
-          def get(endpoint):
-              with urllib.request.urlopen(f"http://127.0.0.1:8000/api/{endpoint}", timeout=5) as response:
-                  return json.load(response)
-
-          meta = get("meta")
-          assert meta["version"] == APP_VERSION
-          assert meta["can_edit"] is (sys.argv[1] == "true")
-          for _ in range(30):
-              if get("pdf-index")["worker_online"]:
-                  break
-              time.sleep(1)
-          else:
-              raise SystemExit("OCR worker did not report online")
-          PY
+            # Hardening is in effect, and linking, cover uploads and OCR still work under it.
+            compose exec -T dnd-tracker-ocr python - worker < tests/docker_smoke.py
+            compose exec -T dnd-tracker python - web "$expected_edit" < tests/docker_smoke.py
             if [[ "$expected_edit" == true ]]; then
               [[ "$(compose port dnd-tracker 8000)" == "127.0.0.1:8765" ]]
               curl -fsS http://127.0.0.1:8765/api/meta | jq -e '.can_edit == true'

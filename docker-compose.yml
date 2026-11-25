@@ -5,6 +5,21 @@
 x-image: &tracker-image
   image: ${DND_TRACKER_IMAGE:-hematic/dnd-collection-tracker:latest}
   user: "${PUID:-1000}:${PGID:-1000}"
+  # Hardening. The app writes only to /data and /tmp (cover uploads over 1 MB and the
+  # worker's health check file), needs no Linux capabilities, and never escalates.
+  read_only: true
+  tmpfs:
+    - /tmp:noexec,nosuid,nodev,size=64m
+  security_opt:
+    - no-new-privileges:true
+  cap_drop:
+    - ALL
+  # Rotate logs. Remove this block if your Docker daemon ships logs elsewhere (Loki, journald).
+  logging:
+    driver: json-file
+    options:
+      max-size: "10m"
+      max-file: "3"
 
 services:
   dnd-tracker:

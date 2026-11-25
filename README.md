@@ -149,6 +149,8 @@ The database and covers live in `DND_DATA_DIR`, mounted at `/data`. Keep it on t
 
 **OCR troubleshooting:** If the UI reports **OCR worker offline**, check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. The worker shows as `unhealthy` when it hasn't renewed its hold on the indexing queue in the last minute, the same test the UI uses. `DND_OCR_CPU_SHARES` adjusts its relative CPU priority, not a hard cap.
 
+**Container hardening:** Both Compose files run the containers with a read-only filesystem, no Linux capabilities, and `no-new-privileges`. The app writes only to `/data` and to a 64 MB in-memory `/tmp`. Logs rotate at 10 MB, keeping three files. If your Docker daemon sends logs to another driver, such as Loki or journald, remove the `logging` block.
+
 ### Back up and restore
 
 A backup of `/data` includes the database, covers, ownership, notes, PDF links, and search index. **CSV export is an inventory, not a backup.** Back up the PDF library and any `.env` file separately. Keep the archives somewhere private and off the tracker host.
