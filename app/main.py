@@ -35,6 +35,7 @@ async def _read_only_guard(request: Request, call_next):
 
 @app.on_event("startup")
 def _startup() -> None:
+    settings.check_startup()
     db.init_db()
     seed.seed()
 

@@ -15,6 +15,10 @@ DND_TRACKER_TRUSTED_PROXIES
                       requests from these IPs (and localhost, for the healthcheck) are
                       served, so nobody on the LAN can skip the login by hitting the
                       published port directly with forged Remote-* headers.
+DND_TRACKER_REQUIRE_TRUSTED_PROXIES
+                      "true" makes the app refuse to start without
+                      DND_TRACKER_TRUSTED_PROXIES. docker-compose.yml sets it, because
+                      Compose can't require "this variable or its old name, TRAEFIK_IP".
 """
 from __future__ import annotations
 
@@ -46,6 +50,17 @@ ADMINS = {a.strip().lower() for a in os.environ.get("DND_TRACKER_ADMINS", "").sp
 IDENTITY_HEADERS = ("remote-user", "remote-email")
 TRUSTED_PROXIES = {ip.strip() for ip in os.environ.get("DND_TRACKER_TRUSTED_PROXIES", "").split(",") if ip.strip()}
 LOOPBACK = {"127.0.0.1", "::1"}
+REQUIRE_TRUSTED_PROXIES = os.environ.get("DND_TRACKER_REQUIRE_TRUSTED_PROXIES", "").strip().lower() == "true"
+
+
+def check_startup() -> None:
+    """Refuse to serve a deployment that requires a trusted proxy but names none."""
+    if REQUIRE_TRUSTED_PROXIES and not TRUSTED_PROXIES:
+        raise RuntimeError(
+            "Set DND_TRACKER_TRUSTED_PROXIES to the IP your reverse proxy connects from "
+            "(TRAEFIK_IP is also accepted). Without it, anyone who can reach the app's port "
+            "could skip the login and claim to be an editor."
+        )
 
 
 def allowed_client(request: Request) -> bool:

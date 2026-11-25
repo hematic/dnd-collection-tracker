@@ -55,14 +55,17 @@ jobs:
           docker run --rm -i --user "$PUID:$PGID" -v "$DND_PDF_DIR:/out" --entrypoint python \
             "$DND_TRACKER_IMAGE" - make-pdf /out < tests/docker_smoke.py
 
-          # The old TRAEFIK_IP name still sets the trusted proxy, and leaving both unset is an error.
+          # The old TRAEFIK_IP name still sets the trusted proxy, the new name wins, and the
+          # web app refuses to start when the Compose file requires a proxy but neither is set.
           proxies() { docker compose -f docker-compose.yml config --format json | jq -r '.services["dnd-tracker"].environment.DND_TRACKER_TRUSTED_PROXIES'; }
           [[ "$(DND_TRACKER_TRUSTED_PROXIES= TRAEFIK_IP=192.0.2.20 proxies)" == 192.0.2.20 ]]
           [[ "$(TRAEFIK_IP=192.0.2.20 proxies)" == 192.0.2.10 ]]
-          if DND_TRACKER_TRUSTED_PROXIES= docker compose -f docker-compose.yml config > /dev/null 2>&1; then
-            echo "::error::docker-compose.yml started without a trusted proxy"
+          [[ "$(DND_TRACKER_TRUSTED_PROXIES= proxies)" == "" ]]
+          if refused="$(timeout 60 docker run --rm -e DND_TRACKER_REQUIRE_TRUSTED_PROXIES=true "$DND_TRACKER_IMAGE" 2>&1)"; then
+            echo "::error::The web app started without a trusted proxy"
             exit 1
           fi
+          grep -F 'Set DND_TRACKER_TRUSTED_PROXIES' <<< "$refused"
 
           check_stack() (
             compose() { docker compose -f "$file" "$@"; }

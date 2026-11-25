@@ -76,5 +76,6 @@ DND_TRACKER_IMAGE=dnd-collection-tracker:local docker compose up -d --pull never
 
 - **The UI reports "OCR worker offline".** Check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. The worker shows as `unhealthy` when it hasn't renewed its hold on the indexing queue in the last minute.
 - **Indexing slows the host.** Lower `DND_OCR_CPU_SHARES`, for example to `256`. It sets relative priority, not a hard cap, so the worker still uses idle CPU.
+- **The web container keeps restarting, and its log says "Set DND_TRACKER_TRUSTED_PROXIES".** The authenticated setup needs your proxy's IP. Set `DND_TRACKER_TRUSTED_PROXIES` (or the older `TRAEFIK_IP`) in `.env`.
 - **"Open this app through its public address".** See [Reverse proxy troubleshooting](reverse-proxy.md#troubleshooting).
 - **The app can't write to `/data`.** `DND_DATA_DIR` must be writable by `PUID:PGID`. Run `ls -ln` on the folder and compare its owner with your `.env`.

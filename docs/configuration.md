@@ -12,7 +12,7 @@ These are read by [`docker-compose.yml`](../docker-compose.yml). [`.env.example`
 |---|---|---|
 | `DND_DATA_DIR` | *required* | Host folder for the database and covers, mounted at `/data`. Use an absolute path on the host's local disk, not a network share: SQLite needs local file locking. |
 | `DND_TRACKER_ADMINS` | *required* | Comma-separated usernames or emails that may edit. Matched, ignoring case, against the `Remote-User` and `Remote-Email` headers from your proxy. Everyone else is read-only. |
-| `DND_TRACKER_TRUSTED_PROXIES` | *required* | Comma-separated IPs your reverse proxy connects from. The app refuses every other client except localhost. `TRAEFIK_IP` is the old name and is used when this one is blank. See [Reverse proxy and login](reverse-proxy.md). |
+| `DND_TRACKER_TRUSTED_PROXIES` | *required* | Comma-separated IPs your reverse proxy connects from. The app refuses every other client except localhost, and refuses to start if neither this nor `TRAEFIK_IP`, its old name, is set. `TRAEFIK_IP` is used when this one is blank. See [Reverse proxy and login](reverse-proxy.md). |
 | `DND_PDF_DIR` | `/mnt/dnd/Books` | Host folder with your PDF library, mounted read-only at `/pdfs` in both containers. |
 | `DND_TRACKER_PDF_MAP` | *(blank)* | Translates PDF paths stored by an older install to paths inside the container. See [`DND_TRACKER_PDF_MAP`](#dnd_tracker_pdf_map). |
 | `DND_TRACKER_IMAGE` | `hematic/dnd-collection-tracker:latest` | Image for both services. Pin an exact version, such as `hematic/dnd-collection-tracker:1.1.9`, to control when you upgrade. |
@@ -41,6 +41,7 @@ The app itself reads these. The Compose files set the first two for you. Set the
 | `DND_TRACKER_PDF_ROOT` | *(unset)* | Folder the **Browse PDF library** picker shows. Links made with the picker are stored relative to it, so you can move the library without relinking. Unset hides the picker. |
 | `DND_TRACKER_ADMINS` | *(unset)* | As above. Unset means everyone can edit, which suits a local install. |
 | `DND_TRACKER_TRUSTED_PROXIES` | *(unset)* | As above. Unset means any client is accepted. |
+| `DND_TRACKER_REQUIRE_TRUSTED_PROXIES` | *(unset)* | `true` makes the app refuse to start until `DND_TRACKER_TRUSTED_PROXIES` is set. `docker-compose.yml` sets it. |
 | `DND_TRACKER_PDF_MAP` | *(unset)* | As above. |
 | `DND_TRACKER_DB` | `tracker.db` in the data folder | Database file path. Mainly for testing. |
 
