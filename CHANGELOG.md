@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.9] - 2026-11-24
+
+### Changed
+- Both Compose files now run the app and OCR worker with a read-only filesystem, no Linux capabilities, and `no-new-privileges`, and rotate container logs at 10 MB. Download the new `docker-compose.yml` or `compose.local.yml` to pick this up. If your Docker daemon sends logs to Loki or journald, remove the `logging` block.
+
 ## [1.1.8] - 2026-11-24
 
 ### Changed
