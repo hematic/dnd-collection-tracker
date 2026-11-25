@@ -2,6 +2,13 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.10] - 2026-11-24
+
+### Changed
+- Rename the Compose setting `TRAEFIK_IP` to `DND_TRACKER_TRUSTED_PROXIES`. Existing `.env` files keep working: the old name is used when the new one is blank.
+- Split the documentation into guides under [docs/](./docs/), with a new [configuration reference](./docs/configuration.md) and a [reverse proxy guide](./docs/reverse-proxy.md) covering Traefik, Caddy and nginx, including a read-only guest hostname beside a login for editors.
+- Serve cover images only from names the app generates.
+
 ## [1.1.9] - 2026-11-24
 
 ### Changed
