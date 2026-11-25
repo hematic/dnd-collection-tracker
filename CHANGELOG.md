@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.8] - 2026-11-24
+
+### Changed
+- Docker health checks no longer query the database every minute, and the OCR worker now has its own health check, so `docker compose ps` shows it as unhealthy when it stops renewing its hold on the indexing queue.
+
 ## [1.1.7] - 2026-11-24
 
 ### Changed
