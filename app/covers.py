@@ -1,6 +1,7 @@
 """Cover images: render page 1 of a linked PDF, or store an uploaded image."""
 from __future__ import annotations
 
+import os
 import re
 from pathlib import Path
 from tempfile import NamedTemporaryFile
@@ -11,6 +12,7 @@ ALLOWED_UPLOAD = {"image/png": ".png", "image/jpeg": ".jpg", "image/webp": ".web
 COVER_WIDTH = 400  # px; plenty for a shelf thumbnail and the detail drawer
 PREVIEW_MAX_DIMENSION = 840
 PREVIEW_JPEG_QUALITY = 82
+COVER_NAME = re.compile(r"[A-Za-z0-9_-][A-Za-z0-9._-]*")
 
 
 def _safe_name(release_id: str) -> str:
@@ -64,10 +66,16 @@ def remove(release_id: str) -> None:
 
 
 def cover_file(name: str) -> Path | None:
-    p = (db.COVERS_DIR / name).resolve()
-    if p.parent != db.COVERS_DIR.resolve() or not p.is_file():
+    """The stored cover called ``name``, or None. ``name`` comes from the request URL."""
+    # Stored names are _safe_name(release_id) plus an extension; anything else, including
+    # hidden temporary files and "..", is never a cover.
+    if not COVER_NAME.fullmatch(name):
         return None
-    return p
+    root = os.path.realpath(db.COVERS_DIR)
+    candidate = os.path.realpath(os.path.join(root, name))
+    if not candidate.startswith(root + os.sep) or not os.path.isfile(candidate):
+        return None
+    return Path(candidate)
 
 
 def preview_file(name: str) -> Path | None:
