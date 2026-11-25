@@ -2,6 +2,13 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.1.11] - 2026-11-24
+
+### Changed
+- With a PDF library configured (always in Docker), linked PDFs must be inside the library or a `DND_TRACKER_PDF_MAP` target, so a pasted path can't expose other files on the server. Old NAS paths that map into the library, and symlinks inside it, keep working.
+- Read-only visitors see "Indexing failed" instead of the full indexing error, which can include server file paths. Editors still see the details.
+- When a linked PDF's cover can't be rendered, the warning no longer includes the underlying error; it's written to the server log instead.
+
 ## [1.1.10] - 2026-11-24
 
 ### Changed
