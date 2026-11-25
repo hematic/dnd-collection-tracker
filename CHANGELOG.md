@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.0] - 2026-11-25
+
+### Added
+- Editors can scan an existing PDF library, review suggested printings with first-page previews, and approve links in batches. Review decisions persist; original files and existing PDF links are unchanged.
+
 ## [1.1.11] - 2026-11-24
 
 ### Changed

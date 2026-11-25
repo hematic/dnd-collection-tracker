@@ -4,6 +4,7 @@ from __future__ import annotations
 import logging
 import os
 import re
+import sqlite3
 import threading
 import time
 import uuid
@@ -104,12 +105,9 @@ def retry_failed() -> int:
     return queued
 
 
-def remove(release_id: str) -> None:
-    with db.connect() as conn:
-        conn.execute("DELETE FROM pdf_text_page WHERE release_id = ?", (release_id,))
-        conn.execute("DELETE FROM pdf_index WHERE release_id = ?", (release_id,))
-        # A currently active job will see the now-unlinked release before persisting
-        # another page; queued jobs are harmless and exit without a linked path.
+def clear_release_index(conn: sqlite3.Connection, release_id: str) -> None:
+    conn.execute("DELETE FROM pdf_text_page WHERE release_id = ?", (release_id,))
+    conn.execute("DELETE FROM pdf_index WHERE release_id = ?", (release_id,))
 
 
 def status() -> dict:

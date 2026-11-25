@@ -42,6 +42,23 @@ The collection summary shows how many results have a linked PDF, unless you're a
 
 ![Box set dialog for Starter Set: Heroes of the Borderlands with a filterable checklist of books to include](./docs/media/set-management.png)
 
+## Import an existing PDF library
+
+Editors can open **Import PDFs** when the [PDF library folder](docs/configuration.md#app-settings)
+is configured. **Scan library** checks PDFs in that folder and its subfolders without moving,
+copying, or modifying them. Suggestions use file names, folder names, and embedded PDF titles,
+not the page contents.
+
+- **Ready to link** preselects confident matches on the current page. Check the proposed
+  printing and preview, then choose **Link selected**. You can also select all ready matches
+  in the current filter for a larger batch.
+- **Needs review** and **No match** let you choose an existing printing manually or ignore the
+  file. Review decisions are saved, so you can leave and return later. Restore an ignored file
+  from **Ignored**.
+
+Import never overwrites an existing PDF link or starts indexing. To make newly linked PDFs
+searchable, start indexing from **PDF Search**.
+
 ## Search inside your PDFs
 
 In the [Docker setup](docs/docker.md), open **PDF Search** and choose **Start indexing** as an editor. The worker indexes embedded text and uses local OCR for scanned pages. Results update when you pause typing or press Enter. Choose all words, any word, or an exact phrase, then toggle editions to refine the results. Matches are grouped by printing in alphabetical book-title order. Expand a printing to see snippets and open the PDF at a matching page. **Export matches (CSV)** lists every matching PDF page for the selected editions, including results not yet loaded on screen.

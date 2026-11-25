@@ -136,3 +136,29 @@ CREATE TRIGGER IF NOT EXISTS pdf_text_page_au AFTER UPDATE ON pdf_text_page BEGI
     INSERT INTO pdf_text_fts(pdf_text_fts, rowid, text) VALUES ('delete', old.id, old.text);
     INSERT INTO pdf_text_fts(rowid, text) VALUES (new.id, new.text);
 END;
+
+CREATE TABLE IF NOT EXISTS pdf_import_scan (
+    id             INTEGER PRIMARY KEY CHECK (id = 1),
+    generation     INTEGER NOT NULL DEFAULT 0,
+    status         TEXT NOT NULL DEFAULT 'idle'
+                   CHECK (status IN ('idle', 'scanning', 'done', 'error')),
+    scanned        INTEGER NOT NULL DEFAULT 0,
+    already_linked INTEGER NOT NULL DEFAULT 0,
+    skipped        INTEGER NOT NULL DEFAULT 0,
+    finished_at    TEXT,
+    error          TEXT
+);
+
+INSERT OR IGNORE INTO pdf_import_scan (id) VALUES (1);
+
+CREATE TABLE IF NOT EXISTS pdf_import_file (
+    path            TEXT PRIMARY KEY,
+    fingerprint     TEXT NOT NULL,
+    metadata_title  TEXT,
+    tier            TEXT NOT NULL CHECK (tier IN ('ready', 'review', 'none')),
+    candidates_json TEXT NOT NULL,
+    query           TEXT NOT NULL,
+    note            TEXT,
+    ignored         INTEGER NOT NULL DEFAULT 0,
+    chosen_release  TEXT REFERENCES release(id) ON DELETE SET NULL
+);

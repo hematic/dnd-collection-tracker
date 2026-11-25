@@ -12,6 +12,7 @@
     <h1>D&amp;D Collection</h1>
     <button id="open-collection" class="secondary page-tab" type="button" aria-pressed="true">Collection</button>
     <button id="open-pdf-search" class="secondary page-tab" type="button" aria-pressed="false">PDF Search</button>
+    <button id="open-pdf-import" class="secondary page-tab" type="button" aria-pressed="false" hidden>Import PDFs</button>
     <span class="topbar-spacer" aria-hidden="true"></span>
     <span id="whoami" class="whoami"></span>
     <button id="open-help" class="icon-btn help-trigger" type="button" aria-label="Help and app version" title="Help and app version">?</button>
@@ -210,6 +211,42 @@
           <button id="pdf-search-more" class="secondary wide" type="button" hidden>Load more matching pages</button>
         </div>
       </section>
+      <section id="pdf-import-page" class="pdf-import-page" hidden aria-labelledby="pdf-import-title">
+        <div class="helpable-heading">
+          <h2 id="pdf-import-title">Import PDFs</h2>
+          <button class="icon-btn help-trigger" type="button" data-help-topic="pdf-import" aria-label="Help: PDF import">?</button>
+        </div>
+        <p>Scan the configured PDF library and review proposed links. Files stay where they are, and nothing links until you approve it.</p>
+        <div class="actions">
+          <button type="button" class="primary" data-import-scan>Scan library</button>
+          <span data-import-status class="rmeta" role="status"></span>
+        </div>
+        <div class="pdf-import-controls" data-import-controls hidden>
+          <div class="actions" role="group" aria-label="Filter by match status" data-import-filters>
+            <button type="button" class="secondary" data-tier="ready" aria-pressed="true">Ready to link</button>
+            <button type="button" class="secondary" data-tier="review" aria-pressed="false">Needs review</button>
+            <button type="button" class="secondary" data-tier="none" aria-pressed="false">No match</button>
+            <button type="button" class="secondary" data-tier="ignored" aria-pressed="false">Ignored</button>
+          </div>
+          <label>Filter by file or folder <input type="search" data-import-query maxlength="256"></label>
+          <div class="actions">
+            <button type="button" class="secondary" data-import-select>Clear selection</button>
+            <button type="button" class="secondary" data-import-select-all>Select all ready matches in filter</button>
+            <button type="button" class="primary" data-import-link>Link selected</button>
+            <button type="button" class="secondary" data-import-ignore>Ignore selected</button>
+            <span data-import-count class="rmeta" role="status"></span>
+          </div>
+        </div>
+        <div data-import-report role="status"></div>
+        <progress data-import-progress aria-label="Linking PDFs" hidden></progress>
+        <p data-import-error class="form-error" role="alert" hidden></p>
+        <div data-import-rows class="pdf-import-rows"></div>
+        <nav data-import-pagination class="actions" aria-label="Import result pages" hidden>
+          <button type="button" class="secondary" data-import-prev>Previous</button>
+          <span data-import-range class="rmeta"></span>
+          <button type="button" class="secondary" data-import-next>Next</button>
+        </nav>
+      </section>
     </main>
   </div>
 
@@ -218,6 +255,7 @@
 
   <dialog id="form-dialog"></dialog>
   <dialog id="pdf-library-dialog" aria-labelledby="pdf-library-title" aria-describedby="pdf-library-description"></dialog>
+  <dialog id="pdf-import-picker" aria-labelledby="pdf-import-picker-title"></dialog>
   <dialog id="help-dialog" aria-labelledby="help-title">
     <div class="help-dialog-head">
       <h2 id="help-title">Help &amp; About</h2>
@@ -247,6 +285,10 @@
     <details data-help-section="pdf-indexing">
       <summary>Indexing PDFs</summary>
       <p>PDF text must be indexed before it can be searched. Editors start indexing from the PDF Search page; it runs in the separate Docker OCR worker and does not start automatically. Pause takes effect after the current page; resume continues queued work. Scanned pages are OCRed locally, and original PDFs are unchanged. When OCR counts are recorded, they appear on each printing in the book details drawer.</p>
+    </details>
+    <details data-help-section="pdf-import">
+      <summary>Importing PDFs from your library</summary>
+      <p>Editors can scan the configured library and link PDFs in batches. Check the suggested printing and first-page preview before linking. Choose a printing for uncertain matches, or ignore files you don't want to link. Rescanning keeps your saved decisions for files that are still present. Import does not replace existing links or start PDF indexing.</p>
     </details>
     <details data-help-section="editing">
       <summary>Editing and access</summary>

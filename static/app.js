@@ -3,6 +3,7 @@ import { api } from './api.js';
 import { EDITION_COLORS, booksPerRow, esc, renderGrid, renderShelves, renderTable } from './shelf.js';
 import { initDetail, openDrawer, workForm } from './detail.js';
 import { clickItem, initSelect, isSelecting, paint } from './select.js';
+import { initPdfImport } from './pdf-import.js';
 
 const $ = (s) => document.querySelector(s);
 const $$ = (s) => [...document.querySelectorAll(s)];
@@ -61,6 +62,7 @@ function readHash() {
   const list = (k) => (p.get(k) ? p.get(k).split('|').filter(Boolean) : []);
   const bool = (k, d) => (p.has(k) ? p.get(k) === '1' : d);
   if (p.get('page') === 'pdf-search') s.page = 'pdf-search';
+  if (p.get('page') === 'pdf-import' && meta?.can_edit && meta.pdf_library_enabled) s.page = 'pdf-import';
   if (p.get('view')) s.view = p.get('view');
   if (p.get('sort')) s.sort = p.get('sort');
   s.desc = bool('desc', DEFAULTS.desc);
@@ -306,11 +308,14 @@ const PDF_INDEX_IDLE_POLL_MS = 15000;
 function setActivePage(page) {
   state.page = page;
   writeHash();
-  document.body.classList.toggle('pdf-mode', page === 'pdf-search');
+  document.body.classList.toggle('pdf-mode', page !== 'collection');
   $('#collection-page').hidden = page !== 'collection';
   $('#pdf-search-page').hidden = page !== 'pdf-search';
   $('#open-collection').setAttribute('aria-pressed', String(page === 'collection'));
   $('#open-pdf-search').setAttribute('aria-pressed', String(page === 'pdf-search'));
+  $('#open-pdf-import').setAttribute('aria-pressed', String(page === 'pdf-import'));
+  $('#pdf-import-page').hidden = page !== 'pdf-import';
+  $('#pdf-import-page').onPageChange?.(page === 'pdf-import');
   clearTimeout(pdfSearchPoll);
   pdfSearchPoll = null;
   if (page === 'pdf-search') {
@@ -640,6 +645,12 @@ export function toast(msg, isError = false) {
   }
   state = readHash();
   syncThemeButton();
+  if (meta.can_edit && meta.pdf_library_enabled) {
+    const importButton = $('#open-pdf-import');
+    importButton.hidden = false;
+    importButton.addEventListener('click', () => setActivePage('pdf-import'));
+    initPdfImport($('#pdf-import-page'), $('#pdf-import-picker'), load);
+  }
   setActivePage(state.page);
   document.body.classList.toggle('readonly', !meta.can_edit);
   document.body.classList.toggle('no-external', !meta.can_open_external);

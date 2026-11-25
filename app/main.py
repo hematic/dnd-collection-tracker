@@ -5,18 +5,20 @@ import csv
 import logging
 import os
 import re
+import sqlite3
 import stat
+from collections.abc import Callable
 from io import StringIO
 from itertools import groupby
 from pathlib import Path
-from typing import Annotated
+from typing import Annotated, Literal
 
 from fastapi import Depends, FastAPI, File, HTTPException, Query, Request, UploadFile
 from fastapi.responses import FileResponse, JSONResponse, Response
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, Field, model_validator
 
-from . import covers, db, pdf_indexer, seed, settings
+from . import covers, db, pdf_import, pdf_indexer, seed, settings
 from .version import APP_VERSION
 
 STATIC_DIR = db.ROOT / "static"
@@ -38,7 +40,10 @@ async def _read_only_guard(request: Request, call_next):
         return JSONResponse({"detail": "Open this app through its public address (behind the login)."}, status_code=403)
     if request.method not in ("GET", "HEAD", "OPTIONS") and not settings.can_edit(request):
         return JSONResponse({"detail": "You have read-only access to this collection."}, status_code=403)
-    return await call_next(request)
+    response = await call_next(request)
+    if request.url.path.startswith("/api/pdf-import"):
+        response.headers["Cache-Control"] = "private, no-store"
+    return response
 
 
 @app.on_event("startup")
@@ -46,6 +51,7 @@ def _startup() -> None:
     settings.check_startup()
     db.init_db()
     seed.seed()
+    pdf_import.recover_scan()
 
 
 @app.get("/healthz", include_in_schema=False)
@@ -780,11 +786,22 @@ def link_pdf(release_id: str, body: PdfIn):
         raw = settings.LIBRARY_PREFIX + body.library_path
     else:
         raw = os.path.expandvars(os.path.expanduser((body.path or "").strip().strip('"').strip("'")))
-    unlinked = not raw
+    work_id, warning = _set_release_pdf(release_id, raw)
+    out = work_detail(work_id)
+    if raw:
+        out["warning"] = warning
+    return out
+
+
+def _set_release_pdf(
+    release_id: str, raw: str, *, validate: Callable[[sqlite3.Connection, bool], None] | None = None,
+) -> tuple[str, str | None]:
     warning = None
     rendered = None
-    with db.connect() as conn:
+    with db.connect(read_only=True) as conn:
         rel = _get_release(conn, release_id)
+        if validate is not None:
+            validate(conn, False)
     if raw:
         p = settings.local_path(raw)
         if p is None:
@@ -804,7 +821,10 @@ def link_pdf(release_id: str, body: PdfIn):
                 warning = COVER_RENDER_WARNING
 
     with db.connect() as conn:
+        conn.execute("BEGIN IMMEDIATE")
         rel = _get_release(conn, release_id)
+        if validate is not None:
+            validate(conn, True)
         old_path = rel["pdf_path"]
         if not raw:
             conn.execute("UPDATE release SET pdf_path = NULL WHERE id = ?", (release_id,))
@@ -822,15 +842,115 @@ def link_pdf(release_id: str, body: PdfIn):
                 except Exception:  # noqa: BLE001 - PDF linked fine; cover is best-effort
                     logger.warning("Could not save the cover for release %s", release_id, exc_info=True)
                     warning = COVER_RENDER_WARNING
-    if unlinked:
-        pdf_indexer.remove(release_id)
-        return work_detail(rel["work_id"])
-    if old_path != raw:
-        pdf_indexer.remove(release_id)
+        if not raw or old_path != raw:
+            pdf_indexer.clear_release_index(conn, release_id)
+    return rel["work_id"], warning
 
-    out = work_detail(rel["work_id"])
-    out["warning"] = warning
-    return out
+
+def _require_pdf_import(request: Request) -> None:
+    if not settings.can_edit(request):
+        raise HTTPException(403, "You have read-only access to this collection.")
+    if not settings.PDF_ROOT:
+        raise HTTPException(404, "No PDF library folder is configured")
+
+
+ImportAccess = Annotated[None, Depends(_require_pdf_import)]
+LibraryRelativePath = Annotated[str, Field(min_length=1, max_length=4096)]
+
+
+class ImportDecision(BaseModel):
+    generation: int = Field(ge=0)
+    paths: list[LibraryRelativePath] = Field(min_length=1, max_length=50)
+    action: Literal["choose", "ignore", "restore"]
+    release_id: str | None = None
+
+    @model_validator(mode="after")
+    def check_choice(self):
+        if self.action == "choose" and (len(self.paths) != 1 or not self.release_id):
+            raise ValueError("Choose one printing for one PDF")
+        return self
+
+
+class ImportLinkItem(BaseModel):
+    path: LibraryRelativePath
+    release_id: str = Field(min_length=1, max_length=256)
+
+
+class ImportLinks(BaseModel):
+    generation: int = Field(ge=0)
+    items: list[ImportLinkItem] = Field(min_length=1, max_length=25)
+
+
+@app.post("/api/pdf-import/scan", status_code=202)
+def scan_pdf_import(_: ImportAccess):
+    try:
+        return {"generation": pdf_import.start_scan()}
+    except pdf_import.ImportErrorState as exc:
+        raise HTTPException(exc.status, str(exc)) from exc
+
+
+@app.get("/api/pdf-import")
+def pdf_import_status(_: ImportAccess):
+    return pdf_import.status()
+
+
+@app.get("/api/pdf-import/files")
+def pdf_import_files(
+    _: ImportAccess, tier: Literal["all", "ready", "review", "none", "ignored"] = "ready",
+    q: str = Query("", max_length=256), offset: int = Query(0, ge=0), limit: int = Query(30, ge=1, le=50),
+):
+    return pdf_import.list_files(tier, q, offset, limit)
+
+
+@app.patch("/api/pdf-import/files", status_code=204)
+def decide_pdf_import(_: ImportAccess, body: ImportDecision):
+    try:
+        pdf_import.decide(body.generation, body.paths, body.action, body.release_id)
+    except pdf_import.ImportErrorState as exc:
+        raise HTTPException(exc.status, str(exc)) from exc
+    return Response(status_code=204)
+
+
+@app.post("/api/pdf-import/link")
+def link_pdf_import(_: ImportAccess, body: ImportLinks):
+    results = []
+    identities: dict[str, pdf_import.Identity | None] = {}
+    for item in body.items:
+        def validate(conn: sqlite3.Connection, consume: bool, entry: ImportLinkItem = item) -> None:
+            pdf_import.validate_link(conn, body.generation, entry.path, entry.release_id, identities, consume=consume)
+
+        try:
+            _, warning = _set_release_pdf(item.release_id, settings.LIBRARY_PREFIX + item.path, validate=validate)
+        except pdf_import.ImportErrorState as exc:
+            results.append({"path": item.path, "error": str(exc)})
+        except HTTPException as exc:
+            results.append({"path": item.path, "error": exc.detail})
+        else:
+            results.append({"path": item.path, "linked": True, "warning": warning})
+    return {"results": results}
+
+
+@app.get("/api/pdf-import/preview")
+def preview_pdf_import(_: ImportAccess, path: str):
+    try:
+        source, _ = pdf_import.reviewed_file(path)
+    except pdf_import.ImportErrorState as exc:
+        raise HTTPException(exc.status, str(exc)) from exc
+    try:
+        return Response(covers.render_pdf_cover(str(source)), media_type="image/jpeg")
+    except (RuntimeError, ValueError, OSError) as exc:
+        logger.info("Could not render library PDF preview for %r: %s", path, exc)
+        raise HTTPException(422, "First page could not be previewed") from exc
+
+
+@app.get("/api/pdf-import/file")
+def open_pdf_import(_: ImportAccess, path: str):
+    try:
+        source, info = pdf_import.reviewed_file(path)
+    except pdf_import.ImportErrorState as exc:
+        raise HTTPException(exc.status, str(exc)) from exc
+    return FileResponse(source, media_type="application/pdf", filename=source.name,
+                        content_disposition_type="inline", stat_result=info)
 
 
 @app.post("/api/releases/{release_id}/cover")

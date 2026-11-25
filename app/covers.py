@@ -1,10 +1,12 @@
 """Cover images: render page 1 of a linked PDF, or store an uploaded image."""
 from __future__ import annotations
 
+import logging
 import os
 import re
 from pathlib import Path
 from tempfile import NamedTemporaryFile
+from threading import Lock
 
 from . import db
 
@@ -13,6 +15,20 @@ COVER_WIDTH = 400  # px; plenty for a shelf thumbnail and the detail drawer
 PREVIEW_MAX_DIMENSION = 840
 PREVIEW_JPEG_QUALITY = 82
 COVER_NAME = re.compile(r"[A-Za-z0-9_-][A-Za-z0-9._-]*")
+_PDF_LOCK = Lock()
+logger = logging.getLogger(__name__)
+
+
+def pdf_title(path: Path) -> str | None:
+    import pymupdf
+
+    try:
+        with _PDF_LOCK, pymupdf.open(path) as doc:
+            if doc.is_pdf and not doc.needs_pass:
+                return ((doc.metadata or {}).get("title") or "")[:512] or None
+    except (RuntimeError, ValueError, OSError) as exc:
+        logger.debug("Could not read PDF title from %s; matching by filename: %s", path, exc)
+    return None
 
 
 def _safe_name(release_id: str) -> str:
@@ -50,11 +66,11 @@ def render_pdf_cover(pdf_path: str) -> bytes:
     """Render without modifying stored covers or holding a database transaction."""
     import pymupdf  # imported lazily so the app still starts if it is missing
 
-    with pymupdf.open(pdf_path) as doc:
+    with _PDF_LOCK, pymupdf.open(pdf_path) as doc:
         if doc.page_count == 0:
             raise ValueError("PDF has no pages")
         page = doc.load_page(0)
-        zoom = COVER_WIDTH / page.rect.width
+        zoom = min(COVER_WIDTH / page.rect.width, PREVIEW_MAX_DIMENSION / page.rect.height)
         pix = page.get_pixmap(matrix=pymupdf.Matrix(zoom, zoom), alpha=False)
         return pix.tobytes(output="jpg", jpg_quality=PREVIEW_JPEG_QUALITY)
 
@@ -106,6 +122,11 @@ def preview_file(name: str) -> Path | None:
         except FileNotFoundError:
             pass
 
+    with _PDF_LOCK:
+        return _render_preview(source)
+
+
+def _render_preview(source: Path) -> Path:
     import pymupdf  # imported lazily so the app still starts if it is missing
 
     pix = pymupdf.Pixmap(str(source))

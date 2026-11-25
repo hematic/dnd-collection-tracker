@@ -38,6 +38,11 @@ export const api = {
   linkPdf: (id, path) => request('PATCH', `/api/releases/${enc(id)}/pdf`, { path }),
   pdfLibrary: (directory) => request('GET', '/api/pdf-library?' + new URLSearchParams({ directory })),
   linkLibraryPdf: (id, library_path) => request('PATCH', `/api/releases/${enc(id)}/pdf`, { library_path }),
+  scanPdfImport: () => request('POST', '/api/pdf-import/scan'),
+  pdfImportStatus: () => request('GET', '/api/pdf-import'),
+  pdfImportFiles: (params) => request('GET', '/api/pdf-import/files?' + new URLSearchParams(params)),
+  decidePdfImport: (body) => request('PATCH', '/api/pdf-import/files', body),
+  linkPdfImport: (body) => request('POST', '/api/pdf-import/link', body),
   uploadCover: (id, file) => {
     const fd = new FormData();
     fd.append('file', file);
