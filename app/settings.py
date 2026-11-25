@@ -70,21 +70,39 @@ def allowed_client(request: Request) -> bool:
     return host in TRUSTED_PROXIES or host in LOOPBACK
 
 
+def _inside(path: str | Path, roots: list[str], *, follow_symlinks: bool = True) -> Path | None:
+    """``path`` with ".." (and, by default, symlinks) resolved, if that lies inside one of
+    ``roots``. Without following symlinks, a library may link to files elsewhere on the
+    server through symlinks its owner created, while a typed "../" still can't escape."""
+    normalize = os.path.realpath if follow_symlinks else os.path.normpath
+    real = normalize(os.path.abspath(path))
+    for root in roots:
+        base = normalize(os.path.abspath(root))
+        if real == base or real.startswith(base.rstrip(os.sep) + os.sep):
+            return Path(real)
+    return None
+
+
 def library_path(relative: str) -> Path:
     if not PDF_ROOT:
         raise ValueError("No PDF library folder is configured")
     parts = relative.split("/") if relative else []
     if any(part in ("", ".", "..") or "\\" in part or ":" in part or "\0" in part for part in parts):
         raise ValueError("Invalid PDF library path")
-    root = Path(PDF_ROOT).expanduser().resolve()
-    path = root.joinpath(*parts).resolve()
-    if not path.is_relative_to(root):
+    root = os.path.expanduser(PDF_ROOT)
+    path = _inside(os.path.join(root, *parts), [root])
+    if path is None:
         raise ValueError("Path is outside the PDF library")
     return path
 
 
 def local_path(stored: str) -> Path | None:
-    """Where a stored PDF path lives on this machine."""
+    """Where a stored PDF path lives on this machine, or None if it may not be used.
+
+    With a PDF library configured (always, in Docker), every PDF must lie inside the
+    library or a DND_TRACKER_PDF_MAP target, so a pasted path can't expose other files
+    on the server. Without one (a local install), any file the user can open is allowed.
+    """
     if stored.startswith(LIBRARY_PREFIX):
         try:
             path = library_path(stored[len(LIBRARY_PREFIX):])
@@ -95,8 +113,18 @@ def local_path(stored: str) -> Path | None:
     for src, dst in PDF_MAP:
         if norm.lower() == src.lower() or norm.lower().startswith(src.lower() + "/"):
             rest = norm[len(src):].lstrip("/")
-            return Path(dst, *rest.split("/")) if rest else Path(dst)
-    return Path(stored)
+            path = Path(dst, *rest.split("/")) if rest else Path(dst)
+            break
+    else:
+        path = Path(stored)
+    if not PDF_ROOT:
+        return path
+    try:
+        return _inside(
+            path, [os.path.expanduser(PDF_ROOT), *(dst for _, dst in PDF_MAP)], follow_symlinks=False
+        )
+    except (ValueError, OSError):
+        return None
 
 
 def user(request: Request) -> str | None:

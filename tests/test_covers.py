@@ -46,6 +46,26 @@ class CoverFileTests(unittest.TestCase):
                     main.serve_cover(name)
                 self.assertEqual(raised.exception.status_code, 404)
 
+    def test_saved_covers_stay_in_the_covers_folder(self):
+        self.assertEqual(covers.save_upload("2e/phb", "image/png", b"png"), "2e_phb.png")
+        self.assertEqual((self.covers / "2e_phb.png").read_bytes(), b"png")
+        self.assertEqual(covers.save_pdf_cover("a\\b", b"jpg"), "a_b.jpg")
+        for release_id in ("../../escape", "..", ".hidden"):
+            with self.subTest(release_id=release_id):
+                with self.assertRaises(ValueError):
+                    covers.save_upload(release_id, "image/png", b"png")
+        self.assertFalse((self.root / "escape.png").exists())
+        self.assertEqual(sorted(p.name for p in self.root.iterdir()), ["covers", "tracker.db"])
+
+    def test_clearing_a_cover_keeps_other_releases_covers(self):
+        for name in ("2e-phb--orig.preview.jpg", "2e-phb--orig-2.jpg"):
+            (self.covers / name).write_bytes(b"x")
+        covers.remove("2e-phb--orig")
+        self.assertEqual(
+            sorted(p.name for p in self.covers.iterdir()),
+            [".2e-phb--orig.preview.jpg.tmp", "2e-phb--orig-2.jpg"],
+        )
+
     def test_rejects_a_symlink_that_leaves_the_covers_folder(self):
         link = self.covers / "escape.jpg"
         try:

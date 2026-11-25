@@ -205,6 +205,38 @@ class DatabaseOptimizationTests(unittest.TestCase):
             with self.assertRaises(HTTPException):
                 main.link_pdf("release", main.PdfIn(library_path="elsewhere.pdf"))
 
+    def test_with_a_library_pasted_paths_must_stay_inside_it(self):
+        root = self.pdf_path.parent / "library"
+        (root / "2e").mkdir(parents=True)
+        inside = root / "2e" / "inside.pdf"
+        inside.write_bytes(self.pdf_path.read_bytes())
+        outside = str(self.pdf_path)  # a real PDF next to the library, not in it
+        with patch.object(settings, "PDF_ROOT", str(root)), \
+                patch.object(settings, "PDF_MAP", [("//nas/Books", str(root))]):
+            for pasted in (outside, r"\\nas\Books\..\book.pdf", str(root / ".." / "book.pdf")):
+                with self.subTest(pasted=pasted):
+                    self.assertIsNone(settings.local_path(pasted))
+                    with self.assertRaises(HTTPException) as refused:
+                        main.link_pdf("release", main.PdfIn(path=pasted))
+                    self.assertEqual(refused.exception.status_code, 422)
+            linked = main.link_pdf("release", main.PdfIn(path=r"\\nas\Books\2e\inside.pdf"))
+            self.assertEqual(main.serve_pdf("release").path, inside.resolve())
+            self.assertEqual(linked["releases"][0]["pdf_path"], r"\\nas\Books\2e\inside.pdf")
+        # A symlink the library's owner put in the library keeps working for pasted links.
+        link = root / "2e" / "linked.pdf"
+        try:
+            link.symlink_to(self.pdf_path)
+        except OSError:
+            pass  # symlinks need extra rights on some Windows setups
+        else:
+            with patch.object(settings, "PDF_ROOT", str(root)), \
+                    patch.object(settings, "PDF_MAP", [("//nas/Books", str(root))]):
+                main.link_pdf("release", main.PdfIn(path=r"\\nas\Books\2e\linked.pdf"))
+                self.assertEqual(main.serve_pdf("release").path.name, "linked.pdf")
+        # Without a library (a local install), any PDF the user can open may be linked.
+        with patch.object(settings, "PDF_ROOT", None), patch.object(settings, "PDF_MAP", []):
+            self.assertEqual(settings.local_path(outside), Path(outside))
+
     def test_library_link_survives_move_and_legacy_mapping_still_works(self):
         root = self.pdf_path.parent / "library"
         folder = root / "2e"
@@ -267,9 +299,14 @@ class DatabaseOptimizationTests(unittest.TestCase):
 
     def test_render_failure_keeps_the_pdf_link_and_reports_a_warning(self):
         main.link_pdf("release", main.PdfIn(path=str(self.pdf_path)))
-        with patch.object(pymupdf.Page, "get_pixmap", side_effect=ValueError("broken cover")):
+        broken = ValueError("broken cover at /secret/path")
+        with patch.object(pymupdf.Page, "get_pixmap", side_effect=broken), \
+                self.assertLogs("app.main", "WARNING") as logged:
             result = main.link_pdf("release", main.PdfIn(path=str(self.pdf_path)))
-        self.assertIn("broken cover", result["warning"])
+        # The details go to the server log, not to the browser.
+        self.assertEqual(result["warning"], main.COVER_RENDER_WARNING)
+        self.assertNotIn("/secret/path", result["warning"])
+        self.assertIn("/secret/path", "\n".join(logged.output))
         release = result["releases"][0]
         self.assertEqual(release["pdf_path"], str(self.pdf_path))
         self.assertTrue((db.COVERS_DIR / release["cover_path"]).is_file())

@@ -38,7 +38,7 @@ The app itself reads these. The Compose files set the first two for you. Set the
 | Variable | Default | What it does |
 |---|---|---|
 | `DND_TRACKER_DATA` | `./data` in a source checkout, `/data` in the image | Folder holding `tracker.db` and `covers/`. |
-| `DND_TRACKER_PDF_ROOT` | *(unset)* | Folder the **Browse PDF library** picker shows. Links made with the picker are stored relative to it, so you can move the library without relinking. Unset hides the picker. |
+| `DND_TRACKER_PDF_ROOT` | *(unset)* | Folder the **Browse PDF library** picker shows. Links made with the picker are stored relative to it, so you can move the library without relinking. When set, every linked PDF, including pasted paths, must be inside this folder or a `DND_TRACKER_PDF_MAP` target. Unset hides the picker and allows any path. |
 | `DND_TRACKER_ADMINS` | *(unset)* | As above. Unset means everyone can edit, which suits a local install. |
 | `DND_TRACKER_TRUSTED_PROXIES` | *(unset)* | As above. Unset means any client is accepted. |
 | `DND_TRACKER_REQUIRE_TRUSTED_PROXIES` | *(unset)* | `true` makes the app refuse to start until `DND_TRACKER_TRUSTED_PROXIES` is set. `docker-compose.yml` sets it. |

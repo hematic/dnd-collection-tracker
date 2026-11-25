@@ -19,9 +19,26 @@ def _safe_name(release_id: str) -> str:
     return re.sub(r"[^A-Za-z0-9._-]", "_", release_id)
 
 
+def _in_covers_dir(name: str) -> Path:
+    """Where ``name`` lives in the covers folder. Every cover path, read or written, goes
+    through here: ``name`` must look like a stored cover and stay inside the folder."""
+    # Stored names are _safe_name(release_id) plus an extension; anything else, including
+    # hidden temporary files and "..", is never a cover.
+    if not COVER_NAME.fullmatch(name):
+        raise ValueError("Invalid cover file name")
+    root = os.path.realpath(db.COVERS_DIR)
+    candidate = os.path.realpath(os.path.join(root, name))
+    if not candidate.startswith(root + os.sep):
+        raise ValueError("Cover path is outside the covers folder")
+    return Path(candidate)
+
+
 def _clear_existing(release_id: str) -> None:
-    for p in db.COVERS_DIR.glob(_safe_name(release_id) + ".*"):
-        p.unlink(missing_ok=True)
+    """Delete this release's cover and its cached previews."""
+    prefix = _safe_name(release_id) + "."
+    for p in db.COVERS_DIR.iterdir():
+        if p.name.startswith(prefix):
+            p.unlink(missing_ok=True)
 
 
 def render_from_pdf(release_id: str, pdf_path: str) -> str:
@@ -45,7 +62,7 @@ def render_pdf_cover(pdf_path: str) -> bytes:
 def save_pdf_cover(release_id: str, data: bytes) -> str:
     _clear_existing(release_id)
     name = _safe_name(release_id) + ".jpg"
-    (db.COVERS_DIR / name).write_bytes(data)
+    _in_covers_dir(name).write_bytes(data)
     return name
 
 
@@ -57,7 +74,7 @@ def save_upload(release_id: str, content_type: str, data: bytes) -> str:
         raise ValueError("Image is larger than 15 MB")
     _clear_existing(release_id)
     name = _safe_name(release_id) + ext
-    (db.COVERS_DIR / name).write_bytes(data)
+    _in_covers_dir(name).write_bytes(data)
     return name
 
 
@@ -67,15 +84,11 @@ def remove(release_id: str) -> None:
 
 def cover_file(name: str) -> Path | None:
     """The stored cover called ``name``, or None. ``name`` comes from the request URL."""
-    # Stored names are _safe_name(release_id) plus an extension; anything else, including
-    # hidden temporary files and "..", is never a cover.
-    if not COVER_NAME.fullmatch(name):
+    try:
+        path = _in_covers_dir(name)
+    except ValueError:
         return None
-    root = os.path.realpath(db.COVERS_DIR)
-    candidate = os.path.realpath(os.path.join(root, name))
-    if not candidate.startswith(root + os.sep) or not os.path.isfile(candidate):
-        return None
-    return Path(candidate)
+    return path if path.is_file() else None
 
 
 def preview_file(name: str) -> Path | None:

@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import csv
+import logging
 import os
 import re
 import stat
@@ -19,6 +20,13 @@ from . import covers, db, pdf_indexer, seed, settings
 from .version import APP_VERSION
 
 STATIC_DIR = db.ROOT / "static"
+logger = logging.getLogger(__name__)
+# Shown to the user when a linked PDF's cover can't be rendered; the details go to the log,
+# since PyMuPDF and file errors can include server paths.
+COVER_RENDER_WARNING = (
+    "PDF linked, but its first page couldn't be rendered as a cover. "
+    "Upload a cover image instead, or check the server log for details."
+)
 
 app = FastAPI(title="D&D Collection Tracker", version=APP_VERSION)
 
@@ -779,8 +787,9 @@ def link_pdf(release_id: str, body: PdfIn):
         if rel["cover_source"] != "upload":
             try:
                 rendered = covers.render_pdf_cover(str(p))
-            except Exception as e:  # noqa: BLE001 - PDF linking can succeed without a cover
-                warning = f"PDF linked, but the cover could not be rendered: {e}"
+            except Exception:  # noqa: BLE001 - PDF linking can succeed without a cover
+                logger.warning("Could not render a cover for release %s from %s", release_id, p, exc_info=True)
+                warning = COVER_RENDER_WARNING
 
     with db.connect() as conn:
         rel = _get_release(conn, release_id)
@@ -798,8 +807,9 @@ def link_pdf(release_id: str, body: PdfIn):
                     conn.execute(
                         "UPDATE release SET cover_path = ?, cover_source = 'pdf' WHERE id = ?", (name, release_id)
                     )
-                except Exception as e:  # noqa: BLE001 - PDF linked fine; cover is best-effort
-                    warning = f"PDF linked, but the cover could not be rendered: {e}"
+                except Exception:  # noqa: BLE001 - PDF linked fine; cover is best-effort
+                    logger.warning("Could not save the cover for release %s", release_id, exc_info=True)
+                    warning = COVER_RENDER_WARNING
     if unlinked:
         pdf_indexer.remove(release_id)
         return work_detail(rel["work_id"])
