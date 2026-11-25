@@ -205,6 +205,26 @@ class DatabaseOptimizationTests(unittest.TestCase):
             with self.assertRaises(HTTPException):
                 main.link_pdf("release", main.PdfIn(library_path="elsewhere.pdf"))
 
+    def test_only_editors_see_indexing_error_details(self):
+        detail = "FileNotFoundError: /pdfs/private/book.pdf"
+        with db.connect() as conn:
+            conn.execute("UPDATE release SET pdf_path = ? WHERE id = 'release'", (str(self.pdf_path),))
+            conn.execute(
+                "INSERT INTO pdf_index (release_id, status, error, updated_at) "
+                "VALUES ('release', 'error', ?, CURRENT_TIMESTAMP)",
+                (detail,),
+            )
+        reader = Request({"type": "http", "headers": []})
+        editor = Request({"type": "http", "headers": [(b"remote-user", b"editor")]})
+        with patch.object(settings, "ADMINS", {"editor"}):
+            for request, expected in ((reader, None), (editor, detail)):
+                with self.subTest(editor=request is editor):
+                    status = main.pdf_index_status(request)
+                    self.assertEqual(status["error"], 1)
+                    self.assertEqual([f["error"] for f in status["failures"]], [expected])
+                    books = main.pdf_index_books(request, ocr_only=False, limit=10, offset=0)
+                    self.assertEqual([b["error"] for b in books["results"]], [expected])
+
     def test_with_a_library_pasted_paths_must_stay_inside_it(self):
         root = self.pdf_path.parent / "library"
         (root / "2e").mkdir(parents=True)

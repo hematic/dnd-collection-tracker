@@ -171,13 +171,24 @@ def books(
     return rows
 
 
+def _hide_index_errors(rows: list[dict], request: Request) -> list[dict]:
+    """Indexing errors can name server paths; only editors, who can fix them, see the text.
+    Readers get no error text, and the UI shows "Indexing failed"."""
+    if settings.can_edit(request):
+        return rows
+    return [{**row, "error": None} if row.get("error") else row for row in rows]
+
+
 @app.get("/api/pdf-index")
-def pdf_index_status():
-    return pdf_indexer.status()
+def pdf_index_status(request: Request):
+    status = pdf_indexer.status()
+    status["failures"] = _hide_index_errors(status["failures"], request)
+    return status
 
 
 @app.get("/api/pdf-index/books")
 def pdf_index_books(
+    request: Request,
     ocr_only: bool = True,
     limit: int = Query(500, ge=1, le=1000),
     offset: int = Query(0, ge=0),
@@ -195,7 +206,8 @@ def pdf_index_books(
             "LIMIT ? OFFSET ?",
             (ocr_only, limit, offset),
         ).fetchall()
-    return {"results": [dict(row) for row in rows], "limit": limit, "offset": offset}
+    results = _hide_index_errors([dict(row) for row in rows], request)
+    return {"results": results, "limit": limit, "offset": offset}
 
 
 @app.post("/api/pdf-index")
