@@ -11,7 +11,7 @@ from pathlib import Path
 
 import pymupdf
 
-from . import db, settings
+from . import db, healthcheck, settings
 
 logger = logging.getLogger(__name__)
 MIN_EMBEDDED_CHARS = 30
@@ -185,6 +185,7 @@ def run_worker(stop_event: threading.Event) -> None:
     _lower_worker_priority()
     worker_id = uuid.uuid4().hex
     _acquire_worker(worker_id)
+    _record_heartbeat()
     heartbeat_stop = threading.Event()
     heartbeat_thread = threading.Thread(
         target=_heartbeat_worker,
@@ -214,6 +215,7 @@ def run_worker(stop_event: threading.Event) -> None:
     finally:
         heartbeat_stop.set()
         heartbeat_thread.join(timeout=WORKER_HEARTBEAT_SECONDS + 1)
+        _clear_heartbeat()
         _release_worker(worker_id)
         logger.info("PDF indexing worker stopped")
 
@@ -263,6 +265,22 @@ def _heartbeat_worker(
             logger.error("PDF indexing worker lease was lost")
             stop_event.set()
             return
+        _record_heartbeat()
+
+
+def _record_heartbeat() -> None:
+    """Mirror the lease renewal to a local file for the container health check."""
+    try:
+        healthcheck.touch_worker_heartbeat()
+    except OSError:
+        logger.warning("Could not update the worker health check file", exc_info=True)
+
+
+def _clear_heartbeat() -> None:
+    try:
+        healthcheck.clear_worker_heartbeat()
+    except OSError:
+        logger.warning("Could not remove the worker health check file", exc_info=True)
 
 
 def _claim_next_job(worker_id: str) -> tuple[str, bool] | None:

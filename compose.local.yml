@@ -23,8 +23,6 @@ services:
       dnd-tracker:
         condition: service_healthy
     stop_grace_period: 2m
-    healthcheck:
-      disable: true
 
 volumes:
   tracker-data:

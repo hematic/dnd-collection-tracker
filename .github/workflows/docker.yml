@@ -56,7 +56,8 @@ jobs:
           check_stack() (
             compose() { docker compose -f "$file" "$@"; }
             trap 'compose logs; compose down' EXIT
-            compose up -d --pull never
+            # --wait fails unless both containers pass the image's health check.
+            compose up -d --pull never --wait --wait-timeout 120
             compose exec -T dnd-tracker-ocr tesseract --list-langs | grep -Fx eng
             compose exec -T dnd-tracker python - "$expected_edit" <<'PY'
           import json, sys, time, urllib.request

@@ -28,12 +28,7 @@ services:
       - ${DND_PDF_DIR:-/mnt/dnd/Books}:/pdfs:ro
     ports:
       - "${DND_PORT:-8765}:8000"
-    healthcheck:
-      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://127.0.0.1:8000/api/meta')"]
-      interval: 60s
-      timeout: 5s
-      start_period: 20s
-      retries: 3
+    # Health checks for both services come from the image (Dockerfile HEALTHCHECK).
 
   dnd-tracker-ocr:
     <<: *tracker-image
@@ -52,5 +47,3 @@ services:
       dnd-tracker:
         condition: service_healthy
     stop_grace_period: 2m
-    healthcheck:
-      disable: true

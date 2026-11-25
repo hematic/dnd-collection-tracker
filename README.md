@@ -147,7 +147,7 @@ The database and covers live in `DND_DATA_DIR`, mounted at `/data`. Keep it on t
 
 **Building from source:** Run `docker build -t dnd-collection-tracker:local .`, then `DND_TRACKER_IMAGE=dnd-collection-tracker:local docker compose up -d --pull never`.
 
-**OCR troubleshooting:** If the UI reports **OCR worker offline**, check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. `DND_OCR_CPU_SHARES` adjusts its relative CPU priority, not a hard cap.
+**OCR troubleshooting:** If the UI reports **OCR worker offline**, check `docker compose ps` and `docker compose logs -f dnd-tracker-ocr`. The worker shows as `unhealthy` when it hasn't renewed its hold on the indexing queue in the last minute, the same test the UI uses. `DND_OCR_CPU_SHARES` adjusts its relative CPU priority, not a hard cap.
 
 ### Back up and restore
 

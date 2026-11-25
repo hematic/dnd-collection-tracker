@@ -39,6 +39,12 @@ def _startup() -> None:
     seed.seed()
 
 
+@app.get("/healthz", include_in_schema=False)
+def healthz():
+    """Container liveness: answers without touching the database (see app/healthcheck.py)."""
+    return {"status": "ok"}
+
+
 # ---------------------------------------------------------------- helpers
 
 def _cover_url(name: str | None) -> str | None:
