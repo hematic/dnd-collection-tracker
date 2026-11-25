@@ -17,10 +17,9 @@ COPY data/catalog.json ./data/catalog.json
 COPY VERSION CHANGELOG.md ./
 RUN python -m app.version --check
 
-# Run as an unprivileged user. Match PUID/PGID to the owner of the data folder on the host.
-ARG PUID=1000
-ARG PGID=1000
-RUN groupadd -g ${PGID} tracker && useradd -u ${PUID} -g ${PGID} -M -s /usr/sbin/nologin tracker \
+# Run as an unprivileged user. docker-compose.yml overrides it with PUID:PGID to match the
+# owner of the data folder on the host.
+RUN groupadd -g 1000 tracker && useradd -u 1000 -g 1000 -M -s /usr/sbin/nologin tracker \
     && mkdir -p /data /pdfs && chown tracker:tracker /data
 USER tracker
 

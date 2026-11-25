@@ -33,7 +33,8 @@ services:
       DND_TRACKER_ADMINS: ${DND_TRACKER_ADMINS:?set DND_TRACKER_ADMINS in .env}
       # Only the proxy may talk to the app: the published port is reachable from the LAN, and
       # the proxy is what enforces the login and strips forged Remote-* headers.
-      DND_TRACKER_TRUSTED_PROXIES: ${TRAEFIK_IP:?set TRAEFIK_IP to the proxy IP}
+      # TRAEFIK_IP is the old name for this setting and still works.
+      DND_TRACKER_TRUSTED_PROXIES: ${DND_TRACKER_TRUSTED_PROXIES:-${TRAEFIK_IP:?set DND_TRACKER_TRUSTED_PROXIES to your reverse proxy's IP}}
     cpu_shares: ${DND_TRACKER_CPU_SHARES:-1024}
     volumes:
       # Database + covers: an absolute folder on the server's local disk, outside the

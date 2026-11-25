@@ -46,7 +46,7 @@ jobs:
         env:
           DND_TRACKER_IMAGE: dnd-collection-tracker:smoke
           DND_TRACKER_ADMINS: smoke
-          TRAEFIK_IP: 192.0.2.10
+          DND_TRACKER_TRUSTED_PROXIES: 192.0.2.10
         run: |
           export DND_DATA_DIR="$RUNNER_TEMP/tracker-data" DND_PDF_DIR="$RUNNER_TEMP/tracker-pdfs"
           export PUID="$(id -u)" PGID="$(id -g)"
@@ -54,6 +54,15 @@ jobs:
           docker build --tag "$DND_TRACKER_IMAGE" .
           docker run --rm -i --user "$PUID:$PGID" -v "$DND_PDF_DIR:/out" --entrypoint python \
             "$DND_TRACKER_IMAGE" - make-pdf /out < tests/docker_smoke.py
+
+          # The old TRAEFIK_IP name still sets the trusted proxy, and leaving both unset is an error.
+          proxies() { docker compose -f docker-compose.yml config --format json | jq -r '.services["dnd-tracker"].environment.DND_TRACKER_TRUSTED_PROXIES'; }
+          [[ "$(DND_TRACKER_TRUSTED_PROXIES= TRAEFIK_IP=192.0.2.20 proxies)" == 192.0.2.20 ]]
+          [[ "$(TRAEFIK_IP=192.0.2.20 proxies)" == 192.0.2.10 ]]
+          if DND_TRACKER_TRUSTED_PROXIES= docker compose -f docker-compose.yml config > /dev/null 2>&1; then
+            echo "::error::docker-compose.yml started without a trusted proxy"
+            exit 1
+          fi
 
           check_stack() (
             compose() { docker compose -f "$file" "$@"; }
@@ -71,7 +80,7 @@ jobs:
           )
 
           file=docker-compose.yml expected_edit=false check_stack
-          unset DND_TRACKER_ADMINS TRAEFIK_IP
+          unset DND_TRACKER_ADMINS DND_TRACKER_TRUSTED_PROXIES
           export DND_LOCAL_PDF_DIR="$DND_PDF_DIR"
           file=compose.local.yml expected_edit=true check_stack
 
@@ -220,3 +229,29 @@ jobs:
           gh release upload "$GITHUB_REF_NAME" --clobber docker-compose.yml tracker.env.example \
             'compose.local.pinned.yml#Local-only Compose (pinned)'
           gh release edit "$GITHUB_REF_NAME" --draft=false --latest="$PROMOTE"
+      - name: Check Docker Hub description token
+        id: description
+        shell: bash
+        env:
+          TOKEN: ${{ secrets.DOCKERHUB_DESCRIPTION_TOKEN }}
+          PROMOTE: ${{ steps.registry.outputs.promote }}
+        run: |
+          # Only the newest stable release updates the page, so rebuilding an older tag never rolls it back.
+          update=false
+          if [[ "$PROMOTE" != true ]]; then
+            echo "Not the latest release; leaving the Docker Hub description alone"
+          elif [[ -z "$TOKEN" ]]; then
+            echo "::notice::Set the DOCKERHUB_DESCRIPTION_TOKEN secret (a Docker Hub token with Read, Write, Delete access) to publish docs/docker-hub.md to Docker Hub"
+          else
+            update=true
+          fi
+          echo "update=$update" >> "$GITHUB_OUTPUT"
+      - name: Update Docker Hub description
+        if: steps.description.outputs.update == 'true'
+        uses: peter-evans/dockerhub-description@1b9a80c056b620d92cedb9d9b5a223409c68ddfa # v5
+        with:
+          username: ${{ vars.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_DESCRIPTION_TOKEN }}
+          repository: hematic/dnd-collection-tracker
+          readme-filepath: docs/docker-hub.md
+          short-description: A self-hosted bookshelf for your Dungeons & Dragons collection.

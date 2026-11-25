@@ -2,7 +2,7 @@
 
 **A self-hosted bookshelf for your Dungeons & Dragons collection.**
 
-[Live demo](https://dnd-demo.hematic.net/) · [Documentation](https://github.com/hematic/dnd-collection-tracker#readme) · [Releases](https://github.com/hematic/dnd-collection-tracker/releases) · [Report an issue](https://github.com/hematic/dnd-collection-tracker/issues)
+[Live demo](https://dnd-demo.hematic.net/) · [Documentation](https://github.com/hematic/dnd-collection-tracker#documentation) · [Releases](https://github.com/hematic/dnd-collection-tracker/releases) · [Report an issue](https://github.com/hematic/dnd-collection-tracker/issues)
 
 ![Fresh install with the AD&D 2e shelf and generated placeholder covers](https://raw.githubusercontent.com/hematic/dnd-collection-tracker/main/docs/media/fresh-shelves.png)
 
@@ -36,9 +36,9 @@ The named volume stores the database and covers. Put PDFs in `./pdfs`, or set `D
 
 ## Reverse proxy and shared access
 
-Use the separate [authenticated Compose setup](https://github.com/hematic/dnd-collection-tracker#authenticated-reverse-proxy) for a shared deployment. It works with any reverse proxy that handles login and passes a `Remote-User` or `Remote-Email` header, such as Authelia or TinyAuth, and documents storage mounts and editor permissions.
+Use the separate [authenticated Compose setup](https://github.com/hematic/dnd-collection-tracker/blob/main/docs/docker.md#authenticated-setup) for a shared deployment. It works with any reverse proxy that handles login and passes a `Remote-User` or `Remote-Email` header, such as Authelia or TinyAuth. [Reverse proxy and login](https://github.com/hematic/dnd-collection-tracker/blob/main/docs/reverse-proxy.md) has Traefik, Caddy and nginx examples, including a read-only guest hostname beside a login for editors. Every setting is listed in the [configuration reference](https://github.com/hematic/dnd-collection-tracker/blob/main/docs/configuration.md).
 
 ## Image tags and updates
 
 - `latest` follows the newest stable release. To update the local stack, run `docker compose -f compose.local.yml pull` and then `docker compose -f compose.local.yml up -d`.
-- Pin an exact version by setting `DND_TRACKER_IMAGE=hematic/dnd-collection-tracker:X.Y.Z` in a `.env` file next to Compose. Back up your collection before updating.
+- Pin an exact version by setting `DND_TRACKER_IMAGE=hematic/dnd-collection-tracker:X.Y.Z` in a `.env` file next to Compose. [Back up your collection](https://github.com/hematic/dnd-collection-tracker/blob/main/docs/backup.md) before updating, and check the [release notes](https://github.com/hematic/dnd-collection-tracker/blob/main/CHANGELOG.md) for changes to the Compose files.
