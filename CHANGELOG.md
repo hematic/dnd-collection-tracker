@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.5] - 2026-11-26
+
+### Changed
+- Added 10 missing OD&D and Basic D&D products and item codes for the original boxed set.
+
 ## [1.2.4] - 2026-11-26
 
 ### Changed
