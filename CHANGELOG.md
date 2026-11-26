@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.4] - 2026-11-26
+
+### Changed
+- The Docker image now applies Debian security updates at build time, clearing the shadow and libzstd CVEs.
+
 ## [1.2.3] - 2026-11-26
 
 ### Changed
