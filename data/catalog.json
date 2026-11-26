@@ -8,25 +8,29 @@
    "type": "Boxed Set",
    "setting": "Setting Agnostic",
    "year": 1974,
+   "code": "2002",
    "releases": [
     {
      "key": "orig",
      "kind": "Original",
      "primary": true,
-     "label": "1974 woodgrain box, 3 booklets (Men & Magic, Monsters & Treasure, Underworld & Wilderness Adventures)"
+     "label": "1974 woodgrain box, 3 booklets (Men & Magic, Monsters & Treasure, Underworld & Wilderness Adventures)",
+     "code": "2002"
     },
     {
      "key": "white",
      "kind": "Reprint",
      "year": 1977,
-     "label": "White box printing"
+     "label": "White box printing",
+     "code": "2002"
     },
     {
      "key": "2013",
      "kind": "Premium Reprint",
      "year": 2013,
      "label": "Original Dungeons & Dragons premium reprint (wooden box)",
-     "publisher": "Wizards of the Coast"
+     "publisher": "Wizards of the Coast",
+     "code": "A4539"
     }
    ],
    "contents": [
@@ -21207,6 +21211,204 @@
    "setting": "Kingdoms of Kalamar",
    "sources": [
     "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "basic-ac1010-poor-wizards-almanac-book-of-facts",
+   "title": "Poor Wizard's Almanac & Book of Facts",
+   "edition": "Basic",
+   "type": "Sourcebook",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "9372",
+   "module": "AC1010",
+   "setting": "Mystara",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-alm.html"
+   ]
+  },
+  {
+   "id": "basic-ac1011-poor-wizards-almanac-ii-book-of-facts",
+   "title": "Poor Wizard's Almanac II & Book of Facts",
+   "edition": "Basic",
+   "type": "Sourcebook",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "9441",
+   "module": "AC1011",
+   "setting": "Mystara",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-alm.html"
+   ]
+  },
+  {
+   "id": "basic-tall-tales-of-the-wee-folk",
+   "title": "Tall Tales of the Wee Folk",
+   "edition": "Basic",
+   "type": "Supplement",
+   "year": 1989,
+   "publisher": "TSR",
+   "code": "9254",
+   "module": "PC1",
+   "setting": "Mystara",
+   "sources": [
+    "https://www.tsrarchive.com/cc/cc-pc.html"
+   ]
+  },
+  {
+   "id": "basic-character-record-sheets-1977",
+   "title": "Character Record Sheets (1977 pad)",
+   "edition": "Basic",
+   "type": "Other",
+   "year": 1977,
+   "publisher": "TSR",
+   "code": "9014",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-crs.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "27-page side-tearing pad"
+    }
+   ]
+  },
+  {
+   "id": "basic-player-character-record-sheets",
+   "title": "Player Character Record Sheets",
+   "edition": "Basic",
+   "type": "Other",
+   "year": 1981,
+   "publisher": "TSR",
+   "code": "9037",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-crs.html",
+    "https://www.tsrarchive.com/dd/dd2-ac.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "1981 32-page book"
+    },
+    {
+     "key": "ac5-1984",
+     "kind": "Revised",
+     "year": 1984,
+     "code": "9037",
+     "label": "AC5 edition (32-page book)"
+    },
+    {
+     "key": "ac6-1985",
+     "kind": "Revised",
+     "year": 1985,
+     "code": "9037",
+     "label": "AC6 edition (48-page book)"
+    }
+   ]
+  },
+  {
+   "id": "basic-character-monster-assortment",
+   "title": "Character & Monster Assortment",
+   "edition": "Basic",
+   "type": "Other",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "9363",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-entry.html"
+   ]
+  },
+  {
+   "id": "odd-palace-of-the-vampire-queen",
+   "title": "Palace of the Vampire Queen",
+   "edition": "OD&D",
+   "type": "Adventure",
+   "year": 1976,
+   "publisher": "Wee Warriors",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-wee.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Wee Warriors module distributed by TSR"
+    }
+   ]
+  },
+  {
+   "id": "odd-the-dwarven-glory",
+   "title": "The Dwarven Glory",
+   "edition": "OD&D",
+   "type": "Adventure",
+   "year": 1977,
+   "publisher": "Wee Warriors",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-wee.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Wee Warriors module distributed by TSR (12 loose pages)"
+    },
+    {
+     "key": "booklet1977",
+     "kind": "Revised",
+     "year": 1977,
+     "label": "Third printing, 48-page booklet"
+    }
+   ]
+  },
+  {
+   "id": "odd-the-character-archaic",
+   "title": "The Character Archaic",
+   "edition": "OD&D",
+   "type": "Other",
+   "year": 1975,
+   "publisher": "Wee Warriors",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-wee.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Wee Warriors character record book distributed by TSR"
+    }
+   ]
+  },
+  {
+   "id": "odd-quest-for-the-fazzlewood",
+   "title": "Quest for the Fazzlewood",
+   "edition": "OD&D",
+   "type": "Adventure",
+   "year": 1978,
+   "publisher": "TSR",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/dd/dd2-o.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Tournament module for Detroit WinterCon VII"
+    }
    ]
   }
  ]
