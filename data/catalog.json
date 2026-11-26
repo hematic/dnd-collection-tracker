@@ -2228,7 +2228,21 @@
    "edition": "3.0",
    "type": "Monster Book",
    "setting": "Setting Agnostic",
-   "year": 2002
+   "year": 2002,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "gift2006",
+     "kind": "Special Edition",
+     "year": 2006,
+     "label": "Monster Gift Set (slipcase)",
+     "code": "10767"
+    }
+   ]
   },
   {
    "id": "30-epic-level-handbook",
@@ -2268,7 +2282,21 @@
    "edition": "3.0",
    "type": "Monster Book",
    "setting": "Setting Agnostic",
-   "year": 2003
+   "year": 2003,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "gift2006",
+     "kind": "Special Edition",
+     "year": 2006,
+     "label": "Monster Gift Set (slipcase)",
+     "code": "10767"
+    }
+   ]
   },
   {
    "id": "30-savage-species",
@@ -2384,6 +2412,20 @@
      "kind": "Premium Reprint",
      "year": 2012,
      "label": "2012 premium reprint (with errata)"
+    },
+    {
+     "key": "special2004",
+     "kind": "Special Edition",
+     "year": 2004,
+     "label": "Special Edition (faux-leather cover)",
+     "code": "17923"
+    },
+    {
+     "key": "gift2003",
+     "kind": "Special Edition",
+     "year": 2003,
+     "label": "v.3.5 Core Rulebook Collection (slipcase)",
+     "code": "96648"
     }
    ]
   },
@@ -2405,6 +2447,20 @@
      "kind": "Premium Reprint",
      "year": 2012,
      "label": "2012 premium reprint (with errata)"
+    },
+    {
+     "key": "special2005",
+     "kind": "Special Edition",
+     "year": 2005,
+     "label": "Special Edition (faux-leather cover)",
+     "code": "95389"
+    },
+    {
+     "key": "gift2003",
+     "kind": "Special Edition",
+     "year": 2003,
+     "label": "v.3.5 Core Rulebook Collection (slipcase)",
+     "code": "96648"
     }
    ]
   },
@@ -2426,6 +2482,20 @@
      "kind": "Premium Reprint",
      "year": 2012,
      "label": "2012 premium reprint (with errata)"
+    },
+    {
+     "key": "special2003",
+     "kind": "Special Edition",
+     "year": 2003,
+     "label": "Special Edition (faux-leather cover)",
+     "code": "95390"
+    },
+    {
+     "key": "gift2003",
+     "kind": "Special Edition",
+     "year": 2003,
+     "label": "v.3.5 Core Rulebook Collection (slipcase)",
+     "code": "96648"
     }
    ]
   },
@@ -2451,7 +2521,21 @@
    "edition": "3.5",
    "type": "Monster Book",
    "setting": "Setting Agnostic",
-   "year": 2004
+   "year": 2004,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "gift2006",
+     "kind": "Special Edition",
+     "year": 2006,
+     "label": "Monster Gift Set (slipcase)",
+     "code": "10767"
+    }
+   ]
   },
   {
    "id": "35-monster-manual-iv",
@@ -2603,7 +2687,21 @@
    "edition": "3.5",
    "type": "Sourcebook",
    "setting": "Setting Agnostic",
-   "year": 2004
+   "year": 2004,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "gift2005",
+     "kind": "Special Edition",
+     "year": 2005,
+     "label": "Race Series Collection (slipcase)",
+     "code": "95388"
+    }
+   ]
   },
   {
    "id": "35-races-of-destiny",
@@ -2611,7 +2709,21 @@
    "edition": "3.5",
    "type": "Sourcebook",
    "setting": "Setting Agnostic",
-   "year": 2004
+   "year": 2004,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "gift2005",
+     "kind": "Special Edition",
+     "year": 2005,
+     "label": "Race Series Collection (slipcase)",
+     "code": "95388"
+    }
+   ]
   },
   {
    "id": "35-races-of-the-wild",
@@ -2619,7 +2731,21 @@
    "edition": "3.5",
    "type": "Sourcebook",
    "setting": "Setting Agnostic",
-   "year": 2005
+   "year": 2005,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "gift2005",
+     "kind": "Special Edition",
+     "year": 2005,
+     "label": "Race Series Collection (slipcase)",
+     "code": "95388"
+    }
+   ]
   },
   {
    "id": "35-races-of-the-dragon",
@@ -2683,7 +2809,21 @@
    "edition": "3.5",
    "type": "Sourcebook",
    "setting": "Setting Agnostic",
-   "year": 2005
+   "year": 2005,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "premium2013",
+     "kind": "Premium Reprint",
+     "year": 2013,
+     "label": "2013 premium reprint",
+     "code": "A3577"
+    }
+   ]
   },
   {
    "id": "35-fiendish-codex-i-hordes-of-the-abyss",
@@ -2739,7 +2879,21 @@
    "edition": "3.5",
    "type": "Sourcebook",
    "setting": "Setting Agnostic",
-   "year": 2007
+   "year": 2007,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "premium2013",
+     "kind": "Premium Reprint",
+     "year": 2013,
+     "label": "2013 premium reprint",
+     "code": "A3578"
+    }
+   ]
   },
   {
    "id": "35-rules-compendium",
@@ -18134,6 +18288,2925 @@
      "primary": true,
      "label": "D&D Delve Night (4 cardstock sheets)"
     }
+   ]
+  },
+  {
+   "id": "35-elder-evils",
+   "title": "Elder Evils",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "21566",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-hb.html"
+   ]
+  },
+  {
+   "id": "35-drow-of-the-underdark",
+   "title": "Drow of the Underdark",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "95726",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-mon.html"
+   ]
+  },
+  {
+   "id": "35-secrets-of-sarlona",
+   "title": "Secrets of Sarlona",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "95567",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-hb.html"
+   ]
+  },
+  {
+   "id": "35-dragons-of-eberron",
+   "title": "Dragons of Eberron",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "95729",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-hb.html"
+   ]
+  },
+  {
+   "id": "35-city-of-stormreach",
+   "title": "City of Stormreach",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21650",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-hb.html"
+   ]
+  },
+  {
+   "id": "35-eyes-of-the-lich-queen",
+   "title": "Eyes of the Lich Queen",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "95977",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-adv.html"
+   ]
+  },
+  {
+   "id": "35-the-sinister-spire",
+   "title": "The Sinister Spire",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "10797",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-adv.html"
+   ]
+  },
+  {
+   "id": "35-fantastic-locations-city-of-peril",
+   "title": "Fantastic Locations: City of Peril",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "95978",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-fl.html"
+   ]
+  },
+  {
+   "id": "30-pool-of-radiance-attack-on-myth-drannor",
+   "title": "Pool of Radiance: Attack on Myth Drannor",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "11710",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-adv.html"
+   ]
+  },
+  {
+   "id": "30-living-greyhawk-gazetteer",
+   "title": "Living Greyhawk Gazetteer",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "11743",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-gaz.html"
+   ]
+  },
+  {
+   "id": "30-diablo-ii-diablerie",
+   "title": "Diablo II: Diablerie",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "11760",
+   "setting": "Sanctuary",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-diablo.html"
+   ]
+  },
+  {
+   "id": "30-diablo-ii-to-hell-and-back",
+   "title": "Diablo II: To Hell and Back",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Wizards of the Coast",
+   "code": "11831",
+   "setting": "Sanctuary",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-diablo.html"
+   ]
+  },
+  {
+   "id": "35-the-shackled-city",
+   "title": "The Shackled City",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Paizo Publishing",
+   "code": "PZO1000",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-pzo.html"
+   ]
+  },
+  {
+   "id": "30-dungeons-dragons-adventure-game",
+   "title": "Dungeons & Dragons Adventure Game",
+   "edition": "3.0",
+   "type": "Boxed Set",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "11641",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-box.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "support2000",
+     "kind": "Revised",
+     "year": 2000,
+     "code": "11951",
+     "label": "Second version, adds cardstock support"
+    }
+   ]
+  },
+  {
+   "id": "35-dungeons-dragons-basic-game-2004",
+   "title": "Dungeons & Dragons Basic Game (2004)",
+   "edition": "3.5",
+   "type": "Boxed Set",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "code": "96647",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-box.html"
+   ]
+  },
+  {
+   "id": "35-dungeons-dragons-basic-game-2006",
+   "title": "Dungeons & Dragons Basic Game (2006)",
+   "edition": "3.5",
+   "type": "Boxed Set",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "code": "95391",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-box.html"
+   ]
+  },
+  {
+   "id": "35-dungeons-dragons-players-kit",
+   "title": "Dungeons & Dragons Player's Kit",
+   "edition": "3.5",
+   "type": "Boxed Set",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "code": "95392",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-box.html"
+   ]
+  },
+  {
+   "id": "30-conversion-manual",
+   "title": "Conversion Manual",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-con.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free 3rd Edition conversion booklet"
+    }
+   ]
+  },
+  {
+   "id": "35-revision-update",
+   "title": "Revision Update",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-con.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free v.3.5 revision booklet"
+    }
+   ]
+  },
+  {
+   "id": "35-animated-series-handbook",
+   "title": "Animated Series Handbook",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-hb.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Included in The Complete Animated Series DVD boxed set"
+    }
+   ]
+  },
+  {
+   "id": "30-greyhawk-gazetteer",
+   "title": "Greyhawk Gazetteer",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "11742",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-gaz.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "rpga2000",
+     "kind": "Special Edition",
+     "year": 2000,
+     "code": "B0002310",
+     "label": "RPGA limited edition"
+    }
+   ]
+  },
+  {
+   "id": "30-the-fright-at-tristor",
+   "title": "The Fright at Tristor",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "B0001723",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA exclusive promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "30-caves-of-shadow",
+   "title": "Caves of Shadow",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "B0002181",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Promotional adventure for the Adventure Game boxed set"
+    }
+   ]
+  },
+  {
+   "id": "35-lair-of-the-mad-alchemist",
+   "title": "Lair of the Mad Alchemist",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Game Day 2004 promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-assault-on-the-fane-of-lolth",
+   "title": "Assault on the Fane of Lolth",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Game Day 2005 promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-curse-of-gethin-abbey",
+   "title": "Curse of Gethin Abbey",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Game Day 2006 promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-the-fall-of-frostsilver",
+   "title": "The Fall of Frostsilver",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Game Day 2007 promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-the-forgotten-forge",
+   "title": "The Forgotten Forge",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Game Day 2004 promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr1-extermination",
+   "title": "Extermination",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2003,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR1",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr2-gray-hunt",
+   "title": "Gray Hunt",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2003,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR2",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr3-key-to-phantoms-cloister",
+   "title": "Key to Phantoms' Cloister",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2003,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR3",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr5-dark-exodus",
+   "title": "Dark Exodus",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR5",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr6-epidemic",
+   "title": "Epidemic",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR6",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr7-nurture-and-nature",
+   "title": "Nurture and Nature",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR7",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr8-rats-bastard",
+   "title": "Rat's Bastard",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR8",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr9-denial-of-resource",
+   "title": "Denial of Resource",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR9",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr11-humility",
+   "title": "Humility",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR11",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr12-tyranny",
+   "title": "Tyranny",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR12",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr13-book-knowledge",
+   "title": "Book Knowledge",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR13",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr16-in-cold-blood",
+   "title": "In Cold Blood",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR16",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr17-tour-of-duty",
+   "title": "Tour of Duty",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR17",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr18-feast-of-the-moon",
+   "title": "Feast of the Moon",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR18",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr19-a-difference-of-opinion",
+   "title": "A Difference of Opinion",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR19",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr20-the-howling-of-a-mighty-storm",
+   "title": "The Howling of a Mighty Storm",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR20",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr21-the-truth-of-hearts",
+   "title": "The Truth of Hearts",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR21",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr22-as-seconds-slip-away",
+   "title": "As Seconds Slip Away",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR22",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-lgr24-to-sever-the-snakes-head",
+   "title": "To Sever the Snake's Head",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "LGR24",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xgr1-under-high-lords-hall",
+   "title": "Under High Lord's Hall",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2003,
+   "publisher": "Wizards of the Coast",
+   "module": "XGR1",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xgr2-dungeon-of-the-hark",
+   "title": "Dungeon of the Hark",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "XGR2",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xgr3-undermountain",
+   "title": "Undermountain",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "XGR3",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xgr4-the-ruins-of-karse",
+   "title": "The Ruins of Karse",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "XGR4",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/3f/3f-lgr.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Legacy of the Green Regent adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-1-reflections-of-the-multiverse",
+   "title": "Reflections of the Multiverse",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-1",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-2-pirates-bounty-and-the-isle-of-fire",
+   "title": "Pirate's Bounty and the Isle of Fire",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-2",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-3-no-ticket",
+   "title": "No Ticket",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-3",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-4-finding-the-way",
+   "title": "Finding the Way",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-4",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-5-gambit-at-dreadhold",
+   "title": "Gambit at Dreadhold",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-5",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-6-blind-mans-hunt",
+   "title": "Blind Man's Hunt",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-6",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-7-the-delirium-stone",
+   "title": "The Delirium Stone",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-7",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-8-freely-given",
+   "title": "Freely Given",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-8",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-9-mote-in-the-eye-of-chaos",
+   "title": "Mote in the Eye of Chaos",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-9",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-10-desolate-endeavor",
+   "title": "Desolate Endeavor",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-10",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-11-the-graywall-incident",
+   "title": "The Graywall Incident",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-11",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-12-escape-from-grea-tower",
+   "title": "Escape From Grea Tower",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-12",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-14-house-of-madness",
+   "title": "House of Madness",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-14",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-emh-15-price-of-protection",
+   "title": "Price of Protection",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "EMH-15",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xmh-1-death-in-darguun",
+   "title": "Death in Darguun",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "XMH-1",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xmh-2-fallen-of-sharn",
+   "title": "Fallen of Sharn",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "module": "XMH-2",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xmh-3-the-unexpected-gate",
+   "title": "The Unexpected Gate",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "XMH-3",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-xmh-4-to-spurn-the-churning-discord",
+   "title": "To Spurn the Churning Discord",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "XMH-4",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-moh.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Mark of Heroes adventure, PDF only"
+    }
+   ]
+  },
+  {
+   "id": "35-cco-1-prophecys-unwitting-servant",
+   "title": "Prophecy's Unwitting Servant",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "CCO-1",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-xec.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Xen'drik Expeditions adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-bwc-3-marked-man",
+   "title": "Marked Man",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "module": "BWC-3",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-xec.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Xen'drik Expeditions adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-csh-4-fire-in-the-heart-of-madness",
+   "title": "Fire in the Heart of Madness",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "module": "CSH-4",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-xec.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Xen'drik Expeditions adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-cvn-5-things-fall-apart",
+   "title": "Things Fall Apart",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Wizards of the Coast",
+   "module": "CVN-5",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-xec.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Xen'drik Expeditions adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-int7-01-ambitions-folly",
+   "title": "Ambition's Folly",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "module": "INT7-01",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-lg.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Living Greyhawk adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-int7-02-trial-by-fire",
+   "title": "Trial by Fire",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "module": "INT7-02",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-lg.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Living Greyhawk adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-cor-intro-7-03-a-dead-mans-job",
+   "title": "A Dead Man's Job",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "module": "COR INTRO 7-03",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-lg.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Living Greyhawk adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-cor-intro-7-04-ritual-of-the-damned",
+   "title": "Ritual of the Damned",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "module": "COR INTRO 7-04",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-lg.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA Living Greyhawk adventure"
+    }
+   ]
+  },
+  {
+   "id": "35-dt5-dungeon-tiles-v-lost-caverns-of-the-underdark",
+   "title": "DT5 Dungeon Tiles V: Lost Caverns of the Underdark",
+   "edition": "3.5",
+   "type": "Supplement",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "21601",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-dt.html"
+   ]
+  },
+  {
+   "id": "35-dt6-dungeon-tiles-vi-dire-tombs",
+   "title": "DT6 Dungeon Tiles VI: Dire Tombs",
+   "edition": "3.5",
+   "type": "Supplement",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "21711",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-dt.html"
+   ]
+  },
+  {
+   "id": "35-dt7-dungeon-tiles-vii-fane-of-the-forgotten-gods",
+   "title": "DT7 Dungeon Tiles VII: Fane of the Forgotten Gods",
+   "edition": "3.5",
+   "type": "Supplement",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21647",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-dt.html"
+   ]
+  },
+  {
+   "id": "30-character-sheets",
+   "title": "Character Sheets",
+   "edition": "3.0",
+   "type": "Other",
+   "year": 2000,
+   "publisher": "Wizards of the Coast",
+   "code": "11642",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-cs.html"
+   ]
+  },
+  {
+   "id": "35-deluxe-character-sheets",
+   "title": "Deluxe Character Sheets",
+   "edition": "3.5",
+   "type": "Other",
+   "year": 2004,
+   "publisher": "Wizards of the Coast",
+   "code": "88595",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/3e/3e2-cs.html"
+   ]
+  },
+  {
+   "id": "35-deluxe-eberron-character-sheets",
+   "title": "Deluxe Eberron Character Sheets",
+   "edition": "3.5",
+   "type": "Other",
+   "year": 2005,
+   "publisher": "Wizards of the Coast",
+   "code": "95005",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/eb/eb2-acc.html"
+   ]
+  },
+  {
+   "id": "30-ravenloft-campaign-setting",
+   "title": "Ravenloft Campaign Setting",
+   "edition": "3.0",
+   "type": "Campaign Setting",
+   "year": 2001,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15000",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-hb.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "limited2001",
+     "kind": "Special Edition",
+     "year": 2001,
+     "code": "WW15099",
+     "label": "Limited, numbered edition of 3,000 (with bookmark)"
+    }
+   ]
+  },
+  {
+   "id": "30-denizens-of-darkness",
+   "title": "Denizens of Darkness",
+   "edition": "3.0",
+   "type": "Monster Book",
+   "year": 2002,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15002",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-hb.html"
+   ]
+  },
+  {
+   "id": "35-ravenloft-dungeon-masters-guide",
+   "title": "Ravenloft Dungeon Master's Guide",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15004",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-hb.html"
+   ]
+  },
+  {
+   "id": "35-ravenloft-players-handbook",
+   "title": "Ravenloft Player's Handbook",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15005",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-hb.html"
+   ]
+  },
+  {
+   "id": "35-denizens-of-dread",
+   "title": "Denizens of Dread",
+   "edition": "3.5",
+   "type": "Monster Book",
+   "year": 2004,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15006",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-hb.html"
+   ]
+  },
+  {
+   "id": "35-masque-of-the-red-death",
+   "title": "Masque of the Red Death",
+   "edition": "3.5",
+   "type": "Campaign Setting",
+   "year": 2004,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15007",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-hb.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-dread-realms",
+   "title": "Secrets of the Dread Realms",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2001,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15001",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "30-champions-of-darkness",
+   "title": "Champions of Darkness",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15003",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "30-van-richtens-arsenal-volume-i",
+   "title": "Van Richten's Arsenal Volume I",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15010",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "30-van-richtens-guide-to-the-walking-dead",
+   "title": "Van Richten's Guide to the Walking Dead",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15011",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "35-van-richtens-guide-to-the-shadow-fey",
+   "title": "Van Richten's Guide to the Shadow Fey",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15012",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "35-van-richtens-guide-to-the-mists",
+   "title": "Van Richten's Guide to the Mists",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2005,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15013",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "PDF only"
+    }
+   ]
+  },
+  {
+   "id": "30-heroes-of-light",
+   "title": "Heroes of Light",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15030",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "35-legacy-of-the-blood-great-families-of-the-core",
+   "title": "Legacy of the Blood: Great Families of the Core",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15031",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "35-dark-tales-disturbing-legends",
+   "title": "Dark Tales & Disturbing Legends",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2005,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15032",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "30-tarokka-deck",
+   "title": "Tarokka Deck",
+   "edition": "3.0",
+   "type": "Other",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15049",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-acc.html"
+   ]
+  },
+  {
+   "id": "30-ravenloft-gazetteer-volume-i",
+   "title": "Ravenloft Gazetteer Volume I",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15020",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-gaz.html"
+   ]
+  },
+  {
+   "id": "30-ravenloft-gazetteer-volume-ii",
+   "title": "Ravenloft Gazetteer Volume II",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15021",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-gaz.html"
+   ]
+  },
+  {
+   "id": "30-ravenloft-gazetteer-volume-iii",
+   "title": "Ravenloft Gazetteer Volume III",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15022",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-gaz.html"
+   ]
+  },
+  {
+   "id": "30-ravenloft-gazetteer-volume-iv",
+   "title": "Ravenloft Gazetteer Volume IV",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15023",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-gaz.html"
+   ]
+  },
+  {
+   "id": "35-ravenloft-gazetteer-volume-v",
+   "title": "Ravenloft Gazetteer Volume V",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Sword & Sorcery Studios",
+   "code": "WW15024",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/3r/3r-gaz.html"
+   ]
+  },
+  {
+   "id": "35-age-of-mortals",
+   "title": "Age of Mortals",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4001",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-war-of-the-lance",
+   "title": "War of the Lance",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4002",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-legends-of-the-twins",
+   "title": "Legends of the Twins",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2005,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4003",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-towers-of-high-sorcery",
+   "title": "Towers of High Sorcery",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4401",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-holy-orders-of-the-stars",
+   "title": "Holy Orders of the Stars",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2005,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4402",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-knightly-orders-of-ansalon",
+   "title": "Knightly Orders of Ansalon",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2006,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4403",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-races-of-ansalon",
+   "title": "Races of Ansalon",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4404",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-bestiary-of-krynn-revised",
+   "title": "Bestiary of Krynn: Revised",
+   "edition": "3.5",
+   "type": "Monster Book",
+   "year": 2007,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4405",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-dragons-of-krynn",
+   "title": "Dragons of Krynn",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4406",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-bestiary-of-krynn",
+   "title": "Bestiary of Krynn",
+   "edition": "3.5",
+   "type": "Monster Book",
+   "year": 2004,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4801",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-hb.html"
+   ]
+  },
+  {
+   "id": "35-lost-leaves-from-the-inn-of-the-last-home",
+   "title": "Lost Leaves from the Inn of the Last Home",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4407",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-acc.html"
+   ]
+  },
+  {
+   "id": "35-key-of-destiny",
+   "title": "Key of Destiny",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2004,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4201",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-adv.html"
+   ]
+  },
+  {
+   "id": "35-spectre-of-sorrows",
+   "title": "Spectre of Sorrows",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4202",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-adv.html"
+   ]
+  },
+  {
+   "id": "35-price-of-courage",
+   "title": "Price of Courage",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4203",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-adv.html"
+   ]
+  },
+  {
+   "id": "35-dragons-of-autumn",
+   "title": "Dragons of Autumn",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2006,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4204",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-adv.html"
+   ]
+  },
+  {
+   "id": "35-dragons-of-winter",
+   "title": "Dragons of Winter",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2007,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4205",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-adv.html"
+   ]
+  },
+  {
+   "id": "35-dragons-of-spring",
+   "title": "Dragons of Spring",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Sovereign Press",
+   "code": "SVP-4206",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/3d/3d-adv.html"
+   ]
+  },
+  {
+   "id": "30-rokugan",
+   "title": "Rokugan",
+   "edition": "3.0",
+   "type": "Campaign Setting",
+   "year": 2001,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3103",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-hb.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-lion",
+   "title": "Secrets of the Lion",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3026",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-scorpion",
+   "title": "Secrets of the Scorpion",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3027",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-unicorn",
+   "title": "Secrets of the Unicorn",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3029",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-mantis",
+   "title": "Secrets of the Mantis",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3034",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-phoenix",
+   "title": "Secrets of the Phoenix",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3035",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-crab",
+   "title": "Secrets of the Crab",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3036",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-crane",
+   "title": "Secrets of the Crane",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3037",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-dragon",
+   "title": "Secrets of the Dragon",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3038",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "35-secrets-of-the-shadowlands",
+   "title": "Secrets of the Shadowlands",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3039",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-clan.html"
+   ]
+  },
+  {
+   "id": "35-way-of-the-open-hand",
+   "title": "Way of the Open Hand",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3042",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "35-way-of-the-daimyo",
+   "title": "Way of the Daimyo",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3043",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "35-way-of-the-thief",
+   "title": "Way of the Thief",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3044",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "35-the-complete-exotic-arms-guide",
+   "title": "The Complete Exotic Arms Guide",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3046",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "35-the-hidden-emperor",
+   "title": "The Hidden Emperor",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3047",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-creatures-of-rokugan",
+   "title": "Creatures of Rokugan",
+   "edition": "3.0",
+   "type": "Monster Book",
+   "year": 2001,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3104",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-magic-of-rokugan",
+   "title": "Magic of Rokugan",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2001,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3105",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-way-of-the-samurai",
+   "title": "Way of the Samurai",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3106",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-way-of-the-ninja",
+   "title": "Way of the Ninja",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3107",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-way-of-the-shugenja",
+   "title": "Way of the Shugenja",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3108",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-fortunes-winds",
+   "title": "Fortunes & Winds",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3109",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "35-rokugan-live-action-roleplaying",
+   "title": "Rokugan Live-Action Roleplaying",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Alderac Entertainment Group",
+   "code": "AEG3041",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-acc.html"
+   ]
+  },
+  {
+   "id": "30-bloodspeakers",
+   "title": "Bloodspeakers",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2002,
+   "code": "PCI2101",
+   "setting": "Rokugan",
+   "sources": [
+    "https://www.tsrarchive.com/3o/3o-adv.html"
+   ]
+  },
+  {
+   "id": "30-kingdoms-of-kalamar-campaign-setting-sourcebook",
+   "title": "Kingdoms of Kalamar Campaign Setting Sourcebook",
+   "edition": "3.0",
+   "type": "Campaign Setting",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1000",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "30-kingdoms-of-kalamar-players-guide",
+   "title": "Kingdoms of Kalamar Player's Guide",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1002",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "30-villain-design-handbook",
+   "title": "Villain Design Handbook",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1004",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "rev2004",
+     "kind": "Revised",
+     "year": 2004,
+     "code": "K&C1025",
+     "label": "2004 revised 144-page softcover"
+    }
+   ]
+  },
+  {
+   "id": "30-kingdoms-of-kalamar-atlas",
+   "title": "Kingdoms of Kalamar Atlas",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1005",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "30-dangerous-denizens-the-monsters-of-tellene",
+   "title": "Dangerous Denizens: The Monsters of Tellene",
+   "edition": "3.0",
+   "type": "Monster Book",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1014",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "35-friend-foe-the-gnomes-and-kobolds-of-tellene",
+   "title": "Friend & Foe: The Gnomes and Kobolds of Tellene",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1029",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "35-friend-foe-the-elves-and-bugbears-of-tellene",
+   "title": "Friend & Foe: The Elves and Bugbears of Tellene",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1031",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "35-svimohzia-the-ancient-isle",
+   "title": "Svimohzia: The Ancient Isle",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2007,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1036",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-hb.html"
+   ]
+  },
+  {
+   "id": "30-geanavue-the-stones-of-peace",
+   "title": "Geanavue: The Stones of Peace",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1001",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-pekal-gazetteer",
+   "title": "Pekal Gazetteer",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1003",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-fury-in-the-wastelands-the-orcs-of-tellene",
+   "title": "Fury in the Wastelands: The Orcs of Tellene",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1007",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-kingdoms-of-kalamar-player-character-record-book",
+   "title": "Kingdoms of Kalamar Player Character Record Book",
+   "edition": "3.0",
+   "type": "Other",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1009",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-strength-and-honor-the-mighty-hobgoblins-of-tellene",
+   "title": "Strength and Honor: The Mighty Hobgoblins of Tellene",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1011",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-loona-port-of-intrigue",
+   "title": "Loona: Port of Intrigue",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1015",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-salt-and-sea-dogs-the-pirates-of-tellene",
+   "title": "Salt and Sea Dogs: The Pirates of Tellene",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1017",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-secrets-of-the-alubelok-coast",
+   "title": "Secrets of the Alubelok Coast",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1018",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "35-kingdoms-of-kalamar-players-primer",
+   "title": "Kingdoms of Kalamar Player's Primer",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1020",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "30-stealth-and-style",
+   "title": "Stealth and Style",
+   "edition": "3.0",
+   "type": "Sourcebook",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1022",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "35-blood-shadows-the-dark-elves-of-tellene",
+   "title": "Blood & Shadows: The Dark Elves of Tellene",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1028",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "35-kingdoms-of-kalamar-city-map-folio",
+   "title": "Kingdoms of Kalamar City Map Folio",
+   "edition": "3.5",
+   "type": "Supplement",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1030",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-acc.html"
+   ]
+  },
+  {
+   "id": "35-goods-and-gear-the-ultimate-adventurers-guide",
+   "title": "Goods and Gear: The Ultimate Adventurer's Guide",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1203",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-ds.html"
+   ]
+  },
+  {
+   "id": "35-trove-of-treasure-maps",
+   "title": "Trove of Treasure Maps",
+   "edition": "3.5",
+   "type": "Supplement",
+   "year": 2004,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1201",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-ds.html"
+   ]
+  },
+  {
+   "id": "35-by-the-sword-dueling-in-realms-of-fantasy",
+   "title": "By the Sword: Dueling in Realms of Fantasy",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2005,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1204",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-ds.html"
+   ]
+  },
+  {
+   "id": "35-brothers-by-blood",
+   "title": "Brothers by Blood",
+   "edition": "3.5",
+   "type": "Sourcebook",
+   "year": 2006,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1205",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-ds.html"
+   ]
+  },
+  {
+   "id": "30-the-root-of-all-evil",
+   "title": "The Root of All Evil",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1100",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-forging-darkness",
+   "title": "Forging Darkness",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1101",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-coins-end",
+   "title": "Coin's End",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1102",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-harvest-of-darkness",
+   "title": "Harvest of Darkness",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1103",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-midnights-terror",
+   "title": "Midnight's Terror",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1104",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-aldrivs-revenge",
+   "title": "Aldriv's Revenge",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1105",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-deathright",
+   "title": "Deathright",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1106",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-sirens-prize",
+   "title": "Siren's Prize",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2001,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1107",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-lands-of-mystery",
+   "title": "Lands of Mystery",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1109",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-the-invasion-of-arunkid",
+   "title": "The Invasion of Arun'Kid",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1110",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-the-lost-tomb-of-kruk-ma-kali",
+   "title": "The Lost Tomb of Kruk-Ma-Kali",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1111",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-the-fate-of-heroes",
+   "title": "The Fate of Heroes",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2002,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1112",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-garden-of-the-plantmaster",
+   "title": "Garden of the Plantmaster",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1113",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "30-stand-and-deliver",
+   "title": "Stand and Deliver",
+   "edition": "3.0",
+   "type": "Adventure",
+   "year": 2003,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1115",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "35-perils-of-pekal",
+   "title": "Perils of Pekal",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1116",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
+   ]
+  },
+  {
+   "id": "35-black-as-the-brightest-flame",
+   "title": "Black as the Brightest Flame",
+   "edition": "3.5",
+   "type": "Adventure",
+   "year": 2005,
+   "publisher": "Kenzer & Company",
+   "code": "K&C1117",
+   "setting": "Kingdoms of Kalamar",
+   "sources": [
+    "https://www.tsrarchive.com/kk/kk-adv.html"
    ]
   }
  ]
