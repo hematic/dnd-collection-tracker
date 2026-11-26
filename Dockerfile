@@ -8,8 +8,10 @@ WORKDIR /app
 COPY requirements.txt .
 # pip is only needed at build time. It vendors its own urllib3 and setuptools, which image
 # scanners flag (e.g. CVE-2026-97689, CVE-2025-47273), so remove it and ensurepip's bundled
-# copy once the requirements are installed.
+# copy once the requirements are installed. apt-get upgrade pulls in Debian security fixes
+# published since the base image was last rebuilt.
 RUN apt-get update \
+    && apt-get upgrade -y --no-install-recommends \
     && apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng \
     && rm -rf /var/lib/apt/lists/* \
     && pip install --no-cache-dir -r requirements.txt \
