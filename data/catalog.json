@@ -1962,6 +1962,26 @@
    "setting": "Greyhawk"
   },
   {
+   "id": "2e-the-catacombs-of-the-necromancers",
+   "title": "The Catacombs of the Necromancers",
+   "edition": "AD&D 2e",
+   "type": "Other",
+   "year": 1998,
+   "publisher": "TSR",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Single-page promotional item for use with Return to the Tomb of Horrors",
+     "primary": true
+    }
+   ]
+  },
+  {
    "id": "2e-return-to-white-plume-mountain",
    "title": "Return to White Plume Mountain",
    "edition": "AD&D 2e",
@@ -2975,7 +2995,35 @@
    "edition": "4e",
    "type": "Core Rulebook",
    "setting": "Setting Agnostic",
-   "year": 2008
+   "year": 2008,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "deluxe2008",
+     "kind": "Special Edition",
+     "year": 2008,
+     "label": "Deluxe Edition",
+     "code": "21956"
+    },
+    {
+     "key": "core2008",
+     "kind": "Special Edition",
+     "year": 2008,
+     "label": "4th Edition Core Rulebook Collection (slipcase)",
+     "code": "22212"
+    },
+    {
+     "key": "phbcoll2009",
+     "kind": "Special Edition",
+     "year": 2009,
+     "label": "4th Edition Player's Handbook Collection (slipcase)",
+     "code": "19850"
+    }
+   ]
   },
   {
    "id": "4e-dungeon-master-s-guide",
@@ -2983,7 +3031,28 @@
    "edition": "4e",
    "type": "Core Rulebook",
    "setting": "Setting Agnostic",
-   "year": 2008
+   "year": 2008,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "deluxe2008",
+     "kind": "Special Edition",
+     "year": 2008,
+     "label": "Deluxe Edition",
+     "code": "21957"
+    },
+    {
+     "key": "core2008",
+     "kind": "Special Edition",
+     "year": 2008,
+     "label": "4th Edition Core Rulebook Collection (slipcase)",
+     "code": "22212"
+    }
+   ]
   },
   {
    "id": "4e-monster-manual",
@@ -2991,7 +3060,28 @@
    "edition": "4e",
    "type": "Core Rulebook",
    "setting": "Setting Agnostic",
-   "year": 2008
+   "year": 2008,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "deluxe2008",
+     "kind": "Special Edition",
+     "year": 2008,
+     "label": "Deluxe Edition",
+     "code": "21958"
+    },
+    {
+     "key": "core2008",
+     "kind": "Special Edition",
+     "year": 2008,
+     "label": "4th Edition Core Rulebook Collection (slipcase)",
+     "code": "22212"
+    }
+   ]
   },
   {
    "id": "4e-player-s-handbook-2",
@@ -2999,7 +3089,21 @@
    "edition": "4e",
    "type": "Core Rulebook",
    "setting": "Setting Agnostic",
-   "year": 2009
+   "year": 2009,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "phbcoll2009",
+     "kind": "Special Edition",
+     "year": 2009,
+     "label": "4th Edition Player's Handbook Collection (slipcase)",
+     "code": "19850"
+    }
+   ]
   },
   {
    "id": "4e-dungeon-master-s-guide-2",
@@ -3565,6 +3669,12 @@
      "kind": "Special Edition",
      "year": 2020,
      "label": "Curse of Strahd: Revamped (boxed, with tarokka deck)"
+    },
+    {
+     "key": "legendary2020",
+     "kind": "Special Edition",
+     "year": 2020,
+     "label": "Legendary Edition (premium boxed edition)"
     }
    ]
   },
@@ -3581,6 +3691,18 @@
      "kind": "Compilation",
      "primary": true,
      "label": "Hoard of the Dragon Queen + The Rise of Tiamat in one book (with updates)"
+    },
+    {
+     "key": "alt2019",
+     "kind": "Alternate Cover",
+     "year": 2019,
+     "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "legendary2025",
+     "kind": "Special Edition",
+     "year": 2025,
+     "label": "Legendary Edition (premium boxed edition)"
     }
    ]
   },
@@ -3731,6 +3853,18 @@
      "kind": "Alternate Cover",
      "year": 2017,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "gift2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Rules Expansion Gift Set (slipcase)"
+    },
+    {
+     "key": "giftalt2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Rules Expansion Gift Set, hobby store limited-edition covers (slipcase)"
     }
    ]
   },
@@ -3773,6 +3907,18 @@
      "kind": "Alternate Cover",
      "year": 2018,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "platinum2018",
+     "kind": "Special Edition",
+     "year": 2018,
+     "label": "Platinum Edition (premium boxed edition)"
+    },
+    {
+     "key": "silver2023",
+     "kind": "Special Edition",
+     "year": 2023,
+     "label": "Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -3836,6 +3982,12 @@
      "kind": "Alternate Cover",
      "year": 2019,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "sinistersilver2019",
+     "kind": "Special Edition",
+     "year": 2019,
+     "label": "Sinister Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -3883,6 +4035,18 @@
      "kind": "Alternate Cover",
      "year": 2019,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "platinum2019",
+     "kind": "Special Edition",
+     "year": 2019,
+     "label": "Platinum Edition (premium boxed edition)"
+    },
+    {
+     "key": "silver2020",
+     "kind": "Special Edition",
+     "year": 2020,
+     "label": "Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -3904,6 +4068,12 @@
      "kind": "Alternate Cover",
      "year": 2019,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "gold2020",
+     "kind": "Special Edition",
+     "year": 2020,
+     "label": "Gold Edition (premium boxed edition)"
     }
    ]
   },
@@ -3967,6 +4137,18 @@
      "kind": "Alternate Cover",
      "year": 2020,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "platinum2020",
+     "kind": "Special Edition",
+     "year": 2020,
+     "label": "Platinum Edition (premium boxed edition)"
+    },
+    {
+     "key": "silver2020",
+     "kind": "Special Edition",
+     "year": 2020,
+     "label": "Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -3988,6 +4170,18 @@
      "kind": "Alternate Cover",
      "year": 2020,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "gift2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Rules Expansion Gift Set (slipcase)"
+    },
+    {
+     "key": "giftalt2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Rules Expansion Gift Set, hobby store limited-edition covers (slipcase)"
     }
    ]
   },
@@ -4030,6 +4224,12 @@
      "kind": "Alternate Cover",
      "year": 2021,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "shadowysilver2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Shadowy Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -4051,6 +4251,18 @@
      "kind": "Alternate Cover",
      "year": 2021,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "platinum2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Platinum Edition (premium boxed edition)"
+    },
+    {
+     "key": "silver2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -4093,6 +4305,12 @@
      "kind": "Alternate Cover",
      "year": 2021,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "silver2022",
+     "kind": "Special Edition",
+     "year": 2022,
+     "label": "Silver Edition (premium boxed edition)"
     }
    ]
   },
@@ -4114,6 +4332,18 @@
      "kind": "Alternate Cover",
      "year": 2022,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "gift2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Rules Expansion Gift Set (slipcase)"
+    },
+    {
+     "key": "giftalt2021",
+     "kind": "Special Edition",
+     "year": 2021,
+     "label": "Rules Expansion Gift Set, hobby store limited-edition covers (slipcase)"
     }
    ]
   },
@@ -4164,6 +4394,18 @@
      "kind": "Alternate Cover",
      "year": 2022,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "platinum2022",
+     "kind": "Special Edition",
+     "year": 2022,
+     "label": "Platinum Edition (premium boxed edition)"
+    },
+    {
+     "key": "silver2022",
+     "kind": "Special Edition",
+     "year": 2022,
+     "label": "Silver Edition (premium boxed edition)"
     }
    ],
    "contents": [
@@ -4199,6 +4441,18 @@
      "kind": "Alternate Cover",
      "year": 2022,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "deluxe2022",
+     "kind": "Special Edition",
+     "year": 2022,
+     "label": "Deluxe Edition (boxed set)"
+    },
+    {
+     "key": "steel2022",
+     "kind": "Special Edition",
+     "year": 2022,
+     "label": "Steel Edition (premium boxed edition)"
     }
    ]
   },
@@ -4280,6 +4534,12 @@
      "kind": "Alternate Cover",
      "year": 2023,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "legendary2023",
+     "kind": "Special Edition",
+     "year": 2023,
+     "label": "Legendary Edition (premium boxed edition)"
     }
    ]
   },
@@ -4357,6 +4617,12 @@
      "kind": "Alternate Cover",
      "year": 2024,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "goldanniversary2024",
+     "kind": "Special Edition",
+     "year": 2024,
+     "label": "Gold Anniversary Edition (premium boxed edition)"
     }
    ]
   },
@@ -4378,6 +4644,12 @@
      "kind": "Alternate Cover",
      "year": 2024,
      "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "platinum2024",
+     "kind": "Special Edition",
+     "year": 2024,
+     "label": "Platinum Edition (premium boxed edition)"
     }
    ]
   },
@@ -4450,7 +4722,20 @@
    "edition": "5e (2024)",
    "type": "Sourcebook",
    "year": 2025,
-   "setting": "Forgotten Realms"
+   "setting": "Forgotten Realms",
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2025",
+     "kind": "Alternate Cover",
+     "year": 2025,
+     "label": "Alternate (hobby store) cover"
+    }
+   ]
   },
   {
    "id": "5r-forgotten-realms-adventures-in-faer-n",
@@ -4458,7 +4743,20 @@
    "edition": "5e (2024)",
    "type": "Adventure",
    "year": 2025,
-   "setting": "Forgotten Realms"
+   "setting": "Forgotten Realms",
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2025",
+     "kind": "Alternate Cover",
+     "year": 2025,
+     "label": "Alternate (hobby store) cover"
+    }
+   ]
   },
   {
    "id": "5r-starter-set-heroes-of-the-borderlands",
@@ -4474,7 +4772,20 @@
    "edition": "5e (2024)",
    "type": "Sourcebook",
    "year": 2025,
-   "setting": "Eberron"
+   "setting": "Eberron",
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2025",
+     "kind": "Alternate Cover",
+     "year": 2025,
+     "label": "Alternate (hobby store) cover"
+    }
+   ]
   },
   {
    "id": "5r-ravenloft-the-horrors-within",
@@ -4482,7 +4793,26 @@
    "edition": "5e (2024)",
    "type": "Sourcebook",
    "year": 2026,
-   "setting": "Ravenloft"
+   "setting": "Ravenloft",
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2026",
+     "kind": "Alternate Cover",
+     "year": 2026,
+     "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "strahdssilver2026",
+     "kind": "Special Edition",
+     "year": 2026,
+     "label": "Strahd's Silver Edition (premium boxed edition)"
+    }
+   ]
   },
   {
    "id": "5r-arcana-unleashed",
@@ -4511,7 +4841,20 @@
    "edition": "5e (2024)",
    "type": "Adventure",
    "setting": "Forgotten Realms",
-   "year": 2026
+   "year": 2026,
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2026",
+     "kind": "Alternate Cover",
+     "year": 2026,
+     "label": "Alternate (hobby store) cover"
+    }
+   ]
   },
   {
    "id": "5r-world-of-warcraft",
@@ -4519,7 +4862,26 @@
    "edition": "5e (2024)",
    "type": "Sourcebook",
    "year": 2026,
-   "setting": "Azeroth"
+   "setting": "Azeroth",
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2026",
+     "kind": "Alternate Cover",
+     "year": 2026,
+     "label": "Alternate (hobby store) cover"
+    },
+    {
+     "key": "collector2026",
+     "kind": "Special Edition",
+     "year": 2026,
+     "label": "Collector's Edition (slipcase)"
+    }
+   ]
   },
   {
    "id": "basic-msolo1-blizzard-pass",
@@ -9611,6 +9973,48 @@
    ]
   },
   {
+   "id": "2e-savage-coast-campaign-book",
+   "title": "Savage Coast Campaign Book",
+   "edition": "AD&D 2e",
+   "type": "Campaign Setting",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "2521",
+   "setting": "Savage Coast",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-ody.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Electronic-only release (TXT/RTF files with GIF illustrations)",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-savage-coast-orc-s-head",
+   "title": "Savage Coast: Orc's Head",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "2522",
+   "setting": "Savage Coast",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-ody.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Electronic-only release (TXT/RTF files with JPEG illustrations)",
+     "primary": true
+    }
+   ]
+  },
+  {
    "id": "2e-savage-coast-monstrous-compendium-appendix",
    "title": "Savage Coast Monstrous Compendium Appendix",
    "edition": "AD&D 2e",
@@ -10976,6 +11380,19 @@
    ]
   },
   {
+   "id": "2e-jakandor-island-of-war",
+   "title": "Jakandor, Island of War",
+   "edition": "AD&D 2e",
+   "type": "Campaign Setting",
+   "year": 1997,
+   "publisher": "TSR",
+   "code": "9511",
+   "setting": "Jakandor",
+   "sources": [
+    "https://tsrarchive.com/add/add-ody.html"
+   ]
+  },
+  {
    "id": "2e-lankhmar-city-of-adventure",
    "title": "Lankhmar: City of Adventure",
    "edition": "AD&D 2e",
@@ -11808,6 +12225,20 @@
     }
    ],
    "metadata_repair_id": "title-only-2e-ref2-character-record-sheets"
+  },
+  {
+   "id": "2e-a-mighty-fortress-campaign-sourcebook",
+   "title": "A Mighty Fortress Campaign Sourcebook",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "9370",
+   "setting": "Historical Earth",
+   "sources": [
+    "https://tsrarchive.com/add/add-hr.html"
+   ],
+   "module": "HR4"
   },
   {
    "id": "2e-age-of-heroes-campaign-sourcebook",
@@ -14156,6 +14587,3554 @@
     "https://www.tsrarchive.com/dd/dd2-geos-3rd-back.jpg"
    ],
    "review_notes": "Complete Sets One-Three compilation, not individual Set Two. Copy's face logo, angled D&D banner and product code stacked above ISBN match Acaeum's third-print characteristics. TSR Archive dates this printing to 1981; Acaeum leaves its date unstated. Keep work first publication 1980. First approve the linked edition/release repair. Separate complete-product confirmation and full backup are required to map existing IDs only. No component creation, merging, reparenting, asset changes or physical-completeness inference."
+  },
+  {
+   "id": "1e-dungeons-of-dread",
+   "title": "Dungeons of Dread",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "A4535",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-s.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "2013 hardcover compilation of S1-S4",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-against-the-slave-lords",
+   "title": "Against the Slave Lords",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "A4536",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-a.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "2013 hardcover compilation of A0-A4, incl. new adventure Danger at Darkshelf Quarry",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-odyssey-tale-of-the-comet",
+   "title": "Odyssey: Tale of the Comet",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1997,
+   "publisher": "TSR",
+   "code": "1143",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-ody.html"
+   ]
+  },
+  {
+   "id": "1e-silver-anniversary-collector-s-edition",
+   "title": "Silver Anniversary Collector's Edition",
+   "edition": "AD&D 1e",
+   "type": "Boxed Set",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "11549",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-25.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Two-piece slipcase of reprinted classic modules",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-dragonlance-classics-15th-anniversary-edition",
+   "title": "Dragonlance Classics 15th Anniversary Edition",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "11350",
+   "setting": "Dragonlance",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-25.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "256-page compilation of the original DL series modules",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-battlesystem-skirmishes-miniatures-rules",
+   "title": "Battlesystem: Skirmishes Miniatures Rules",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1991,
+   "publisher": "TSR",
+   "code": "9335",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-bs.html"
+   ]
+  },
+  {
+   "id": "2e-moonlight-madness",
+   "title": "Moonlight Madness",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1998,
+   "publisher": "TSR",
+   "code": "9568",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-adv.html"
+   ]
+  },
+  {
+   "id": "2e-tsr-jam-1999",
+   "title": "TSR Jam 1999",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "11445",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-adv.html"
+   ]
+  },
+  {
+   "id": "2e-campaign-option-council-of-wyrms-setting",
+   "title": "Campaign Option: Council of Wyrms Setting",
+   "edition": "AD&D 2e",
+   "type": "Campaign Setting",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "11383",
+   "setting": "Council of Wyrms",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-opt.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "208-page hardback",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-first-quest",
+   "title": "First Quest",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "1105",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-box.html"
+   ]
+  },
+  {
+   "id": "2e-introduction-to-advanced-dungeons-dragons-game",
+   "title": "Introduction to Advanced Dungeons & Dragons Game",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "1134",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-box.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "1135",
+     "kind": "Reprint",
+     "year": 1995,
+     "code": "1135",
+     "label": "Stock 1135 box (same contents as 1134)"
+    }
+   ]
+  },
+  {
+   "id": "2e-the-complete-starter-set",
+   "title": "The Complete Starter Set",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "1167",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-box.html"
+   ]
+  },
+  {
+   "id": "2e-dungeons-dragons-adventure-game-tsr-11523",
+   "title": "Dungeons & Dragons Adventure Game (TSR 11523)",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "11523",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-box.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Stock 11523 box; distinct stock number from TSR 11450",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-diablo-ii-adventure-game",
+   "title": "Diablo II Adventure Game",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "11548",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-box.html"
+   ]
+  },
+  {
+   "id": "2e-fighter-s-screen",
+   "title": "Fighter's Screen",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "9457",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-screen.html"
+   ]
+  },
+  {
+   "id": "2e-dungeon-master-screen-master-index",
+   "title": "Dungeon Master Screen & Master Index",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "9504",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-acc.html"
+   ]
+  },
+  {
+   "id": "2e-lc1-gateway-to-ravens-bluff-the-living-city",
+   "title": "LC1 Gateway to Ravens Bluff, The Living City",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1989,
+   "publisher": "TSR",
+   "code": "9283",
+   "module": "LC1",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/fr/fr-lc.html"
+   ]
+  },
+  {
+   "id": "2e-volo-s-guide-to-baldur-s-gate-ii",
+   "title": "Volo's Guide to Baldur's Gate II",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 2000,
+   "publisher": "TSR",
+   "code": "11626",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/fr/fr-volo.html"
+   ]
+  },
+  {
+   "id": "2e-sja4-under-the-dark-fist",
+   "title": "SJA4 Under the Dark Fist",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1991,
+   "publisher": "TSR",
+   "code": "9325",
+   "module": "SJA4",
+   "setting": "Spelljammer",
+   "sources": [
+    "https://www.tsrarchive.com/sj/sj-sja.html"
+   ]
+  },
+  {
+   "id": "2e-the-planescape-sketchbook",
+   "title": "The Planescape Sketchbook",
+   "edition": "AD&D 2e",
+   "type": "Other",
+   "year": 1994,
+   "publisher": "TSR",
+   "setting": "Planescape",
+   "sources": [
+    "https://www.tsrarchive.com/ps/ps-misc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Gen Con 1994 and EuroGenCon 1994 exclusive",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-dragon-kings",
+   "title": "Dragon Kings",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2408",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-box.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "160-page hardback",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-the-ivory-triangle",
+   "title": "The Ivory Triangle",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2418",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-box.html"
+   ]
+  },
+  {
+   "id": "2e-city-by-the-silt-sea",
+   "title": "City by the Silt Sea",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "2432",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-box.html"
+   ]
+  },
+  {
+   "id": "2e-mind-lords-of-the-last-sea",
+   "title": "Mind Lords of the Last Sea",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "2444",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-rev.html"
+   ]
+  },
+  {
+   "id": "2e-dsr1-slave-tribes",
+   "title": "DSR1 Slave Tribes",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2404",
+   "module": "DSR1",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsr.html"
+   ]
+  },
+  {
+   "id": "2e-dsr2-dune-trader",
+   "title": "DSR2 Dune Trader",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2407",
+   "module": "DSR2",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsr.html"
+   ]
+  },
+  {
+   "id": "2e-dsr3-veiled-alliance",
+   "title": "DSR3 Veiled Alliance",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2411",
+   "module": "DSR3",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsr.html"
+   ]
+  },
+  {
+   "id": "2e-dsr4-valley-of-dust-and-fire",
+   "title": "DSR4 Valley of Dust and Fire",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2413",
+   "module": "DSR4",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsr.html"
+   ]
+  },
+  {
+   "id": "2e-dss1-city-state-of-tyr",
+   "title": "DSS1 City-State of Tyr",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2420",
+   "module": "DSS1",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dss.html"
+   ]
+  },
+  {
+   "id": "2e-dss2-earth-air-fire-and-water",
+   "title": "DSS2 Earth, Air, Fire, and Water",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2422",
+   "module": "DSS2",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dss.html"
+   ]
+  },
+  {
+   "id": "2e-dss3-elves-of-athas",
+   "title": "DSS3 Elves of Athas",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2423",
+   "module": "DSS3",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dss.html"
+   ]
+  },
+  {
+   "id": "2e-cgr2-the-complete-gladiator-s-handbook",
+   "title": "CGR2 The Complete Gladiator's Handbook",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2419",
+   "module": "CGR2",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-cgr.html"
+   ]
+  },
+  {
+   "id": "2e-the-will-and-the-way",
+   "title": "The Will and the Way",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "2431",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-acc.html"
+   ]
+  },
+  {
+   "id": "2e-thri-kreen-of-athas",
+   "title": "Thri-Kreen of Athas",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "2437",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-acc.html"
+   ]
+  },
+  {
+   "id": "2e-beyond-the-prism-pentad",
+   "title": "Beyond the Prism Pentad",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "2441",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-acc.html"
+   ]
+  },
+  {
+   "id": "2e-windriders-of-the-jagged-cliffs",
+   "title": "Windriders of the Jagged Cliffs",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "2439",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-rev.html"
+   ]
+  },
+  {
+   "id": "2e-defilers-and-preservers-the-wizards-of-athas",
+   "title": "Defilers and Preservers: The Wizards of Athas",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "2445",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-rev.html"
+   ]
+  },
+  {
+   "id": "2e-psionic-artifacts-of-athas",
+   "title": "Psionic Artifacts of Athas",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "2446",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-rev.html"
+   ]
+  },
+  {
+   "id": "2e-ds1-freedom",
+   "title": "DS1 Freedom",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1991,
+   "publisher": "TSR",
+   "code": "2401",
+   "module": "DS1",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-ds.html"
+   ]
+  },
+  {
+   "id": "2e-dsq1-road-to-urik",
+   "title": "DSQ1 Road to Urik",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2406",
+   "module": "DSQ1",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsq.html"
+   ]
+  },
+  {
+   "id": "2e-dsq2-arcane-shadows",
+   "title": "DSQ2 Arcane Shadows",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2410",
+   "module": "DSQ2",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsq.html"
+   ]
+  },
+  {
+   "id": "2e-dsq3-asticlian-gambit",
+   "title": "DSQ3 Asticlian Gambit",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "2412",
+   "module": "DSQ3",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsq.html"
+   ]
+  },
+  {
+   "id": "2e-dse1-dragon-s-crown",
+   "title": "DSE1 Dragon's Crown",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2416",
+   "module": "DSE1",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dse.html"
+   ]
+  },
+  {
+   "id": "2e-dse2-black-spine",
+   "title": "DSE2 Black Spine",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "2428",
+   "module": "DSE2",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dse.html"
+   ]
+  },
+  {
+   "id": "2e-dsm1-black-flames",
+   "title": "DSM1 Black Flames",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2417",
+   "module": "DSM1",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsm.html"
+   ]
+  },
+  {
+   "id": "2e-dsm2-merchant-house-of-amketch",
+   "title": "DSM2 Merchant House of Amketch",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2421",
+   "module": "DSM2",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsm.html"
+   ]
+  },
+  {
+   "id": "2e-dsm3-marauders-of-nibenay",
+   "title": "DSM3 Marauders of Nibenay",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "2424",
+   "module": "DSM3",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-dsm.html"
+   ]
+  },
+  {
+   "id": "2e-forest-maker",
+   "title": "Forest Maker",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "2430",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/ds/ds-adv.html"
+   ]
+  },
+  {
+   "id": "2e-land-of-fate",
+   "title": "Land of Fate",
+   "edition": "AD&D 2e",
+   "type": "Campaign Setting",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "1077",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-box.html"
+   ]
+  },
+  {
+   "id": "2e-city-of-delights",
+   "title": "City of Delights",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "1091",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-box.html"
+   ]
+  },
+  {
+   "id": "2e-alq1-golden-voyages",
+   "title": "ALQ1 Golden Voyages",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1992,
+   "publisher": "TSR",
+   "code": "9366",
+   "module": "ALQ1",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq2-assassin-mountain",
+   "title": "ALQ2 Assassin Mountain",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "9431",
+   "module": "ALQ2",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq3-a-dozen-and-one-adventures",
+   "title": "ALQ3 A Dozen and One Adventures",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "9432",
+   "module": "ALQ3",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq4-secrets-of-the-lamp",
+   "title": "ALQ4 Secrets of the Lamp",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1993,
+   "publisher": "TSR",
+   "code": "9433",
+   "module": "ALQ4",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq5-ruined-kingdoms",
+   "title": "ALQ5 Ruined Kingdoms",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "9440",
+   "module": "ALQ5",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq6-cities-of-bone",
+   "title": "ALQ6 Cities of Bone",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "9467",
+   "module": "ALQ6",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq7-corsairs-of-the-great-sea",
+   "title": "ALQ7 Corsairs of the Great Sea",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "9449",
+   "module": "ALQ7",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-alq8-caravans",
+   "title": "ALQ8 Caravans",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "9459",
+   "module": "ALQ8",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-alq.html"
+   ]
+  },
+  {
+   "id": "2e-reunion",
+   "title": "Reunion",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1998,
+   "publisher": "TSR",
+   "code": "9584",
+   "setting": "Al-Qadim",
+   "sources": [
+    "https://www.tsrarchive.com/aq/aq-adv.html"
+   ]
+  },
+  {
+   "id": "2e-cities-of-the-sun",
+   "title": "Cities of the Sun",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3103",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-box.html"
+   ]
+  },
+  {
+   "id": "2e-the-rjurik-highlands",
+   "title": "The Rjurik Highlands",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3121",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-box.html"
+   ]
+  },
+  {
+   "id": "2e-havens-of-the-great-bay",
+   "title": "Havens of the Great Bay",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3129",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-box.html"
+   ]
+  },
+  {
+   "id": "2e-naval-battle-rules-the-seas-of-cerilia",
+   "title": "Naval Battle Rules: The Seas of Cerilia",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3134",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-box.html"
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-roesone",
+   "title": "Player's Secrets of Roesone",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3104",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-endier",
+   "title": "Player's Secrets of Endier",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3105",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-medoere",
+   "title": "Player's Secrets of Medoere",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3106",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-tuornen",
+   "title": "Player's Secrets of Tuornen",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3107",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-ilien",
+   "title": "Player's Secrets of Ilien",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3108",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-talinie",
+   "title": "Player's Secrets of Talinie",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3109",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-ariya",
+   "title": "Player's Secrets of Ariya",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3111",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-binsada",
+   "title": "Player's Secrets of Binsada",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3119",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-baruk-azhik",
+   "title": "Player's Secrets of Baruk-Azhik",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3120",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-halskapa",
+   "title": "Player's Secrets of Halskapa",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3122",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-khourane",
+   "title": "Player's Secrets of Khourane",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3123",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-tuarhievel",
+   "title": "Player's Secrets of Tuarhievel",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3124",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-stjordvik",
+   "title": "Player's Secrets of Stjordvik",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3127",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Four-panel cardstock screen",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-hogunmark",
+   "title": "Player's Secrets of Hogunmark",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1998,
+   "publisher": "TSR",
+   "code": "3135",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "32-page book; RPGA Network member exclusive",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-player-s-secrets-of-muden",
+   "title": "Player's Secrets of Müden",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1997,
+   "publisher": "TSR",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-dom.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "PDF-only release (35-page PDF)",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-blood-enemies-abominations-of-cerilia",
+   "title": "Blood Enemies: Abominations of Cerilia",
+   "edition": "AD&D 2e",
+   "type": "Monster Book",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3101",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-acc.html"
+   ]
+  },
+  {
+   "id": "2e-blood-spawn-creatures-of-light-and-shadow",
+   "title": "Blood Spawn: Creatures of Light and Shadow",
+   "edition": "AD&D 2e",
+   "type": "Monster Book",
+   "year": 2000,
+   "publisher": "TSR",
+   "code": "3140",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-acc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "PDF-only release (83-page PDF)",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-tribes-of-the-heartless-waste",
+   "title": "Tribes of the Heartless Waste",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1997,
+   "publisher": "TSR",
+   "code": "3147",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-acc.html"
+   ]
+  },
+  {
+   "id": "2e-the-book-of-magecraft",
+   "title": "The Book of Magecraft",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3117",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-acc.html"
+   ]
+  },
+  {
+   "id": "2e-the-book-of-priestcraft",
+   "title": "The Book of Priestcraft",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1997,
+   "publisher": "TSR",
+   "code": "3126",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-acc.html"
+   ]
+  },
+  {
+   "id": "2e-the-book-of-regency",
+   "title": "The Book of Regency",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 2000,
+   "publisher": "TSR",
+   "code": "3137",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-acc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "PDF-only release (112-page PDF)",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-sword-and-crown",
+   "title": "Sword and Crown",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3102",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-adv.html"
+   ]
+  },
+  {
+   "id": "2e-warlock-of-the-stonecrowns",
+   "title": "Warlock of the Stonecrowns",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "3110",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-adv.html"
+   ]
+  },
+  {
+   "id": "2e-the-sword-of-roele",
+   "title": "The Sword of Roele",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3118",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-adv.html"
+   ]
+  },
+  {
+   "id": "2e-legends-of-the-hero-kings",
+   "title": "Legends of the Hero-Kings",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "3125",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-adv.html"
+   ]
+  },
+  {
+   "id": "2e-king-of-the-giantdowns",
+   "title": "King of the Giantdowns",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1997,
+   "publisher": "TSR",
+   "code": "3142",
+   "setting": "Birthright",
+   "sources": [
+    "https://www.tsrarchive.com/br/br-adv.html"
+   ]
+  },
+  {
+   "id": "2e-glantri-kingdom-of-magic",
+   "title": "Glantri: Kingdom of Magic",
+   "edition": "AD&D 2e",
+   "type": "Boxed Set",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "2511",
+   "setting": "Mystara",
+   "sources": [
+    "https://www.tsrarchive.com/ms/ms-box.html"
+   ]
+  },
+  {
+   "id": "2e-mark-of-amber",
+   "title": "Mark of Amber",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "2513",
+   "setting": "Mystara",
+   "sources": [
+    "https://www.tsrarchive.com/ms/ms-cd.html"
+   ]
+  },
+  {
+   "id": "2e-player-s-survival-kit",
+   "title": "Player's Survival Kit",
+   "edition": "AD&D 2e",
+   "type": "Supplement",
+   "year": 1995,
+   "publisher": "TSR",
+   "code": "2510",
+   "setting": "Mystara",
+   "sources": [
+    "https://www.tsrarchive.com/ms/ms-sur.html"
+   ]
+  },
+  {
+   "id": "2e-lankhmar-the-new-adventures-of-fafhrd-and-gray-mouser",
+   "title": "Lankhmar: The New Adventures of Fafhrd and Gray Mouser",
+   "edition": "AD&D 2e",
+   "type": "Campaign Setting",
+   "year": 1996,
+   "publisher": "TSR",
+   "code": "1144",
+   "setting": "Lankhmar",
+   "sources": [
+    "https://www.tsrarchive.com/lm/lm-box.html"
+   ]
+  },
+  {
+   "id": "2e-rogues-in-lankhmar",
+   "title": "Rogues in Lankhmar",
+   "edition": "AD&D 2e",
+   "type": "Sourcebook",
+   "year": 1994,
+   "publisher": "TSR",
+   "code": "9461",
+   "setting": "Lankhmar",
+   "sources": [
+    "https://www.tsrarchive.com/lm/lm-other.html"
+   ]
+  },
+  {
+   "id": "1e-lost-tamoachan-the-hidden-shrine-of-lubaatum",
+   "title": "Lost Tamoachan: The Hidden Shrine of Lubaatum",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1979,
+   "publisher": "TSR",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-c.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Tournament version (26 loose pages w/cover)",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-lost-caverns-of-tsojconth",
+   "title": "Lost Caverns of Tsojconth",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1976,
+   "publisher": "TSR",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-s.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Tournament version (8 loose pages w/cover)",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-the-star-of-kolhapur",
+   "title": "The Star of Kolhapur",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1997,
+   "publisher": "TSR",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-adv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "RPGA Dragon-level member exclusive",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-wand-of-archeal",
+   "title": "Wand of Archeal",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1999,
+   "publisher": "TSR",
+   "code": "B00778",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-adv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "RPGA Guild-level member exclusive",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-iq2-forbidden-ground",
+   "title": "IQ2 Forbidden Ground",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1998,
+   "publisher": "TSR",
+   "module": "IQ2",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-iq.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "16-page booklet included with InQuest Gamer #43",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "2e-iq3-warriors-of-the-gray-queen",
+   "title": "IQ3 Warriors of the Gray Queen",
+   "edition": "AD&D 2e",
+   "type": "Adventure",
+   "year": 1999,
+   "publisher": "TSR",
+   "module": "IQ3",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-iq.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "16-page booklet included with InQuest Gamer #50",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-r5-the-great-bugbear-hunt",
+   "title": "R5 The Great Bugbear Hunt",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1986,
+   "publisher": "TSR",
+   "module": "R5",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-r.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Published in Polyhedron Newszine #28",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-r6-the-384th-incarnation-of-bigby-s-tomb",
+   "title": "R6 The 384th Incarnation of Bigby's Tomb",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1984,
+   "publisher": "TSR",
+   "module": "R6",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-r.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Published in Polyhedron Newszine #20",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-rpga5-the-riddle-of-dolmen-moor",
+   "title": "RPGA5 The Riddle of Dolmen Moor",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1983,
+   "publisher": "TSR",
+   "module": "RPGA5",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-rpga.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Published in Polyhedron Newszine #16",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-rpga6-the-incants-of-ishcabeble",
+   "title": "RPGA6 The Incants of Ishcabeble",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1984,
+   "publisher": "TSR",
+   "module": "RPGA6",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-rpga.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Published in Polyhedron Newszine #17",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-rpga7-llywelyn-s-tomb",
+   "title": "RPGA7 Llywelyn's Tomb",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1984,
+   "publisher": "TSR",
+   "module": "RPGA7",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-rpga.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Published in Polyhedron Newszine #18",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "1e-rpga8-and-the-gods-will-have-their-way",
+   "title": "RPGA8 ...And the Gods Will Have Their Way",
+   "edition": "AD&D 1e",
+   "type": "Adventure",
+   "year": 1984,
+   "publisher": "TSR",
+   "module": "RPGA8",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/add/add-rpga.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "label": "Published in Polyhedron Newszine #19",
+     "primary": true
+    }
+   ]
+  },
+  {
+   "id": "5e-dungeons-dragons-vs-rick-and-morty",
+   "title": "Dungeons & Dragons vs. Rick and Morty",
+   "edition": "5e (2014)",
+   "type": "Boxed Set",
+   "year": 2019,
+   "publisher": "Wizards of the Coast",
+   "code": "C7248",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-box.html"
+   ]
+  },
+  {
+   "id": "5e-stranger-things-starter-set",
+   "title": "Stranger Things Starter Set",
+   "edition": "5e (2014)",
+   "type": "Boxed Set",
+   "year": 2019,
+   "publisher": "Wizards of the Coast",
+   "code": "E3702",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-box.html"
+   ]
+  },
+  {
+   "id": "5r-welcome-to-the-hellfire-club",
+   "title": "Welcome to the Hellfire Club",
+   "edition": "5e (2024)",
+   "type": "Boxed Set",
+   "year": 2025,
+   "publisher": "Wizards of the Coast",
+   "code": "D4704",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-box.html"
+   ]
+  },
+  {
+   "id": "5r-dragon-delves",
+   "title": "Dragon Delves",
+   "edition": "5e (2024)",
+   "type": "Adventure",
+   "year": 2025,
+   "publisher": "Wizards of the Coast",
+   "code": "D4716",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-adv-hb.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true
+    },
+    {
+     "key": "alt2025",
+     "kind": "Alternate Cover",
+     "year": 2025,
+     "label": "Alternate (hobby store) cover"
+    }
+   ]
+  },
+  {
+   "id": "5e-the-deck-of-many-things",
+   "title": "The Deck of Many Things",
+   "edition": "5e (2014)",
+   "type": "Boxed Set",
+   "year": 2024,
+   "publisher": "Wizards of the Coast",
+   "code": "D3195",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-hb-acc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Boxed: The Book of Many Things, Card Reference Guide and 66 cards"
+    },
+    {
+     "key": "alt2024",
+     "kind": "Alternate Cover",
+     "year": 2024,
+     "label": "Alternate (hobby store) cover",
+     "code": "D3196"
+    }
+   ]
+  },
+  {
+   "id": "5e-elemental-evil-player-s-companion",
+   "title": "Elemental Evil Player's Companion",
+   "edition": "5e (2014)",
+   "type": "Supplement",
+   "year": 2015,
+   "publisher": "Wizards of the Coast",
+   "code": "Z3276",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-acc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Print-on-demand / PDF only; for use with Princes of the Apocalypse"
+    }
+   ]
+  },
+  {
+   "id": "5e-character-sheets",
+   "title": "Character Sheets",
+   "edition": "5e (2014)",
+   "type": "Other",
+   "year": 2017,
+   "publisher": "Wizards of the Coast",
+   "code": "C3686",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-acc.html"
+   ]
+  },
+  {
+   "id": "5e-adventure-grid",
+   "title": "Adventure Grid",
+   "edition": "5e (2014)",
+   "type": "Other",
+   "year": 2017,
+   "publisher": "Wizards of the Coast",
+   "code": "C3689",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-acc.html"
+   ]
+  },
+  {
+   "id": "5r-character-sheets",
+   "title": "Character Sheets (2024)",
+   "edition": "5e (2024)",
+   "type": "Other",
+   "year": 2024,
+   "publisher": "Wizards of the Coast",
+   "code": "D3898",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-acc-24.html"
+   ]
+  },
+  {
+   "id": "5e-ghosts-of-dragonspear-castle",
+   "title": "Ghosts of Dragonspear Castle",
+   "edition": "5e (2014)",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "A6898",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Gen Con 2013 exclusive"
+    }
+   ]
+  },
+  {
+   "id": "5e-cloud-giant-s-bargain",
+   "title": "Cloud Giant's Bargain",
+   "edition": "5e (2014)",
+   "type": "Adventure",
+   "year": 2016,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Exclusive to theaters screening Dungeons & Dragons Live from PAX West"
+    }
+   ]
+  },
+  {
+   "id": "5e-lost-tales-of-myth-drannor",
+   "title": "Lost Tales of Myth Drannor",
+   "edition": "5e (2014)",
+   "type": "Adventure",
+   "year": 2017,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Gen Con 2017 exclusive"
+    }
+   ]
+  },
+  {
+   "id": "5e-x-marks-the-spot",
+   "title": "X Marks the Spot",
+   "edition": "5e (2014)",
+   "type": "Adventure",
+   "year": 2017,
+   "publisher": "Wizards of the Coast",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "PAX Unplugged 2017 exclusive"
+    }
+   ]
+  },
+  {
+   "id": "5e-dragon-of-icespire-peak-adventure-preview",
+   "title": "Dragon of Icespire Peak: Adventure Preview",
+   "edition": "5e (2014)",
+   "type": "Adventure",
+   "year": 2021,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Preview version of the Essentials Kit adventure"
+    }
+   ]
+  },
+  {
+   "id": "5e-red-dragon-s-tale-a-lego-adventure",
+   "title": "Red Dragon's Tale: A LEGO Adventure",
+   "edition": "5e (2014)",
+   "type": "Adventure",
+   "year": 2024,
+   "publisher": "Wizards of the Coast",
+   "code": "RDP 107713",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "LEGO Insiders exclusive"
+    }
+   ]
+  },
+  {
+   "id": "5r-fated-flight-of-the-recluse",
+   "title": "Fated Flight of the Recluse",
+   "edition": "5e (2024)",
+   "type": "Adventure",
+   "year": 2025,
+   "publisher": "Wizards of the Coast",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/5e/5e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Promotional adventure, free with purchase of Eberron: Forge of the Artificer"
+    }
+   ]
+  },
+  {
+   "id": "4e-player-s-strategy-guide",
+   "title": "Player's Strategy Guide",
+   "edition": "4e",
+   "type": "Sourcebook",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "25382",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-acc-hb.html"
+   ]
+  },
+  {
+   "id": "4e-dungeon-delve",
+   "title": "Dungeon Delve",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "code": "23987",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-acc-hb.html"
+   ]
+  },
+  {
+   "id": "4e-dragon-magazine-annual",
+   "title": "Dragon Magazine Annual",
+   "edition": "4e",
+   "type": "Sourcebook",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "code": "24207",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-acc-hb.html"
+   ]
+  },
+  {
+   "id": "4e-dungeon-magazine-annual",
+   "title": "Dungeon Magazine Annual",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "25031",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-acc-hb.html"
+   ]
+  },
+  {
+   "id": "4e-dungeon-survival-guide",
+   "title": "Dungeon Survival Guide",
+   "edition": "4e",
+   "type": "Other",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "21542",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-acc-hb.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "64-page illustrated hardback"
+    }
+   ]
+  },
+  {
+   "id": "4e-wizards-presents-races-and-classes",
+   "title": "Wizards Presents: Races and Classes",
+   "edition": "4e",
+   "type": "Other",
+   "year": 2007,
+   "publisher": "Wizards of the Coast",
+   "code": "21648",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-wp.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Preview book for 4th Edition"
+    }
+   ]
+  },
+  {
+   "id": "4e-wizards-presents-worlds-and-monsters",
+   "title": "Wizards Presents: Worlds and Monsters",
+   "edition": "4e",
+   "type": "Other",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21649",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-wp.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Preview book for 4th Edition"
+    }
+   ]
+  },
+  {
+   "id": "4e-roleplaying-game-starter-set-2008",
+   "title": "Roleplaying Game Starter Set (2008)",
+   "edition": "4e",
+   "type": "Boxed Set",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21712",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-box.html"
+   ]
+  },
+  {
+   "id": "4e-elminster-s-forgotten-realms",
+   "title": "Elminster's Forgotten Realms",
+   "edition": "4e",
+   "type": "Sourcebook",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "39888",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-fr-hb.html"
+   ]
+  },
+  {
+   "id": "4e-an-adventurer-s-guide-to-eberron",
+   "title": "An Adventurer's Guide to Eberron",
+   "edition": "4e",
+   "type": "Sourcebook",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21723",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-eb-hb.html"
+   ]
+  },
+  {
+   "id": "4e-halls-of-undermountain",
+   "title": "Halls of Undermountain",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "38855",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-adv-hb.html"
+   ]
+  },
+  {
+   "id": "4e-orcs-of-stonefang-pass",
+   "title": "Orcs of Stonefang Pass",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "25125",
+   "module": "HS2",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-hs.html"
+   ]
+  },
+  {
+   "id": "4e-scepter-tower-of-spellgard",
+   "title": "Scepter Tower of Spellgard",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21764",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-fr.html"
+   ]
+  },
+  {
+   "id": "4e-seekers-of-the-ashen-crown",
+   "title": "Seekers of the Ashen Crown",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "code": "21900",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-eb.html"
+   ]
+  },
+  {
+   "id": "4e-marauders-of-the-dune-sea",
+   "title": "Marauders of the Dune Sea",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "25389",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-ds.html"
+   ]
+  },
+  {
+   "id": "4e-character-record-sheets",
+   "title": "Character Record Sheets",
+   "edition": "4e",
+   "type": "Other",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "21721",
+   "setting": "Setting Agnostic",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-acc.html"
+   ]
+  },
+  {
+   "id": "4e-treasure-of-talon-pass",
+   "title": "Treasure of Talon Pass",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "code": "B3714",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-free.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free RPG Day 2008"
+    }
+   ]
+  },
+  {
+   "id": "4e-khyber-s-harvest",
+   "title": "Khyber's Harvest",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "code": "B8134",
+   "setting": "Eberron",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-free.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free RPG Day 2009"
+    }
+   ]
+  },
+  {
+   "id": "4e-bloodsand-arena",
+   "title": "Bloodsand Arena",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8724",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-free.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free RPG Day 2010"
+    }
+   ]
+  },
+  {
+   "id": "4e-domain-of-dread-histaven",
+   "title": "Domain of Dread: Histaven",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B4807",
+   "setting": "Ravenloft",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-free.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free RPG Day 2011"
+    }
+   ]
+  },
+  {
+   "id": "4e-dead-in-the-eye",
+   "title": "Dead in the Eye",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B10304",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-free.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Free RPG Day 2012"
+    }
+   ]
+  },
+  {
+   "id": "4e-into-the-shadowhaunt",
+   "title": "Into the Shadowhaunt",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-one-dark-night-in-weeping-briar",
+   "title": "One Dark Night in Weeping Briar",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day; 1st printing"
+    },
+    {
+     "key": "2nd",
+     "kind": "Reprint",
+     "year": 2009,
+     "label": "2nd printing"
+    }
+   ]
+  },
+  {
+   "id": "4e-journey-through-the-silver-caves",
+   "title": "Journey Through the Silver Caves",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-a-passage-into-mystery",
+   "title": "A Passage Into Mystery",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "code": "B8013",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-beneath-the-lonely-tower",
+   "title": "Beneath the Lonely Tower",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-sunderpeak-temple",
+   "title": "Sunderpeak Temple",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8771",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-the-lost-cistern-of-aravek",
+   "title": "The Lost Cistern of Aravek",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8771",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-gates-of-neverdeath",
+   "title": "Gates of Neverdeath",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9101",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-vault-of-the-dracolich",
+   "title": "Vault of the Dracolich",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10595",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dndday.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Game Day"
+    }
+   ]
+  },
+  {
+   "id": "4e-tunnel-rats",
+   "title": "Tunnel Rats",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Premiere store promotional exclusive"
+    }
+   ]
+  },
+  {
+   "id": "4e-escape-from-sembia",
+   "title": "Escape From Sembia",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Preview adventure released through the RPGA"
+    }
+   ]
+  },
+  {
+   "id": "4e-beneath-haunted-halls",
+   "title": "Beneath Haunted Halls",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2008,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Weekend in the Realms promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "4e-the-icy-queen-s-crossing",
+   "title": "The Icy Queen's Crossing",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-promo.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Weekend in the Realms promotional adventure"
+    }
+   ]
+  },
+  {
+   "id": "4e-the-village-of-hommlet",
+   "title": "The Village of Hommlet",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-reward.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA reward adventure"
+    }
+   ]
+  },
+  {
+   "id": "4e-tomb-of-horrors-rpga-reward",
+   "title": "Tomb of Horrors (RPGA Reward)",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "4429A",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-reward.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA reward adventure (36-page booklet)"
+    }
+   ]
+  },
+  {
+   "id": "4e-hidden-shrine-of-tamoachan",
+   "title": "Hidden Shrine of Tamoachan",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9103",
+   "setting": "Greyhawk",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-reward.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "RPGA reward adventure"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-undermountain-halaster-s-lost-apprentice",
+   "title": "Encounters: Undermountain: Halaster's Lost Apprentice",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 1"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-fury-of-the-wastewalker-chapter-1-an-obsidian-rain",
+   "title": "Encounters: Fury of the Wastewalker Chapter 1: An Obsidian Rain",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8679",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 2"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-fury-of-the-wastewalker-chapter-2-tomb-of-a-long-lost-age",
+   "title": "Encounters: Fury of the Wastewalker Chapter 2: Tomb of a Long, Lost Age",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8720",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 2"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-fury-of-the-wastewalker-chapter-3-flight-to-tyr",
+   "title": "Encounters: Fury of the Wastewalker Chapter 3: Flight to Tyr",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8722",
+   "setting": "Dark Sun",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 2"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-keep-on-the-borderlands-a-season-of-serpents-chapter-1",
+   "title": "Encounters: Keep on the Borderlands: A Season of Serpents Chapter 1",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8744",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 3"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-keep-on-the-borderlands-a-season-of-serpents-chapter-2",
+   "title": "Encounters: Keep on the Borderlands: A Season of Serpents Chapter 2",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8745",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 3"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-keep-on-the-borderlands-a-season-of-serpents-chapter-3",
+   "title": "Encounters: Keep on the Borderlands: A Season of Serpents Chapter 3",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8746",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 3"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-keep-on-the-borderlands-a-season-of-serpents-chapter-4",
+   "title": "Encounters: Keep on the Borderlands: A Season of Serpents Chapter 4",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8747",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 3"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-keep-on-the-borderlands-a-season-of-serpents-chapter-5",
+   "title": "Encounters: Keep on the Borderlands: A Season of Serpents Chapter 5",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2010,
+   "publisher": "Wizards of the Coast",
+   "code": "B8748",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 3"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-march-of-the-phantom-brigade",
+   "title": "Encounters: March of the Phantom Brigade",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9098",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 4"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-dark-legacy-of-evard",
+   "title": "Encounters: Dark Legacy of Evard",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9099",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 5"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-lost-crown-of-neverwinter",
+   "title": "Encounters: Lost Crown of Neverwinter",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9102",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 6"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-beyond-the-crystal-cave",
+   "title": "Encounters: Beyond the Crystal Cave",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9107",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 7"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-web-of-the-spider-queen",
+   "title": "Encounters: Web of the Spider Queen",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9727",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 8"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-the-elder-elemental-eye",
+   "title": "Encounters: The Elder Elemental Eye",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9728",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 9"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-council-of-spiders",
+   "title": "Encounters: Council of Spiders",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9729",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 10"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-war-of-everlasting-darkness",
+   "title": "Encounters: War of Everlasting Darkness",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9730",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 11"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-against-the-cult-of-chaos",
+   "title": "Encounters: Against the Cult of Chaos",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10590",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 12"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-storm-over-neverwinter",
+   "title": "Encounters: Storm Over Neverwinter",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10591",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 13"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-search-for-the-diamond-staff",
+   "title": "Encounters: Search for the Diamond Staff",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10592",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 14"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-murder-in-baldur-s-gate-launch-weekend",
+   "title": "Encounters: Murder in Baldur's Gate (Launch Weekend)",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10593",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Launch-weekend prequel to Murder in Baldur's Gate"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-murder-in-baldur-s-gate",
+   "title": "Encounters: Murder in Baldur's Gate",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "A4537",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 15"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-legacy-of-the-crystal-shard-launch-weekend",
+   "title": "Encounters: Legacy of the Crystal Shard (Launch Weekend)",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10594",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "Launch-weekend prequel to Legacy of the Crystal Shard"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-legacy-of-the-crystal-shard",
+   "title": "Encounters: Legacy of the Crystal Shard",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "A4538",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 16"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-scourge-of-the-sword-coast",
+   "title": "Encounters: Scourge of the Sword Coast",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2014,
+   "publisher": "Wizards of the Coast",
+   "code": "B11188",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 17; print-on-demand / PDF only"
+    }
+   ]
+  },
+  {
+   "id": "4e-encounters-dead-in-thay",
+   "title": "Encounters: Dead in Thay",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2014,
+   "publisher": "Wizards of the Coast",
+   "code": "B11189",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-enc.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Encounters Season 18; print-on-demand / PDF only"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-forge-of-the-dawn-titan",
+   "title": "Lair Assault: Forge of the Dawn Titan",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9104",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-talon-of-umberlee",
+   "title": "Lair Assault: Talon of Umberlee",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2011,
+   "publisher": "Wizards of the Coast",
+   "code": "B9106",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-attack-of-the-tyrantclaw",
+   "title": "Lair Assault: Attack of the Tyrantclaw",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9108",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-spiderkiller",
+   "title": "Lair Assault: Spiderkiller",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9731",
+   "setting": "Forgotten Realms",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-kill-the-wizard",
+   "title": "Lair Assault: Kill the Wizard",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9732",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-temple-of-the-sky-god",
+   "title": "Lair Assault: Temple of the Sky God",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2012,
+   "publisher": "Wizards of the Coast",
+   "code": "B9733",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-lair-assault-into-the-pit-of-madness",
+   "title": "Lair Assault: Into the Pit of Madness",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2013,
+   "publisher": "Wizards of the Coast",
+   "code": "B10596",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-la.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Lair Assault"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-company-of-the-griffon",
+   "title": "Delve Night: Company of the Griffon",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-deepwater-rising",
+   "title": "Delve Night: Deepwater Rising",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-the-disquiet-spirits",
+   "title": "Delve Night: The Disquiet Spirits",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-the-dragon-twins-lair",
+   "title": "Delve Night: The Dragon Twins' Lair",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-into-the-shadow",
+   "title": "Delve Night: Into the Shadow",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-sanity-s-precipice",
+   "title": "Delve Night: Sanity's Precipice",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-the-sewers-of-silence",
+   "title": "Delve Night: The Sewers of Silence",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-the-tower-of-maraj",
+   "title": "Delve Night: The Tower of Maraj",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
+  },
+  {
+   "id": "4e-delve-night-what-you-wish-for",
+   "title": "Delve Night: What You Wish For",
+   "edition": "4e",
+   "type": "Adventure",
+   "year": 2009,
+   "publisher": "Wizards of the Coast",
+   "setting": "Points of Light",
+   "sources": [
+    "https://www.tsrarchive.com/4e/4e-dlv.html"
+   ],
+   "releases": [
+    {
+     "key": "orig",
+     "kind": "Original",
+     "primary": true,
+     "label": "D&D Delve Night (4 cardstock sheets)"
+    }
+   ]
   }
  ]
 }
