@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.3] - 2026-11-26
+
+### Changed
+- Removed pip from the Docker image after install, clearing the urllib3, setuptools and msgpack CVEs reported by image scanners.
+
 ## [1.2.2] - 2026-11-26
 
 ### Changed
