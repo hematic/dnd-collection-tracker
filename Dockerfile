@@ -6,10 +6,16 @@ ENV PYTHONDONTWRITEBYTECODE=1 \
 
 WORKDIR /app
 COPY requirements.txt .
+# pip is only needed at build time. It vendors its own urllib3 and setuptools, which image
+# scanners flag (e.g. CVE-2026-97689, CVE-2025-47273), so remove it and ensurepip's bundled
+# copy once the requirements are installed.
 RUN apt-get update \
     && apt-get install -y --no-install-recommends tesseract-ocr tesseract-ocr-eng \
     && rm -rf /var/lib/apt/lists/* \
-    && pip install --no-cache-dir -r requirements.txt
+    && pip install --no-cache-dir -r requirements.txt \
+    && rm -rf "$(python -c 'import ensurepip, pathlib; print(pathlib.Path(ensurepip.__file__).parent / "_bundled")')" \
+    && python -m pip uninstall -y pip \
+    && ! python -m pip --version 2>/dev/null
 
 COPY app ./app
 COPY static ./static
