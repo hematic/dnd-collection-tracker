@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.2] - 2026-11-26
+
+### Changed
+- Added 184 missing 3rd Edition and 3.5 books (including the licensed Ravenloft, Dragonlance, Rokugan and Kingdoms of Kalamar lines) and 14 new printings.
+
 ## [1.2.1] - 2026-11-25
 
 ### Changed
