@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.1] - 2026-11-25
+
+### Changed
+- Added 206 books and 254 printings to the catalog: missing AD&D 1e/2e products (including the Dark Sun, Al-Qadim and Birthright lines, Odyssey titles and RPGA modules), 4th Edition books and in-store play adventures, and 5th Edition books, promos, hobby-store covers and premium editions. Existing collections receive them on the next restart.
+
 ## [1.2.0] - 2026-11-25
 
 ### Added
