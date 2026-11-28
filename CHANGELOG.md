@@ -2,6 +2,11 @@
 
 User-visible changes are recorded here using MAJOR.MINOR.PATCH version numbers.
 
+## [1.2.6] - 2026-11-28
+
+### Changed
+- Moved the six Sundering-era D&D Encounters adventures (Murder in Baldur's Gate, Legacy of the Crystal Shard, Scourge of the Sword Coast and Dead in Thay) from 4th Edition to 5th Edition, and removed the character sheet packs and the Dragon of Icespire Peak preview from the catalog.
+
 ## [1.2.5] - 2026-11-26
 
 ### Changed
