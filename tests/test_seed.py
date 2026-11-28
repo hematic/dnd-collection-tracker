@@ -340,9 +340,9 @@ class ReseedingTests(unittest.TestCase):
         with patch.object(db, "DATA_DIR", fresh), patch.object(db, "DB_PATH", fresh / "tracker.db"), \
                 patch.object(db, "COVERS_DIR", fresh / "covers"), patch.object(seed, "CATALOG", db.CATALOG_PATH):
             main._startup()
-            self.assertEqual(len(db.list_books()), 1408)
-            self.assertEqual(len(db.list_books(show_contents=True)), 1448)
-            self.assertEqual(self.rows("SELECT COUNT(*) AS n FROM release"), [{"n": 1584}])
+            self.assertEqual(len(db.list_books()), 1405)
+            self.assertEqual(len(db.list_books(show_contents=True)), 1445)
+            self.assertEqual(self.rows("SELECT COUNT(*) AS n FROM release"), [{"n": 1581}])
             with db.connect(read_only=True) as conn:
                 before = list(conn.iterdump())
                 for table in ("catalog_work_mapping", "catalog_release_mapping", "catalog_metadata_repair",

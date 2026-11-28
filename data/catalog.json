@@ -16571,19 +16571,6 @@
    ]
   },
   {
-   "id": "5e-character-sheets",
-   "title": "Character Sheets",
-   "edition": "5e (2014)",
-   "type": "Other",
-   "year": 2017,
-   "publisher": "Wizards of the Coast",
-   "code": "C3686",
-   "setting": "Setting Agnostic",
-   "sources": [
-    "https://www.tsrarchive.com/5e/5e-acc.html"
-   ]
-  },
-  {
    "id": "5e-adventure-grid",
    "title": "Adventure Grid",
    "edition": "5e (2014)",
@@ -16594,19 +16581,6 @@
    "setting": "Setting Agnostic",
    "sources": [
     "https://www.tsrarchive.com/5e/5e-acc.html"
-   ]
-  },
-  {
-   "id": "5r-character-sheets",
-   "title": "Character Sheets (2024)",
-   "edition": "5e (2024)",
-   "type": "Other",
-   "year": 2024,
-   "publisher": "Wizards of the Coast",
-   "code": "D3898",
-   "setting": "Setting Agnostic",
-   "sources": [
-    "https://www.tsrarchive.com/5e/5e-acc-24.html"
    ]
   },
   {
@@ -16687,26 +16661,6 @@
      "kind": "Original",
      "primary": true,
      "label": "PAX Unplugged 2017 exclusive"
-    }
-   ]
-  },
-  {
-   "id": "5e-dragon-of-icespire-peak-adventure-preview",
-   "title": "Dragon of Icespire Peak: Adventure Preview",
-   "edition": "5e (2014)",
-   "type": "Adventure",
-   "year": 2021,
-   "publisher": "Wizards of the Coast",
-   "setting": "Forgotten Realms",
-   "sources": [
-    "https://www.tsrarchive.com/5e/5e-promo.html"
-   ],
-   "releases": [
-    {
-     "key": "orig",
-     "kind": "Original",
-     "primary": true,
-     "label": "Preview version of the Essentials Kit adventure"
     }
    ]
   },
@@ -17844,7 +17798,7 @@
   {
    "id": "4e-encounters-murder-in-baldur-s-gate-launch-weekend",
    "title": "Encounters: Murder in Baldur's Gate (Launch Weekend)",
-   "edition": "4e",
+   "edition": "5e (2014)",
    "type": "Adventure",
    "year": 2013,
    "publisher": "Wizards of the Coast",
@@ -17865,7 +17819,7 @@
   {
    "id": "4e-encounters-murder-in-baldur-s-gate",
    "title": "Encounters: Murder in Baldur's Gate",
-   "edition": "4e",
+   "edition": "5e (2014)",
    "type": "Adventure",
    "year": 2013,
    "publisher": "Wizards of the Coast",
@@ -17886,7 +17840,7 @@
   {
    "id": "4e-encounters-legacy-of-the-crystal-shard-launch-weekend",
    "title": "Encounters: Legacy of the Crystal Shard (Launch Weekend)",
-   "edition": "4e",
+   "edition": "5e (2014)",
    "type": "Adventure",
    "year": 2013,
    "publisher": "Wizards of the Coast",
@@ -17907,7 +17861,7 @@
   {
    "id": "4e-encounters-legacy-of-the-crystal-shard",
    "title": "Encounters: Legacy of the Crystal Shard",
-   "edition": "4e",
+   "edition": "5e (2014)",
    "type": "Adventure",
    "year": 2013,
    "publisher": "Wizards of the Coast",
@@ -17928,7 +17882,7 @@
   {
    "id": "4e-encounters-scourge-of-the-sword-coast",
    "title": "Encounters: Scourge of the Sword Coast",
-   "edition": "4e",
+   "edition": "5e (2014)",
    "type": "Adventure",
    "year": 2014,
    "publisher": "Wizards of the Coast",
@@ -17949,7 +17903,7 @@
   {
    "id": "4e-encounters-dead-in-thay",
    "title": "Encounters: Dead in Thay",
-   "edition": "4e",
+   "edition": "5e (2014)",
    "type": "Adventure",
    "year": 2014,
    "publisher": "Wizards of the Coast",
